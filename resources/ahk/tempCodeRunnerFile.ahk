@@ -1,0 +1,1 @@
+C:\Home\Usage\ThrottleStop\ThrottleStop.exe
