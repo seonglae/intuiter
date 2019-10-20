@@ -35,4 +35,7 @@ export default {
 ::-webkit-scrollbar {
     display: none;
 }
+button {
+  -webkit-app-region: no-drag;
+}
 </style>
