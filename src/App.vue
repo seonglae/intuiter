@@ -6,8 +6,8 @@
         <span class="font-weight-light">Intuit Manager</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn text target="_blank">
-        Exit Intuiter
+      <v-btn text v-on:click="close">
+        Exit
       </v-btn>
     </v-app-bar>
 
@@ -21,6 +21,13 @@
 import LandingPage from './components/LandingPage';
 
 export default {
+  methods: {
+    close () {
+      const remote = require('electron').remote
+      let win = remote.getCurrentWindow()
+      win.close()
+    }
+  },
   name: 'App',
   components: {
     LandingPage,

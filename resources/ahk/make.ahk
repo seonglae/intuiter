@@ -43,4 +43,7 @@ if FileExist("Intuit.exe"){
     run "Intuit.exe"
     break
 }
+
+MsgBox, , Make and Run, Complete
+
 Exitapp
