@@ -34,7 +34,12 @@ module.exports = {
             "nsis",
             "appx"
           ],
-          "icon": "dist_electron/icons/icon.ico"
+          "requestedExecutionLevel": "highestAvailable",
+          "certificateFile" : "dist_electron/intuiter.pfx",
+          "certificatePassword" : "sung1103215!",
+          "icon": "dist_electron/icons/icon.ico",
+          "publisherName" : "Seonglae",
+          "certificateSubjectName" : "Seonglae"
         }
       }
     }

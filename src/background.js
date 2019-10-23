@@ -20,6 +20,7 @@ function createWindow () {
     height: 800,
     minWidth: 850,
     minHeight: 800,
+    transparent: true, 
     frame: false,
     titleBarStyle: "hiddenInset",
     webPreferences: {
@@ -95,13 +96,3 @@ if (isDevelopment) {
     })
   }
 }
-
-// system theme
-const { systemPreferences } = require('electron')
-
-systemPreferences.subscribeNotification(
-  'AppleInterfaceThemeChangedNotification',
-  function theThemeHasChanged () {
-    updateMyAppTheme(systemPreferences.isDarkMode())
-  }
-)
