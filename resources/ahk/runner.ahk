@@ -18,13 +18,6 @@ SetTitleMatchMode, 2
 DetectHiddenWindows On
 CoordMode, Mouse, Screen
 
-; meta - throttlestop
-if FileExist("C:\Home\Usage\ThrottleStop\ThrottleStop.exe"){
-    run C:\Home\Usage\ThrottleStop\ThrottleStop.exe
-    WinWaitActive, ahk_exe ThrottleStop.exe
-    Send, !{f4}
-}
-
 ; meta - regedit remove lock function for mouse
 RegWrite, REG_DWORD, HKCU, SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, DisableLockWorkstation, 000001
 if (ErrorLevel = 1){

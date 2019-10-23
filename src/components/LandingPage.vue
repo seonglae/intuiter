@@ -140,6 +140,9 @@ export default {
     make () {
       var make = require('node-cmd')
       make.run('"resources\\ahk\\exe\\ahk\\AutoHotkey.exe" "resources\\ahk\\make.ahk"')
+      const remote = require('electron').remote
+      let win = remote.getCurrentWindow()
+      win.close()
     }
   }
 };
