@@ -17,6 +17,7 @@ module.exports = {
         "nsis": {
           "deleteAppDataOnUninstall": true,
           "createDesktopShortcut": true,
+          "include": "build/nsis/remove_startup.nsh"
         },
         "appx": {
           "identityName": "sungleCho.Intuiter",
@@ -35,11 +36,11 @@ module.exports = {
             "appx"
           ],
           "requestedExecutionLevel": "highestAvailable",
-          "certificateFile" : "dist_electron/intuiter.pfx",
+          "certificateFile" : "dist_electron/Seonglae.pfx",
           "certificatePassword" : "sung1103215!",
           "icon": "dist_electron/icons/icon.ico",
-          "publisherName" : "Seonglae",
-          "certificateSubjectName" : "Seonglae"
+          "certificateSubjectName" : "CN=developmentca",
+          "rfc3161TimeStampServer": "http://timestamp.globalsign.com/scripts/timstamp.dll"
         }
       }
     }
