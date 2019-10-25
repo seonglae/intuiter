@@ -60,8 +60,8 @@ export default {
   data: () => ({
     ecosystem: [
       {
-        text: "vuetify-loader",
-        href: "https://github.com/vuetifyjs/vuetify-loader"
+        text: "how to use",
+        href: "https://www.notion.so/seonglae/How-To-Use-Intuit-5831be99599e49dba750bd8d4620fc47"
       },
       {
         text: "github",
