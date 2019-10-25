@@ -10,15 +10,19 @@
         Exit
       </v-btn>
     </v-app-bar>
-
+    
     <v-content>
-      <LandingPage/>
+      <side-bar/>
+      <option-space/>
+      <make-space/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import LandingPage from './components/LandingPage';
+import MakeSpace from './components/MakeSpace';
+import SideBar from './components/SideBar';
+import OptionSpace from './components/OptionSpace';
 
 export default {
   methods: {
@@ -30,7 +34,9 @@ export default {
   },
   name: 'App',
   components: {
-    LandingPage,
+    MakeSpace,
+    SideBar,
+    OptionSpace
   },
   data: () => ({
     //
