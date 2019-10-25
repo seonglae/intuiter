@@ -17,7 +17,7 @@ module.exports = {
         nsis: {
           deleteAppDataOnUninstall: true,
           createDesktopShortcut: true,
-          include: 'build/nsis/remove_startup.nsh'
+          include: 'dist_electron/nsis/remove_startup.nsh'
         },
         appx: {
           identityName: 'sungleCho.Intuiter',
