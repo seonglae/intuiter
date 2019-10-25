@@ -2,23 +2,30 @@
 
 mouse_up(accel, max, cos, sin, axis){
     v = 0
-    while (GetKeyState("i", "P")){
-        if (GetKeyState("l", "P"))
-            while(GetKeyState("l", "P")){
+    while (GetKeyState("i", "P")){ 
+        if (GetKeyState("l", "P") and GetKeyState("i", "P")){
+            while(GetKeyState("l", "P") and GetKeyState("i", "P")){
                 MouseRelativeMove(cos * v, -sin * v)
                 if(v < max)
                     v := v + accel
             }
-        else if (GetKeyState("j", "P"))
-            while(GetKeyState("j", "P")){
+            return
+        }
+        else if (GetKeyState("j", "P") and GetKeyState("i", "P")){
+            while(GetKeyState("j", "P") and GetKeyState("i", "P")){
                 MouseRelativeMove(-cos * v, -sin * v)
                 if(v < max)
                     v := v + accel
             }
-        else if (GetKeyState("i", "P")){
-            MouseRelativeMove(0, -axis * v)
-            if(v < max)
-                v := v + accel
+            return
+        }
+        else if (GetKeyState("i", "P") and !GetKeyState("j", "P") and !GetKeyState("l", "P")){
+            while (GetKeyState("i", "P") and !GetKeyState("j", "P") and !GetKeyState("l", "P")){
+                MouseRelativeMove(0, -axis * v)
+                if(v < max)
+                    v := v + accel
+            }
+            return
         }
     }
 }
@@ -26,22 +33,30 @@ mouse_up(accel, max, cos, sin, axis){
 mouse_down(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("k", "P")){
-        if (GetKeyState("l", "P"))
-            while(GetKeyState("l", "P")){
-                MouseRelativeMove(cos * v, sin * v)
-                if(v < max)
-                    v := v + accel
-            }
-        else if (GetKeyState("j", "P"))
-            while(GetKeyState("j", "P")){
+        if (GetKeyState("j", "P")  and GetKeyState("k", "P")){
+            while(GetKeyState("j", "P") and GetKeyState("k", "P")){
                 MouseRelativeMove(-cos * v, sin * v)
                 if(v < max)
                     v := v + accel
             }
-        else if (GetKeyState("k","P")){
-            MouseRelativeMove(0, axis * v)
-            if(v < max)
-                v := v + accel
+            return
+        }
+        
+        else if (GetKeyState("l", "P")  and GetKeyState("k", "P")){
+            while(GetKeyState("l", "P")  and GetKeyState("k", "P")){
+                MouseRelativeMove(cos * v, sin * v)
+                if(v < max)
+                    v := v + accel
+            }
+            return
+        }
+        else if (GetKeyState("k","P") and !GetKeyState("j","P")  and !GetKeyState("l","P")){
+            while (GetKeyState("k","P") and !GetKeyState("j","P")  and !GetKeyState("l","P")){
+                MouseRelativeMove(0, axis * v)
+                if(v < max)
+                    v := v + accel
+            }
+            return
         }
     }
 }
@@ -49,22 +64,29 @@ mouse_down(accel, max, cos, sin, axis){
 mouse_left(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("j", "P")){
-        if (GetKeyState("k", "P"))
-            while(GetKeyState("k", "P")){
-                MouseRelativeMove(-cos * v, sin * v)
-                if(v < max)
-                    v := v + accel
-            }
-        else if (GetKeyState("i", "P"))
-            while(GetKeyState("i", "P")){
+        if (GetKeyState("i", "P") and GetKeyState("j", "P")){
+            while(GetKeyState("i", "P")and GetKeyState("j", "P")){
                 MouseRelativeMove(-cos * v, -sin * v)
                 if(v < max)
                     v := v + accel
             }
-        else if (GetKeyState("j", "P")){
-            MouseRelativeMove( -axis * v, 0)
-            if(v < max)
-                v := v + accel
+            return
+        }
+        else if (GetKeyState("k", "P") and GetKeyState("j", "P")){
+            while(GetKeyState("k", "P") and GetKeyState("j", "P")){
+                MouseRelativeMove(-cos * v, sin * v)
+                if(v < max)
+                    v := v + accel
+            }
+            return
+        }
+        else if (GetKeyState("j", "P") and !GetKeyState("i", "P") and !GetKeyState("k", "P")){
+            while (GetKeyState("j", "P") and !GetKeyState("i", "P") and !GetKeyState("k", "P")){
+                MouseRelativeMove( -axis * v, 0)
+                if(v < max)
+                    v := v + accel
+            }
+            return
         }
     }
 }
@@ -72,22 +94,29 @@ mouse_left(accel, max, cos, sin, axis){
 mouse_right(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("l", "P")){
-        if (GetKeyState("k", "P"))
-            while(GetKeyState("k", "P")){
+        if (GetKeyState("k", "P") and GetKeyState("l", "P")){
+            while(GetKeyState("k", "P") and GetKeyState("l", "P")){
                 MouseRelativeMove(cos * v, sin * v)
                 if(v < max)
                     v := v + accel
             }
-        else if (GetKeyState("i", "P"))
-            while(GetKeyState("i", "P")){
+            return
+        }
+        else if (GetKeyState("i", "P") and GetKeyState("l", "P")){
+            while(GetKeyState("i", "P")and GetKeyState("l", "P")){
                 MouseRelativeMove(cos * v, -sin * v)
                 if(v < max)
                     v := v + accel
             }
-        else if (GetKeyState("l", "P")){
-            MouseRelativeMove(axis * v, 0)
-            if(v < max)
-                v := v + accel
+            return
+        }
+        else if (GetKeyState("l", "P") and !GetKeyState("k", "P") and !GetKeyState("i", "P")){
+            while (GetKeyState("l", "P") and !GetKeyState("k", "P") and !GetKeyState("i", "P")){
+                MouseRelativeMove(axis * v, 0)
+                if(v < max)
+                    v := v + accel
+            }
+            return
         }
     }
 }
