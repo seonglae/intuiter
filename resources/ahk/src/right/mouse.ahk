@@ -43,32 +43,53 @@ Lwin & l::
 return
 
 ; meta - click toggle
-Lwin & y::
+Lwin & n::
     if (!GetKeyState("shift")){
         toggle_left(LEFT_DOWN)
         
     }
     else if (GetKeyState("shift")){
-        Run *Runas cmd.exe /c explorer.exe shell:appsFolder\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc!ubuntu1804,,hide
+        send, #n
     }
 return
 
-Lwin & p::
+Lwin & m::
     if (!GetKeyState("shift")){
         toggle_mid(MID_DOWN)
+    }
+    else if (GetKeyState("shift")){
+        send, #m
+    }
+return
+
+; meta - scroll at win
+Lwin & u::
+    if (!GetKeyState("shift")){
+         click_left("u")
     }
     else if (GetKeyState("shift")){
         Run *Runas cmd.exe /c explorer.exe shell:appsFolder\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc!ubuntu1804,,hide
     }
 return
 
-; meta - mouse click
 Lwin & o::
     if (!GetKeyState("shift")){
         click_right("o")
+        
+    }
+    else if (GetKeyState("shift")){
+        send, #o
+    }
+return
+
+
+; meta - mouse click
+Lwin & p::
+    if (!GetKeyState("shift")){
+        scroll_down("p")
     }
     else if (GetKeyState("shift") and !GetKeyState("ctrl")){
-        Run *Runas cmd.exe /c explorer.exe shell:appsFolder\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc!ubuntu1804,,hide
+        send, #p
     }
 return
 
@@ -81,22 +102,23 @@ Lwin & w::
     }
 return
 
-Lwin & u::
+Lwin & y::
     if (!GetKeyState("shift")){
-        click_left("u")
+        scroll_up("y")
+       
     }
     else if (GetKeyState("shift")){
-        Run *Runas cmd.exe /c explorer.exe shell:appsFolder\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc!ubuntu1804,,hide
+        send, #y
     }
 return
 
 ; meta - mouse scroll global variable
 Lalt & u::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
-        scroll_up()
+        scroll_up("u")
     }
     else if (GetKeyState("shift") && !GetKeyState("ctrl")){
-        scroll_left()
+        scroll_left("u")
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
         
@@ -110,10 +132,10 @@ Return
 
 Lalt & o::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
-        scroll_down()
+        scroll_down("o")
     }
     else if (GetKeyState("shift") && !GetKeyState("ctrl")){
-        scroll_right()
+        scroll_right("o")
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
         
