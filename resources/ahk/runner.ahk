@@ -36,8 +36,7 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\lib\const.ahk
 #Include %A_scriptDir%\lib\korean.ahk
 #Include %A_scriptDir%\lib\text_func.ahk
-#Include %A_scriptDir%\lib\mouse_func.ahk
-
+#Include %A_scriptDir%\lib\mouse_func_precision.ahk
 
 ; meta - must lwin before lalt
 ; meta - Include right win

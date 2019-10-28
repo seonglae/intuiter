@@ -25,6 +25,7 @@ mouse_up(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
     }
 }
@@ -55,6 +56,7 @@ mouse_down(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
     }
 }
@@ -84,6 +86,7 @@ mouse_left(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
     }
 }
@@ -114,6 +117,7 @@ mouse_right(accel, max, cos, sin, axis){
                 v := v + accel
             }
         }
+        return
     }
 }
 
@@ -125,36 +129,36 @@ MouseRelativeMove(x, y){
 
 ; meta - scroll function
 
-scroll_down(){
+scroll_down(key){
     a_divider = 3
-    while (GetKeyState("o", "P")){
+    while (GetKeyState(key, "P")){
         Click WheelDown
         sleep 500 / a_divider + 1
         a_divider := a_divider + 1
     }
 }
 
-scroll_up(){
+scroll_up(key){
     a_divider = 3
-    while (GetKeyState("u", "P")){
+    while (GetKeyState(key, "P")){
         Click Wheelup
         sleep 500 / a_divider
         a_divider := a_divider + 1
     }
 }
 
-scroll_left(){
+scroll_left(key){
     a_divider = 3
-    while (GetKeyState("u", "P")){
+    while (GetKeyState(key, "P")){
         Click WheelLeft
         sleep 500 / a_divider
         a_divider := a_divider + 1
     }
 }
 
-scroll_right(){
+scroll_right(key){
     a_divider = 3
-    while (GetKeyState("o", "P")){
+    while (GetKeyState(key, "P")){
         Click WheelRight
         sleep 500 / a_divider
         a_divider := a_divider + 1
