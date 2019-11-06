@@ -165,38 +165,22 @@ scroll_right(key){
     }
 }
 
-; meta - toggle function
-toggle_left(ByRef left_down){
-    if (left_down = true){
-        DllCall("mouse_event", "UInt", 0x04) ; left button up
-        left_down := false
-    }
-    else{
-        DllCall("mouse_event", "UInt", 0x02) ; left button down
-        left_down := true
-    }
-}
-
-toggle_mid(ByRef mid_down){
-    if (mid_down = true){
-        DllCall("mouse_event", "UInt", 0x40) ; middle button up
-        mid_down := false
-    }
-    else{
-        DllCall("mouse_event", "UInt", 0x20) ; middle button down
-        mid_down := true
-    }
-}
 
 ; meta - mouse click
 click_left(key){
-    DllCall("mouse_event", "UInt", 0x02) ; left button up
+    DllCall("mouse_event", "UInt", 0x02)
     KeyWait, %key%
-    DllCall("mouse_event", "UInt", 0x04) ; left button down
+    DllCall("mouse_event", "UInt", 0x04)
 }
 
 click_right(key){
-    DllCall("mouse_event", "UInt", 0x08) ; left button up
+    DllCall("mouse_event", "UInt", 0x08)
     KeyWait, %key%
-    DllCall("mouse_event", "UInt", 0x10) ; left button down
+    DllCall("mouse_event", "UInt", 0x10)
+}
+
+click_mid(key){
+    DllCall("mouse_event", "UInt", 0x20) ; middle button down
+    KeyWait, %key%
+    DllCall("mouse_event", "UInt", 0x40) ; middle button up
 }
