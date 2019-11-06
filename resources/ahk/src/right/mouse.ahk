@@ -41,6 +41,8 @@ Lwin & l::
         run %windir%\System32\tsdiscon.exe
     }
 return
+
+
 ; meta - scroll at win
 Lwin & u::
     if (!GetKeyState("shift")){
@@ -88,6 +90,15 @@ Lwin & y::
     }
     else if (GetKeyState("shift")){
         send, #y
+    }
+return
+
+Lwin & m::
+    if (!GetKeyState("shift")){
+        click_mid("m")
+    }
+    else if (GetKeyState("shift")){
+        send, #m
     }
 return
 
