@@ -41,27 +41,6 @@ Lwin & l::
         run %windir%\System32\tsdiscon.exe
     }
 return
-
-; meta - click toggle
-Lwin & n::
-    if (!GetKeyState("shift")){
-        toggle_left(LEFT_DOWN)
-        
-    }
-    else if (GetKeyState("shift")){
-        send, #n
-    }
-return
-
-Lwin & m::
-    if (!GetKeyState("shift")){
-        toggle_mid(MID_DOWN)
-    }
-    else if (GetKeyState("shift")){
-        send, #m
-    }
-return
-
 ; meta - scroll at win
 Lwin & u::
     if (!GetKeyState("shift")){

@@ -11,7 +11,3 @@ ACCEL_INTERVAL = 1
 SCROLL_DIVISOR = 3
 SCROLL_DIVIDIEND = 400
 SCROLL_ACCEL = 1
-
-; meta - mouse toggle
-LEFT_DOWN = false
-MID_DOWN = false
