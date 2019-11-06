@@ -169,3 +169,9 @@ click_right(key){
     KeyWait, %key%
     DllCall("mouse_event", "UInt", 0x10) ; left button down
 }
+
+click_mid(key){
+    DllCall("mouse_event", "UInt", 0x20) ; middle button down
+    KeyWait, %key%
+    DllCall("mouse_event", "UInt", 0x40) ; middle button up
+}
