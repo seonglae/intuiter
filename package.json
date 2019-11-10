@@ -1,25 +1,23 @@
 {
   "name": "intuiter",
-  "version": "0.2.0",
+  "version": "0.2.0-beta",
   "private": true,
   "description": "Productivity Electron AHK Appliction",
   "author": "seonglae <sungle3737@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "electron:build": "vue-cli-service electron:build",
-    "electron:serve": "vue-cli-service electron:serve",
+    "build": "vue-cli-service electron:build",
+    "serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
   "main": "background.js",
   "dependencies": {
-    "core-js": "^3.3.4",
+    "core-js": "^3.4.0",
     "material-design-icons-iconfont": "^5.0.1",
     "node-cmd": "^3.0.0",
     "vue": "^2.6.10",
-    "vuetify": "^2.1.7"
+    "vuetify": "^2.1.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.5",
@@ -27,15 +25,15 @@
     "@vue/cli-service": "^4.0.5",
     "babel-eslint": "^10.0.1",
     "devtron": "^1.4.0",
-    "electron": "^7.0.0",
+    "electron": "^7.1.1",
     "eslint": "^6.6.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-vue": "^6.0.0",
     "modclean": "^3.0.0-beta.1",
-    "sass": "^1.23.1",
+    "sass": "^1.23.3",
     "sass-loader": "^8.0.0",
     "standard": "^14.3.1",
     "vue-cli-plugin-electron-builder": "^1.4.0",
-    "vue-cli-plugin-vuetify": "^1.1.1",
+    "vue-cli-plugin-vuetify": "^2.0.2",
     "vue-template-compiler": "^2.6.10",
     "vuetify-loader": "^1.3.0"
   },
