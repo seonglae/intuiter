@@ -20,15 +20,10 @@ module.exports = {
         extraResources: [
           {
             from: './resources/ahk/',
-            to: 'ahk',
-            filter: [
-              '**/*'
-            ]
+            to: 'ahk'
           }
         ],
         nsis: {
-          deleteAppDataOnUninstall: true,
-          createDesktopShortcut: true,
           include: 'dist/nsis/remove_startup.nsh',
         },
         appx: {
