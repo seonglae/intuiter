@@ -16,7 +16,6 @@ module.exports = {
   pluginOptions: {
     electronBuilder: {
       builderOptions: {
-        "generateUpdatesFilesForAllChannels": true,
         extraResources: [
           {
             from: './resources/ahk/',
