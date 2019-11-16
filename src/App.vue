@@ -14,13 +14,13 @@
     <v-content>
       <!-- <side-bar/> -->
       <option-space/>
-      <!-- <make-space/> -->
+      <make-space/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-// import MakeSpace from './components/MakeSpace';
+import MakeSpace from './components/MakeSpace';
 //import SideBar from './components/SideBar';
 import OptionSpace from './components/OptionSpace';
 
@@ -34,7 +34,7 @@ export default {
   },
   name: 'App',
   components: {
-    // MakeSpace,
+    MakeSpace,
     //SideBar,
     OptionSpace
   },

@@ -16,6 +16,7 @@
     "core-js": "^3.4.0",
     "node-cmd": "^3.0.0",
     "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
     "vuetify": "^2.1.9"
   },
   "devDependencies": {
@@ -64,3 +65,4 @@
     "url": "git://github.com/sungle3737/intuiter.git"
   }
 }
+  
