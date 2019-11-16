@@ -7,7 +7,6 @@
 
       <v-flex mb-4>
         <h1 class="display-2 font-weight-bold mb-3">Intuit Manager</h1>
-        <v-btn v-on:click="make">Make and Run</v-btn>
       </v-flex>
 
       <v-flex mb-5 xs12>
@@ -110,42 +109,6 @@ export default {
     ]
   }),
   methods: {
-    make() {
-      var path = require("electron").remote.app.getAppPath();
-      console.log(path);
-
-      // command run
-      var cmd = require("node-cmd");
-      cmd.get(
-        '"resources\\ahk\\exe\\ahk\\AutoHotkey.exe" "resources\\ahk\\make.ahk"',
-        function(err, data, stderr) {
-          // close window
-          if (!err) {
-            const remote = require("electron").remote;
-            let win = remote.getCurrentWindow();
-            win.close();
-          } else {
-            const { dialog } = require('electron')
-
-            const options = {
-              type: "error",
-              title: "Error",
-              message: "Some Error Occured",
-              detail: "please press make button one more time"
-            };
-
-            dialog.showMessageBox(
-              null,
-              options,
-              (response) => {
-                console.log(response);
-              }
-            );
-            console.log("error", err, data, stderr);
-          }
-        }
-      );
-    }
   }
 };
 </script>
