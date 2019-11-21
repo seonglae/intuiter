@@ -19,6 +19,7 @@ Lalt & 1::
         send, ^+1
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+        send, ^!1
     }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
@@ -34,6 +35,7 @@ Lalt & 3::
         send, ^+3
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+        send, ^!3
     }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
@@ -49,6 +51,7 @@ Lalt & 5::
         send, ^+5
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+        send, ^!5
     }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
@@ -64,6 +67,7 @@ Lalt & 9::
         send, +^9
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+        send, ^!9
     }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
