@@ -20,9 +20,9 @@
 </template>
 
 <script>
-import MakeSpace from './components/MakeSpace';
-//import SideBar from './components/SideBar';
-import OptionSpace from './components/OptionSpace';
+import MakeSpace from './components/MakeSpace'
+//import SideBar from './components/SideBar'
+import OptionSpace from './components/OptionSpace'
 
 export default {
   methods: {
@@ -41,14 +41,14 @@ export default {
   data: () => ({
     //
   }),
-};
+}
 </script>
 
 <style>
 ::-webkit-scrollbar {
-    display: none;
+    display: none
 }
 button {
-  -webkit-app-region: no-drag;
+  -webkit-app-region: no-drag
 }
 </style>
