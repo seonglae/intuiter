@@ -112,39 +112,39 @@ export default {
   }),
   methods: {
     make() {
-      var path = require("electron").remote.app.getAppPath();
-      console.log(path);
+      let path = require("electron").remote.app.getAppPath()
+      console.log(path)
       // command run
-      var cmd = require("node-cmd");
+      let cmd = require("node-cmd")
       cmd.get(
         '"resources\\ahk\\exe\\ahk\\AutoHotkey.exe" "resources\\ahk\\make.ahk"',
         this.after_make
-      );
+      )
     },
 
     after_make(err, data, stderr) {
       if (!err) {
-        const remote = require("electron").remote;
-        let win = remote.getCurrentWindow();
-        win.close();
+        const remote = require("electron").remote
+        let win = remote.getCurrentWindow()
+        win.close()
         return
       }
-      this.if_error(err, data, stderr);
+      this.if_error(err, data, stderr)
     },
     
     if_error(err, data, stderr) {
-      const { dialog } = require("electron");
+      const { dialog } = require("electron")
       const options = {
         type: "error",
         title: "Error",
         message: "Some Error Occured",
         detail: "please press make button one more time"
-      };
+      }
       dialog.showMessageBox(null, options, response => {
-        console.log(response);
-      });
-      console.log("error", err, data, stderr);
+        console.log(response)
+      })
+      console.log("error", err, data, stderr)
     }
   }
-};
+}
 </script>
