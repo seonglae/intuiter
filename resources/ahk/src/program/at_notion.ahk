@@ -1,6 +1,6 @@
 ; todo - add gui where to shortcut work per program extension - plus notion.exe
 ; meta - notion - whale, chrome, edge
-#If WinActive("ahk_exe whale.exe") or WinActive("ahk_exe chrome.exe")
+#If WinActive("ahk_exe whale.exe") or WinActive("ahk_exe chrome.exe") or WinActive("Edge")
 
 ; meta - enter notion
 Lalt & `::
