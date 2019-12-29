@@ -63,3 +63,4 @@ Loop, %MONITOR_COUNT%
 ; meta - Include program
 #Include %A_scriptDir%\src\program\at_notion.ahk
 #Include %A_scriptDir%\src\program\at_win.ahk
+#Include %A_scriptDir%\src\program\event.ahk
