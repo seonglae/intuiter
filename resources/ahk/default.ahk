@@ -15,20 +15,20 @@ SetTitleMatchMode, 2
 DetectHiddenWindows On
 CoordMode, Mouse, Screen
 
-; meta - throttlestop
-if FileExist("C:\Home\Usage\ThrottleStop\ThrottleStop.exe"){
-    run C:\Home\Usage\ThrottleStop\ThrottleStop.exe
+; meta - Throttlestop
+if FileExist("C:\Home\Usage\Prog\ThrottleStop\ThrottleStop.exe"){
+    run C:\Home\Usage\Prog\ThrottleStop\ThrottleStop.exe
     WinWaitActive, ahk_exe ThrottleStop.exe
     Send, !{f4}
 }
 
-; meta - regedit remove lock function for mouse
+; meta - Regedit remove lock function for mouse
 RegWrite, REG_DWORD, HKCU, SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, DisableLockWorkstation, 000001
 if (ErrorLevel = 1){
     MsgBox, regedit fail
 }
 
-; meta - get monitor infor
+; meta - Get monitor infor
 Loop, %MONITOR_COUNT%
 {
     SysGet, MonitorName, MonitorName, %A_Index%
@@ -44,11 +44,11 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\lib\mouse_func.ahk
 
 
-; meta - must lwin before lalt
+; meta - Must lwin before lalt
 ; meta - Include right win
 #Include %A_scriptDir%\src\right\mouse.ahk
 
-; meta - include win folder
+; meta - Include win folder
 #Include %A_scriptDir%\src\win\convention.ahk
 #Include %A_scriptDir%\src\win\display_rotate.ahk
 #Include %A_scriptDir%\src\win\app_shortcut.ahk
