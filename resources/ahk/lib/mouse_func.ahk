@@ -9,6 +9,7 @@ mouse_up(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("j", "P") and GetKeyState("i", "P")){
             while(GetKeyState("j", "P") and GetKeyState("i", "P")){
@@ -16,6 +17,7 @@ mouse_up(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("i", "P") and !GetKeyState("j", "P") and !GetKeyState("l", "P")){
             while (GetKeyState("i", "P") and !GetKeyState("j", "P") and !GetKeyState("l", "P")){
@@ -37,6 +39,7 @@ mouse_down(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         
         else if (GetKeyState("l", "P")  and GetKeyState("k", "P")){
@@ -45,6 +48,7 @@ mouse_down(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("k","P") and !GetKeyState("j","P")  and !GetKeyState("l","P")){
             while (GetKeyState("k","P") and !GetKeyState("j","P")  and !GetKeyState("l","P")){
@@ -66,6 +70,7 @@ mouse_left(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("k", "P") and GetKeyState("j", "P")){
             while(GetKeyState("k", "P") and GetKeyState("j", "P")){
@@ -73,6 +78,7 @@ mouse_left(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("j", "P") and !GetKeyState("i", "P") and !GetKeyState("k", "P")){
             while (GetKeyState("j", "P") and !GetKeyState("i", "P") and !GetKeyState("k", "P")){
@@ -94,6 +100,7 @@ mouse_right(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("i", "P") and GetKeyState("l", "P")){
             while(GetKeyState("i", "P")and GetKeyState("l", "P")){
@@ -101,6 +108,7 @@ mouse_right(accel, max, cos, sin, axis){
                 if(v < max)
                     v := v + accel
             }
+            return
         }
         else if (GetKeyState("l", "P") and !GetKeyState("k", "P") and !GetKeyState("i", "P")){
             while (GetKeyState("l", "P") and !GetKeyState("k", "P") and !GetKeyState("i", "P")){
@@ -108,8 +116,8 @@ mouse_right(accel, max, cos, sin, axis){
             if(v < max)
                 v := v + accel
             }
-            return
         }
+        return
     }
 }
 
@@ -157,17 +165,18 @@ scroll_right(key){
     }
 }
 
+
 ; meta - mouse click
 click_left(key){
-    DllCall("mouse_event", "UInt", 0x02) ; left button up
+    DllCall("mouse_event", "UInt", 0x02)
     KeyWait, %key%
-    DllCall("mouse_event", "UInt", 0x04) ; left button down
+    DllCall("mouse_event", "UInt", 0x04)
 }
 
 click_right(key){
-    DllCall("mouse_event", "UInt", 0x08) ; left button up
+    DllCall("mouse_event", "UInt", 0x08)
     KeyWait, %key%
-    DllCall("mouse_event", "UInt", 0x10) ; left button down
+    DllCall("mouse_event", "UInt", 0x10)
 }
 
 click_mid(key){
