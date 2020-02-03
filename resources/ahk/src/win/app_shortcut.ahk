@@ -19,15 +19,3 @@ Lwin & t::
         send #t
     }
 return
-
-Lwin & h::
-    if (!GetKeyState("shift")){
-        if FileExist("C:\Users\Seonglae\AppData\Local\hyper\Hyper.exe")
-            run *Runas C:\Users\Seonglae\AppData\Local\hyper\Hyper.exe
-        else
-            send #h
-    }
-    else if (GetKeyState("shift")){
-        send #h
-    }
-return

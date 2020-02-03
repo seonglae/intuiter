@@ -85,11 +85,16 @@ return
 
 Lwin & y::
     if (!GetKeyState("shift")){
-        scroll_up("y")
-       
     }
     else if (GetKeyState("shift")){
         send, #y
+    }
+return
+
+
+Lwin & `;::
+    if (!GetKeyState("shift")){
+        scroll_down(":")
     }
 return
 
@@ -103,6 +108,19 @@ Lwin & m::
 return
 
 ; meta - mouse scroll global variable
+Lwin & h::
+    if (!GetKeyState("shift")){
+        scroll_up("h")
+    }
+    else if (GetKeyState("shift")){
+        if FileExist("C:\Users\Seonglae\AppData\Local\hyper\Hyper.exe")
+            run *Runas C:\Users\Seonglae\AppData\Local\hyper\Hyper.exe
+        else
+            send #h
+    }
+return
+
+
 Lalt & u::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
         scroll_up("u")
