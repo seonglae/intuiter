@@ -11,6 +11,22 @@
 
 # How to Use
 
+### 1. Do Power Delete
+![Alt Text](gif/delete.gif)
+
+
+### 2. Move Text Cursor very fast or Jump
+![Alt Text](gif/move.gif)
+
+### 3. Scroll without mouse
+![Alt Text](gif/scroll.gif)
+
+### 4. select text by shortcut
+![Alt Text](gif/select.gif)
+
+### 5. Click without mouse
+![Alt Text](gif/click.gif)
+
 # How I Developed
 
 # How to Contribute
@@ -20,3 +36,5 @@
 # Lisence
 
 # Information Of Me
+- [Personal Portfolio](https://seonglae.com)
+- [Example Notion Site (My Page)](https://notion.seonglae.com)
