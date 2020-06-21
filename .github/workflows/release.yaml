@@ -3,7 +3,7 @@ name: CI/CD to Seonglae Server
 
 on:
   push:
-    branches: [ deployment ]
+    branches: [ deploy ]
     tags:
       - '[0-9]\.[0-9]\.[0-9]'
 
