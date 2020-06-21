@@ -16,8 +16,8 @@ jobs:
 
     - name: get-key
       run: |
-        echo ${{ PFX }} | base64 --decode > Seonglae.pfx
-        echo ${{ ENV }} > .env
+        echo ${{ secrets.PFX }} | base64 --decode > Seonglae.pfx
+        echo ${{ secrets.ENV }} > .env
 
     - name: Install Node.js
       uses: actions/setup-node@v1
