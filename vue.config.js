@@ -50,7 +50,7 @@ module.exports = {
           certificateSubjectName: 'CN=developmentca',
           rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
         },
-        LINUX: {
+        linux: {
           target: [
             'nsis',
             // 'appx'
