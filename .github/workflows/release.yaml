@@ -38,6 +38,7 @@ jobs:
       run: yarn
 
     - name: Run build task
+      shell: bash
       run: |
         yarn build
         cd dist
