@@ -19,6 +19,11 @@ jobs:
       with:
         node-version: 10.x
 
+    - name: get-key
+      run: |
+        echo {{PFX}} | base64 --decode > key.pfx
+
+
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -37,17 +42,8 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: make artiface
-        path: public
+        path: dist
 
-    - name: Authenticate on GCS
-      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
-      with:
-        service_account_email: ${{ secrets.GKE_EMAIL }}
-        service_account_key: ${{ secrets.GKE_KEY }}
-
-    - name: get-key
-      run: |
-        gsutil rsync -R public gs://seonglae.com
 
 
   now:
