@@ -6,7 +6,7 @@
   "author": "seonglae <sungle3737@gmail.com>",
   "scripts": {
     "lint": "vue-cli-service lint",
-    "build": "vue-cli-service electron:build",
+    "build": "vue-cli-service electron:build --publish=never",
     "serve": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
