@@ -9,11 +9,12 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
 
     - name: get-key
+      shell: bash
       run: |
         echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
         echo "${{ secrets.ENV }}" > .env
