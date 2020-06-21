@@ -44,8 +44,8 @@ module.exports = {
             // 'appx'
           ],
           requestedExecutionLevel: 'highestAvailable',
-          certificateFile: 'Seonglae.pfx',
-          certificatePassword: process.env.PASS,
+          // certificateFile: 'Seonglae.pfx',
+          // certificatePassword: process.env.PASS,
           // icon: 'dist/icons/icon.ico',
           // certificateSubjectName: 'CN=developmentca',
           rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
