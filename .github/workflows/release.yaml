@@ -14,15 +14,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: get-key
+      run: |
+        echo ${{ PFX }} | base64 --decode > Seonglae.pfx
+        echo ${{ ENV }} > .env
+
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
-
-    - name: get-key
-      run: |
-        echo "{{ PFX }}" | base64 --decode > Seonglae.pfx
-        echo "{{ ENV }}" > .env
 
 
     - name: Cache node modules
