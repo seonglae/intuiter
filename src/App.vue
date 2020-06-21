@@ -11,18 +11,15 @@
       </v-btn>
     </v-app-bar>
     
-    <v-content>
+    <v-main>
       <!-- <side-bar/> -->
-      <option-space/>
       <make-space/>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import MakeSpace from './components/MakeSpace'
-//import SideBar from './components/SideBar'
-import OptionSpace from './components/OptionSpace'
 
 export default {
   methods: {
@@ -35,8 +32,6 @@ export default {
   name: 'App',
   components: {
     MakeSpace,
-    //SideBar,
-    OptionSpace
   },
   data: () => ({
     //

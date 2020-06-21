@@ -52,15 +52,12 @@ Lalt & r::
         MsgBox ,,AHK, Reload Start
         Reload
     }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, +!r
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send !^r
-    }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, !+^r
-    }
 Return
 
 Lalt & q::
@@ -72,9 +69,8 @@ Lalt & q::
         ifMsgbox, Yes
         {
             RegWrite, REG_DWORD, HKCU, SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, DisableLockWorkstation, 000000
-            if (ErrorLevel = 1){
+            if (ErrorLevel = 1)
                 MsgBox, regedit fail
-            }
             Exitapp
         }
     }
@@ -102,9 +98,8 @@ Lalt & t::
     }
     else if (GetKeyState("shift") && !GetKeyState("ctrl")){
     }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         Run *Runas cmd.exe
-    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
     else if (GetKeyState("Lwin")){
