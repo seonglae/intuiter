@@ -1,13 +1,10 @@
 ; meta - application shortcuts
 
 Lwin & c::
-    
-    if (!GetKeyState("shift")){
-        Run *Runas cmd.exe /c Code,,hide
-    }
-    else if (GetKeyState("shift")){
+    if (!GetKeyState("shift"))
+        Run *Runas cmd.exe /c "code-insiders || code",,hide
+    else if (GetKeyState("shift"))
         send #c
-    }
 return
 
 ; meta - windows terminal

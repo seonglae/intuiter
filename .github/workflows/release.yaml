@@ -1,0 +1,63 @@
+name: CI/CD to Seonglae Server
+
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
+    - name: Install npm dependencies]
+      run: yarn
+
+    - name: Run build task
+      run: yarn build
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: make artiface
+        path: public
+
+    - name: Authenticate on GCS
+      uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+      with:
+        service_account_email: ${{ secrets.GKE_EMAIL }}
+        service_account_key: ${{ secrets.GKE_KEY }}
+
+    - name: get-key
+      run: |
+        gsutil rsync -R public gs://seonglae.com
+
+
+  now:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Now deployment
+      uses: amondnet/now-deployment@v2
+      with:
+        zeit-token: ${{ secrets.ZEIT_TOKEN }} # Required
+        now-org-id: ${{ secrets.ORG_ID}}  #Required
+        now-project-id: ${{ secrets.PROJECT_ID}} #Required

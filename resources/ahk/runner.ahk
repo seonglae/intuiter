@@ -19,8 +19,8 @@ DetectHiddenWindows On
 CoordMode, Mouse, Screen
 
 ; meta - throttlestop
-if FileExist("C:\Home\Usage\Prog\sys\ThrottleStop\ThrottleStop.exe"){
-    run C:\Home\Usage\Prog\sys\ThrottleStop\ThrottleStop.exe
+if FileExist("C:\Home\Usage\Prog\System\ThrottleStop\ThrottleStop.exe"){
+    run C:\Home\Usage\Prog\System\ThrottleStop\ThrottleStop.exe
     WinWaitActive, ahk_exe ThrottleStop.exe
     Send, !{f4}
 }
