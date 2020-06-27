@@ -26,9 +26,9 @@ jobs:
 
 
     - name: Cache node modules
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
-        path: node_modules
+        path: **/node_modules
         key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.OS }}-build-
@@ -71,5 +71,5 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
         asset_path: Intuiter.exe
-        asset_name: Intuiter
+        asset_name: Intuiter.exe
         asset_content_type: application/exe
