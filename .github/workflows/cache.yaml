@@ -35,4 +35,3 @@ jobs:
 
     - name: Install npm dependencies
       run: yarn
-git 
