@@ -1,11 +1,9 @@
-name: CI/CD to Seonglae Server
-
+name: caching
 
 on:
   push:
     branches:
       - master
-
 
 jobs:
   build:
