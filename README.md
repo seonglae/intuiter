@@ -11,7 +11,9 @@
 
 # How to Install
 
-Go To release Tab
+Go To release Tab Windows and Browser may say this program in unsafe, but don't
+worry. autohotkey which this program core uses is powerful language so that
+happen
 
 # How to Use
 
