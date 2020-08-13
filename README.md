@@ -15,15 +15,18 @@ Go To release Tab
 
 # How to Use
 
-### Intuiter use `wasd movement` concept in gaming to `text` like vim but more better and wider
+### Intuiter use `wasd movement` concept in gaming to `text` and `screen` like vim but more better and wider
 
 ![wasd](https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg)
 
 If you write a lot by pc, this program will be fit for you
 
-- `alt` + `ikjl`
-- `alt` + `esdf`
-- `alt` + `bi`
+## Best Features (not all)
+
+- `alt` + `ikjl` - power arrow
+- `win` + `ikjl` - mouse
+- `alt` + `esdf` - normal arrow
+- `alt` + `bi` - backspace, delete
 
 - `ctrl` means `power`
 - `shift` means `speed`
@@ -50,13 +53,29 @@ If you write a lot by pc, this program will be fit for you
 
 # How I Developed
 
+- `Electron` - Engine
+- `Vue, Vuetify` - Front
+- `AutoHotkey` - Core
+- `Github Action` - Distribution
+
+# How to Use
+
+- Use free
+- Please report issue by github or below link comment
+- below link contains precise usage
+
+- [Documentation](https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg)
+
 # How to Contribute
 
-# Change Log
+This Project is only for windows but another project [robota]() is developing
+which support mac os, and linux but this will be maintained
 
-# Lisence
+- ahk user can contribute to core
+- js user can contribute electron, vue
+- this is my first big project, code is not clean
 
-# Information Of Me
+# To do List
 
-- [Personal Portfolio](https://seonglae.com)
-- [Example Notion Site (My Page)](https://notion.seonglae.com)
+- ahk extension
+- custom keybinding feature
