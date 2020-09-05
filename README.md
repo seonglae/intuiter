@@ -38,6 +38,8 @@ If you write a lot by pc, this program will be fit for you
 - `ctrl` means `power`
 - `shift` means `speed`
 
+try press ctrl or shift while using upper shortcuts
+
 ### 1. Do Power Delete
 
 ![Alt Text](gif/delete.gif)
