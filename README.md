@@ -60,6 +60,10 @@ try press ctrl or shift while using upper shortcuts
 
 ![Alt Text](gif/click.gif)
 
+
+# VSCode light version
+- [terminal intuiter](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter) - VSCode Productivity Tool
+
 # How I Developed
 
 - `Electron` - Engine

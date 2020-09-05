@@ -1,5 +1,5 @@
 ; meta - tray icon
-Menu, Tray, Icon, %A_ScriptDir%\img\icon.ico
+Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico
 
 ; meta - Administrator
 #SingleInstance Force
