@@ -18,7 +18,7 @@
 ; meta - Administrator and Set Options
 #NoTrayIcon
 #SingleInstance Force
-    SetWorkingDir %A_ScriptDir%
+SetWorkingDir %A_ScriptDir%
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%"
 
@@ -35,7 +35,7 @@ if FileExist("Intuit.exe"){
 }
 
 ; meta - Make EXE
-Run *Runas cmd.exe /c ""exe\ahk\Ahk2Exe.exe" /in "runner.ahk" /icon "img\icon.ico" /out Intuit.exe",,hide
+Run *Runas cmd.exe /c ""exe\ahk\Ahk2Exe.exe" /in "runner.ahk" /icon "img\logo.ico" /out Intuit.exe",,hide
 
 ; meta - if made then run
 while(true)
