@@ -1,13 +1,13 @@
 {
   "name": "intuiter",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "private": false,
   "description": "Productivity Electron AHK Appliction",
   "author": "seonglae <sungle3737@gmail.com>",
   "scripts": {
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service electron:build --publish=never",
-    "serve": "vue-cli-service electron:serve",
+    "dev": "vue-cli-service electron:serve",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
