@@ -7,17 +7,22 @@
 
 # intuiter
 
-### Windows global Vim Substitute ++
+### Windows global version Vim Substitute and more++
 
 # How to Install
+Intuiter is provided by Windows Official package manager `winget`
+press `win + x` and `a` ant type
 
 ```bash
 winget install intuiter
 ```
 
+if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=2&activetab=pivot:overviewtab)
+
+
 # How to Use
 
-### Intuiter use `wasd movement` concept in gaming to `text` and `screen` like vim but more better and wider
+### Intuiter use **wasd movement** concept in gaming to **text** and **screen** like vim but more better and wider
 
 ![wasd](https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg)
 
