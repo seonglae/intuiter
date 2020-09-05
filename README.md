@@ -7,7 +7,7 @@
 
 # intuiter
 
-### Productivitiy Application of Windows Vim Substitute Global Version
+### Windows global Vim Substitute ++
 
 # How to Install
 
