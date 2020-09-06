@@ -23,7 +23,7 @@ winget install intuiter
 if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=2&activetab=pivot:overviewtab)
 
 - Windows Store distribution is planned
-- You can also download from release tab
+- You can also download from release tab - but smart screen problem will happen
 
 
 # How to Use
