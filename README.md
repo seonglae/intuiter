@@ -6,8 +6,11 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/sungle3737/intuiter/blob/master/LICENSE)
 
 # intuiter
-
 ### Windows global version Vim Substitute and more++
+Vim and Emacs are too hard and not intuitive in my opinion.
+So I developed new key map which can be used by not only for developer but also normal user.
+
+If you **Use** computer, this program will definitely help you.
 
 # How to Install
 Intuiter is provided by Windows Official package manager `winget`
