@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="Intuiter" ProcessorArchitecture="x64" Publisher="CN=developmentca" Version="0.5.0.1" />
+  <Properties>
+    <DisplayName>Intuiter Desktop</DisplayName>
+    <PublisherDisplayName>Reserved</PublisherDisplayName>
+    <Description>No description entered</Description>
+    <Logo>gif\logo50.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust"/>
+  </Capabilities>
+  <Applications>
+    <Application Id="Intuiter" Executable="app/intuiter.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements BackgroundColor="#464646" DisplayName="Intuiter Desktop" Square150x150Logo="gif\logo150.png" Square44x44Logo="gif\logo44.png" Description="Intuiter for Desktops">
+        <uap:DefaultTile Wide310x150Logo="assets\SampleAppx.310x150.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>
