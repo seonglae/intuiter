@@ -22,6 +22,10 @@ module.exports = {
           {
             from: './resources/ahk/',
             to: 'ahk'
+          },
+          {
+            from: './gif/',
+            to: 'gif'
           }
         ],
         nsis: {
