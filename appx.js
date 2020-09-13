@@ -4,11 +4,9 @@ convertToWindowsStore({
   containerVirtualization: false,
   inputDirectory: 'dist',
   outputDirectory: 'appx',
-  packageVersion: '0.5.0.1',
   packageName: 'Intuiter',
-  packageDisplayName: 'Intuiter Desktop',
-  packageDescription: 'Intuiter for Desktops',
+  packageDisplayName: 'Intuiter',
+  packageDescription: 'Intuiter',
   packageExecutable: 'app/intuiter.exe',
-  manifest: 'AppXManifest.xml',
-  publisher: 'CN=developmentca',
+  manifest: 'AppXManifest.xml'
 })
