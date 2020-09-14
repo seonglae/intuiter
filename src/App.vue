@@ -40,10 +40,7 @@ export default {
   name: 'App',
   components: {
     MakeSpace
-  },
-  data: () => ({
-    //
-  })
+  }
 }
 </script>
 
