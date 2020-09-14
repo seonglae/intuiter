@@ -7,6 +7,6 @@ convertToWindowsStore({
   packageName: 'Intuiter',
   packageDisplayName: 'Intuiter',
   packageDescription: 'Intuiter',
-  packageExecutable: 'app/intuiter.exe',
-  manifest: 'AppXManifest.xml'
+  manifest: 'AppXManifest.xml',
+  publisher: 'CN=developmentca'
 })

@@ -2,7 +2,8 @@
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-<Identity Name="sungleCho.Intuiter" ProcessorArchitecture="x64" Publisher="CN=169E7280-3382-426D-AE3B-5FB3786A703F" Version="0.1.0.0" />
+<Identity Name="sungleCho.Intuiter" ProcessorArchitecture="x64" Publisher="CN=developmentca" Version="0.1.0.0" />
+
 
   <Properties>
     <DisplayName>Intuiter Desktop</DisplayName>
@@ -21,7 +22,7 @@
     <rescap:Capability Name="runFullTrust"/>
   </Capabilities>
   <Applications>
-    <Application Id="Intuiter" Executable="app/intuiter.exe" EntryPoint="Windows.FullTrustApplication">
+<Application Id="Intuiter" Executable="app/win-unpacked/Intuiter.exe" EntryPoint="Windows.FullTrustApplication">
 <uap:VisualElements BackgroundColor="#464646" DisplayName="Intuiter Desktop" Square150x150Logo="app\win-unpacked\resources\gif\logo150.png" Square44x44Logo="app\win-unpacked\resources\gif\logo44.png" Description="Intuiter for Desktops">
         <uap:DefaultTile Wide310x150Logo="assets\SampleAppx.310x150.png" />
       </uap:VisualElements>
