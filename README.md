@@ -65,25 +65,25 @@ If you write a lot by pc, this program will be fit for you
 - `ctrl` means `power`
 - `shift` means `speed`
 
-try press ctrl or shift while using upper shortcuts
+### Try press ctrl or shift while using upper shortcuts
 
-### 1. Do Power Delete
+1. Do Power Delete
 
 ![Alt Text](gif/delete.gif)
 
-### 2. Move Text Cursor very fast or Jump
+2. Move Text Cursor very fast or Jump
 
 ![Alt Text](gif/move.gif)
 
-### 3. Scroll without mouse
+3. Scroll without mouse
 
 ![Alt Text](gif/scroll.gif)
 
-### 4. select text by shortcut
+4. select text by shortcut
 
 ![Alt Text](gif/select.gif)
 
-### 5. Click without mouse
+5. Click without mouse
 
 ![Alt Text](gif/click.gif)
 
