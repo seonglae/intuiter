@@ -5,6 +5,8 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/sungle3737/intuiter/blob/master/LICENSE)
 
+<br/>
+
 # intuiter
 ### Windows global version Vim Substitute and more++
 Vim and Emacs are too hard and not intuitive in my opinion.
@@ -14,6 +16,8 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 둘다 마음에 차지 않는 부분이 있었고, 개발자 뿐만 아니라 일반 사용자도 높은 생산성과 접근성을 가질 수 있도록 설계했습니다
 
 If you **Use** computer, this program will definitely help you.
+
+<br/>
 
 # How to Install
 Intuiter is provided by Windows Official package manager `winget`
@@ -29,6 +33,7 @@ if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-in
 - Windows Store distribution is planned
 - You can also download from release tab - but smart screen problem will happen
 
+<br/>
 
 # How to Use
 
@@ -49,9 +54,11 @@ If you write a lot by pc, this program will be fit for you
 ## Best Features (not all)
 
 - `alt` + `ikjl` - power arrow
-- `win` + `ikjl` - mouse
+- `win` + `ikjl` - mouse control
 - `alt` + `esdf` - normal arrow
 - `alt` + `bi` - backspace, delete
+- `alt` + `uo` - mouse scroll with acceleration
+- `alt` + `yp` - tab control
 
 - `ctrl` means `power`
 - `shift` means `speed`
@@ -79,21 +86,27 @@ try press ctrl or shift while using upper shortcuts
 ![Alt Text](gif/click.gif)
 
 
+<br/>
+
 # VSCode light version
 - [terminal intuiter](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter) - VSCode Productivity Tool
+
+<br/>
 
 # Warning
 This Program coulb be considered as game hack
 
+<br/>
 
-# How I Developed
+# Info
+## How I Developed
 
 - `Electron` - Engine
 - `Vue, Vuetify` - Front
 - `AutoHotkey` - Core
 - `Github Action` - Distribution
 
-# How to Use
+## How to Use
 
 - Use free
 - Please report issue by github or below link comment
