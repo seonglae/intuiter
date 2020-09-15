@@ -48,7 +48,8 @@ If System Icon Appear like this, the program is running
 ### Intuiter use **wasd movement** concept in gaming to **text** and **screen** like vim but more better and wider
 
 
-![wasd](https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg)
+<img src="https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg" alt="wasd" width="500"/>
+
 
 If you write a lot by pc, this program will be fit for you
 
@@ -75,23 +76,23 @@ If you write a lot by pc, this program will be fit for you
 
 1. Do Power Delete
 
-![Alt Text](gif/delete.gif)
+<img src="gif/delete.gif" alt="Power Delete" width="800"/>
 
 2. Move Text Cursor very fast or Jump
 
-![Alt Text](gif/move.gif)
+<img src="gif/move.gif" alt="fast or Jump" width="800"/>
 
 3. Scroll without mouse
 
-![Alt Text](gif/scroll.gif)
+<img src="gif/scroll.gif" alt="Power Delete" width="800"/>
 
 4. select text by shortcut
 
-![Alt Text](gif/select.gif)
+<img src="gif/select.gif" alt="Power Delete" width="800"/>
 
 5. Click without mouse
 
-![Alt Text](gif/click.gif)
+<img src="gif/click.gif" alt="Power Delete" width="800"/>
 
 
 <br/>
