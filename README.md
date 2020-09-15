@@ -60,6 +60,8 @@ If you write a lot by pc, this program will be fit for you
 - `alt` + `bi` - backspace, delete
 - `alt` + `uo` - mouse scroll with **acceleration**
 - `alt` + `yp` - tab control
+- `alt` + `a` - select line
+- `alt` + `w` - select word
 
 <br/>
 
