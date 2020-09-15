@@ -55,10 +55,10 @@ If you write a lot by pc, this program will be fit for you
 ## Best Features (not all)
 
 - `alt` + `ikjl` - power arrow
-- `win` + `ikjl` - mouse control
+- `win` + `ikjl` - mouse control with **accelleration**
 - `alt` + `esdf` - normal arrow
 - `alt` + `bi` - backspace, delete
-- `alt` + `uo` - mouse scroll with acceleration
+- `alt` + `uo` - mouse scroll with **acceleration**
 - `alt` + `yp` - tab control
 
 <br/>
