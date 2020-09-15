@@ -54,14 +54,17 @@ If you write a lot by pc, this program will be fit for you
 
 ## Best Features (not all)
 
+### Text Control
 - `alt` + `ikjl` - power arrow
-- `win` + `ikjl` - mouse control with **accelleration**
 - `alt` + `esdf` - normal arrow
 - `alt` + `bi` - backspace, delete
-- `alt` + `uo` - mouse scroll with **acceleration**
-- `alt` + `yp` - tab control
 - `alt` + `a` - select line
 - `alt` + `w` - select word
+
+### Global Control
+- `alt` + `yp` - tab control
+- `alt` + `uo` - mouse scroll with **acceleration**
+- `win` + `ikjl` - mouse control with **accelleration**
 
 <br/>
 
