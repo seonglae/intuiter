@@ -60,6 +60,8 @@ If you write a lot by pc, this program will be fit for you
 - `alt` + `uo` - mouse scroll with acceleration
 - `alt` + `yp` - tab control
 
+<br/>
+
 - `ctrl` means `power`
 - `shift` means `speed`
 
