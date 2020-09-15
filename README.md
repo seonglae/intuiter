@@ -13,6 +13,7 @@ Vim and Emacs are too hard and not intuitive in my opinion.
 So I developed new key map which can be used by not only for developer but also normal user.
 
 Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생각하는데, hjkl로 이동하는 vim은 직관적인 부분이 부족하고,  emacs는 어느 프로그램에서나 쓰기에는 단축키의 대부분이 프로그램과 겹치며 요즘 개발 메타에는 자주 쓰이지 않는 키들이 많습니다
+
 둘다 마음에 차지 않는 부분이 있었고, 개발자 뿐만 아니라 일반 사용자도 높은 생산성과 접근성을 가질 수 있도록 설계했습니다
 
 If you **Use** computer, this program will definitely help you.
