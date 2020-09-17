@@ -10,7 +10,7 @@
 # intuiter
 ### Windows global version Vim Substitute and more++
 Vim and Emacs are too hard and not intuitive.
-So I developed new key map which can be used by not only for developer but also normal user.
+So I developed new key map which can be used by not only for developers but also normal users.
 
 Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생각하는데, hjkl로 이동하는 vim은 직관적인 부분이 부족하고,  emacs는 어느 프로그램에서나 쓰기에는 단축키의 대부분이 프로그램과 겹치며 요즘 개발 메타에는 자주 쓰이지 않는 키들이 많습니다
 
