@@ -21,6 +21,7 @@ If you **Use** computer, this program will definitely help you.
 # How to Install
 Intuiter is provided by Windows Official package manager `winget`
 press `win + x` and `a` ant type
+
 [Install winget](https://github.com/microsoft/winget-cli/releases/lastest)
 
 ```bash
