@@ -23,12 +23,11 @@
 
 <script>
 import MakeSpace from './components/MakeSpace'
-import { shell } from 'electron'
+import { shell, remote } from 'electron'
 
 export default {
   methods: {
     close() {
-      const remote = require('electron').remote
       let win = remote.getCurrentWindow()
       win.close()
     },
