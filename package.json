@@ -16,7 +16,7 @@
     "node-cmd": "^3.0.0",
     "vue": "^2.6.10",
     "vuetify": "^2.1.9",
-    "electron": "^8.1.0"
+    "electron": "^8.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.5",
