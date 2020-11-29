@@ -11,29 +11,23 @@
 
 <script>
 import fs from 'fs'
-import { dialog, remote } from 'electron'
+import { remote } from 'electron'
 import { get } from 'node-cmd'
+import { resolve } from 'path'
 
 export default {
   data: () => ({}),
 
   methods: {
     make() {
-      let path = remote.app.getAppPath()
-      console.log(path)
+      const app = remote.app
+      const root = resolve(app.getAppPath(), '../../')
       // command run
-      const ahkPath = 'resources\\ahk\\exe\\ahk\\AutoHotkey.exe'
-      const makePath = 'resources\\ahk\\make.ahk'
-      if (!fs.existsSync(path)) {
-        const options = {
-          type: 'error',
-          title: 'Error',
-          message: `${process.cwd()}`,
-          detail: 'Reinstall or Contact to Developer Seonglae'
-        }
-        dialog.showMessageBox(null, options, (response) => {
-          console.log(response)
-        })
+      let ahkPath = 'resources\\ahk\\exe\\ahk\\AutoHotkey.exe'
+      let makePath = 'resources\\ahk\\make.ahk'
+      if (!fs.existsSync(ahkPath)) {
+        ahkPath = resolve(root, ahkPath)
+        makePath = resolve(root, makePath)
       }
       get(`"${ahkPath}" "${makePath}"`, this.after_make)
     },
@@ -52,12 +46,10 @@ export default {
         type: 'error',
         title: 'Error',
         message: 'Some Error Occured',
-        detail: 'please press make button one more time'
+        detail: stderr
       }
-      dialog.showMessageBox(null, options, (response) => {
-        console.log(response)
-      })
-      console.log('error', err, data, stderr)
+      const dialog = remote.dialog
+      dialog.showMessageBox(null, options)
     }
   }
 }
