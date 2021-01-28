@@ -13,7 +13,7 @@
   },
   "main": "background.js",
   "dependencies": {
-    "electron": "^8.5.2",
+    "electron": "^9.4.0",
     "node-cmd": "^3.0.0",
     "vue": "^2.6.10",
     "vuetify": "^2.1.9"
