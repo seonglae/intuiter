@@ -1,9 +1,9 @@
 ; meta - tray icon
-Menu, Tray, Icon, %A_ScriptDir%\img\icon.ico
+Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico
 
 ; meta - Administrator
 #SingleInstance Force
-    SetWorkingDir %A_ScriptDir%
+SetWorkingDir %A_ScriptDir%
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%",,hide
 
@@ -16,8 +16,8 @@ DetectHiddenWindows On
 CoordMode, Mouse, Screen
 
 ; meta - Throttlestop
-if FileExist("C:\Home\Usage\Prog\ThrottleStop\ThrottleStop.exe"){
-    run C:\Home\Usage\Prog\ThrottleStop\ThrottleStop.exe
+if FileExist("C:\Home\Usage\Prog\System\ThrottleStop\ThrottleStop.exe"){
+    run C:\Home\Usage\Prog\System\ThrottleStop\ThrottleStop.exe
     WinWaitActive, ahk_exe ThrottleStop.exe
     Send, !{f4}
 }
@@ -43,7 +43,6 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\lib\text_func.ahk
 #Include %A_scriptDir%\lib\mouse_func.ahk
 
-
 ; meta - Must lwin before lalt
 ; meta - Include right win
 #Include %A_scriptDir%\src\right\mouse.ahk
@@ -53,7 +52,6 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\src\win\display_rotate.ahk
 #Include %A_scriptDir%\src\win\app_shortcut.ahk
 #Include %A_scriptDir%\src\win\global_win.ahk
-
 
 ; get gui make hotstring and include ahk files to runner.ahk
 ; and run make ahk file

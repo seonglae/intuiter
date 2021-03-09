@@ -1,9 +1,7 @@
-require('dotenv').config();
+require('dotenv').config()
 
 module.exports = {
-  transpileDependencies: [
-    'vuetify'
-  ],
+  transpileDependencies: ['vuetify'],
   configureWebpack: {
     performance: {
       hints: false
@@ -11,7 +9,7 @@ module.exports = {
     optimization: {
       splitChunks: {
         minSize: 10000,
-        maxSize: 200000,
+        maxSize: 200000
       }
     }
   },
@@ -22,16 +20,20 @@ module.exports = {
           {
             from: './resources/ahk/',
             to: 'ahk'
+          },
+          {
+            from: './gif/',
+            to: 'gif'
           }
         ],
         nsis: {
-          include: 'nsis/remove_startup.nsh',
+          include: 'nsis/remove_startup.nsh'
         },
         appx: {
           identityName: 'sungleCho.Intuiter',
           applicationId: 'Intuiter',
           publisher: 'CN=169E7280-3382-426D-AE3B-5FB3786A703F',
-          publisherDisplayName: 'seonglae',
+          publisherDisplayName: 'seonglae'
         },
         productName: 'Intuiter',
         appId: 'com.seonglae.intuiter',
@@ -40,15 +42,16 @@ module.exports = {
         },
         win: {
           target: [
-            'nsis',
+            'nsis'
             // 'appx'
           ],
           requestedExecutionLevel: 'highestAvailable',
-          certificateFile: 'Seonglae.pfx',
-          certificatePassword: 'process.env.PASS',
-          // icon: 'dist/icons/icon.ico',
-          certificateSubjectName: 'CN=developmentca',
-          rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
+          // certificateFile: 'Seonglae.pfx',
+          // certificatePassword: process.env.PASS,
+          icon: 'gif/white.png',
+          // certificateSubjectName: 'CN=developmentca',
+          rfc3161TimeStampServer:
+            'http://timestamp.globalsign.com/scripts/timstamp.dll'
         }
       }
     }

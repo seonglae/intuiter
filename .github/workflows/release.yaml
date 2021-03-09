@@ -3,18 +3,18 @@ name: CI/CD to Seonglae Server
 
 on:
   push:
-    branches: [ release ]
     tags:
       - '[0-9]\.[0-9]\.[0-9]'
 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  release:
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
 
     - name: get-key
+      shell: bash
       run: |
         echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
         echo "${{ secrets.ENV }}" > .env
@@ -26,9 +26,10 @@ jobs:
 
 
     - name: Cache node modules
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
-        path: node_modules
+        path: |
+          **/node_modules
         key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.OS }}-build-
@@ -38,7 +39,10 @@ jobs:
       run: yarn
 
     - name: Run build task
-      run: yarn build
+      shell: bash
+      run: |
+        yarn build
+        ln dist/Intuiter*.exe Intuiter.exe
 
     - uses: actions/upload-artifact@v1
       with:
@@ -67,6 +71,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: dist/Intuiter ${{ github.ref }}.exe
-        asset_name: Intuiter
+        asset_path: Intuiter.exe
+        asset_name: Intuiter.exe
         asset_content_type: application/exe
