@@ -125,9 +125,6 @@ This Program coulb be considered as game hack
 
 # How to Contribute
 
-This Project is only for windows but another project [robota]() is developing
-which support mac os, and linux but this will be maintained
-
 - ahk user can contribute to core
 - js user can contribute electron, vue
 - this is my first big project, code is not clean
