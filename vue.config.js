@@ -1,17 +1,9 @@
 require('dotenv').config()
 
 module.exports = {
-  transpileDependencies: ['vuetify'],
   configureWebpack: {
-    performance: {
-      hints: false
-    },
-    optimization: {
-      splitChunks: {
-        minSize: 10000,
-        maxSize: 200000
-      }
-    }
+    performance: { hints: false },
+    optimization: { splitChunks: { minSize: 10000, maxSize: 200000 } }
   },
   pluginOptions: {
     electronBuilder: {

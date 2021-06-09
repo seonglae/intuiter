@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">Intuit Manager</h1>
+      <v-flex class="mt-6">
+        <h1 class="display-2 font-weight-bold mb-3">Intuiter</h1>
         <v-btn v-on:click="make">Make and Run</v-btn>
       </v-flex>
     </v-layout>
@@ -10,48 +10,41 @@
 </template>
 
 <script>
-import fs from 'fs'
-import { remote } from 'electron'
+import { existsSync } from 'fs'
 import { get } from 'node-cmd'
+import { defineComponent } from '@vue/composition-api'
 import { resolve } from 'path'
+import consola from 'consola'
 
-export default {
-  data: () => ({}),
+const AHK_PATH = 'resources\\ahk\\exe\\ahk\\AutoHotkey.exe'
+const MAKER_PATH = 'resources\\ahk\\make.ahk'
 
-  methods: {
-    make() {
-      const app = remote.app
-      const root = resolve(app.getAppPath(), '../../')
+export default defineComponent({
+  setup(props, context) {
+    const electron = require('electron').app
+    const remote = require('electron').remote
+    const root = resolve(app.getAppPath(), '../../')
 
-      // Run Command
-      let ahkPath = 'resources\\ahk\\exe\\ahk\\AutoHotkey.exe'
-      let makePath = 'resources\\ahk\\make.ahk'
-      if (!fs.existsSync(ahkPath)) {
-        ahkPath = resolve(root, ahkPath)
-        makePath = resolve(root, makePath)
-      }
-      get(`"${ahkPath}" "${makePath}"`, this.afterMake)
-    },
+    // Run Command
+    function make() {
+      const ahkPath = resolve(root, AHK_PATH)
+      const makePath = resolve(root, MAKER_PATH)
+      if (!existsSync(ahkPath) || !existsSync(makePath)) return ifError('No Files')
+      get(`"${ahkPath}" "${makePath}"`, afterMake)
+    }
 
-    afterMake(err, data, stderr) {
-      if (!err) {
-        let win = remote.getCurrentWindow()
-        win.close()
-        return
-      }
-      this.ifError(err, data, stderr)
-    },
+    // Close After run
+    function afterMake(err, data, stderr) {
+      if (!err) remote.getCurrentWindow().close()
+      ifError(stderr)
+    }
 
-    ifError(err, data, stderr) {
-      const options = {
-        type: 'error',
-        title: 'Error',
-        message: 'Some Error Occured',
-        detail: stderr
-      }
+    // Error Dialog
+    function ifError(stderr) {
+      const options = { type: 'error', title: 'Error', message: 'Some Error Occured', detail: stderr }
       const dialog = remote.dialog
       dialog.showMessageBox(null, options)
     }
   }
-}
+})
 </script>
