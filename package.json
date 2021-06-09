@@ -2,7 +2,7 @@
   "name": "intuiter",
   "version": "0.5.6",
   "private": false,
-  "license": "mit",
+  "license": "MIT",
   "description": "Productivity Electron AHK Appliction",
   "author": {
     "name": "Seonglae Cho",
@@ -14,7 +14,7 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
-  "main": "background.js",
+  "main": "index.js",
   "dependencies": {
     "electron": "^9.4.0",
     "node-cmd": "^3.0.0",
