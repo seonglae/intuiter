@@ -4,11 +4,13 @@
   "private": false,
   "license": "mit",
   "description": "Productivity Electron AHK Appliction",
-  "author": "seonglae <sungle3737@gmail.com>",
+  "author": {
+    "name": "Seonglae Cho",
+    "email": "sungle3737@gmail.com"
+  },
   "scripts": {
-    "lint": "vue-cli-service lint",
-    "build": "vue-cli-service electron:build --publish=never",
     "dev": "vue-cli-service electron:serve",
+    "build": "vue-cli-service electron:build",
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps"
   },
@@ -35,6 +37,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/sungle3737/intuiter.git"
+    "url": "git://github.com/seonglae/intuiter.git"
   }
 }
