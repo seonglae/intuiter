@@ -28,10 +28,13 @@ jobs:
       with:
         path: |
           **/node_modules
-        key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
+        key: ${{ runner.OS }}-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.OS }}-build-
           ${{ runner.OS }}-
 
-    - name: Install npm dependencies
-      run: yarn
+    - name: Install pnpm
+      run: npm i -g pnpm
+
+    - name: pnpm install
+      run: pnpm i
