@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import MakeSpace from './comps/MakeSpace'
+import MakeSpace from '../comps/MakeSpace'
 import { shell, remote } from 'electron'
 
 export default {
