@@ -20,15 +20,7 @@ module.exports = {
           { from: './resources/ahk/', to: 'ahk' },
           { from: './resources/gif/', to: 'gif' }
         ],
-        nsis: {
-          include: 'src/nsis/remove_startup.nsh'
-        },
-        appx: {
-          identityName: 'sungleCho.Intuiter',
-          applicationId: 'Intuiter',
-          publisher: 'CN=169E7280-3382-426D-AE3B-5FB3786A703F',
-          publisherDisplayName: 'seonglae'
-        },
+        nsis: { include: 'src/nsis/remove_startup.nsh' },
         productName: 'Intuiter',
         appId: 'com.seonglae.intuiter',
         directories: {
@@ -37,9 +29,7 @@ module.exports = {
         win: {
           target: ['nsis'],
           requestedExecutionLevel: 'highestAvailable',
-          icon: 'gif/white.png',
-          rfc3161TimeStampServer:
-            'http://timestamp.globalsign.com/scripts/timstamp.dll'
+          icon: 'gif/white.png'
         }
       }
     }
