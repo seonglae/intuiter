@@ -38,10 +38,10 @@ if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-in
 
 # How to Use
 
-![Alt Text](imageprogram.png)
+![Alt Text](image/program.png)
 ### Just Press **Make and Run** Button
 
-![Alt Text](imagetray.png)
+![Alt Text](image/tray.png)
 
 If System Icon Appear like this, the program is running
 
@@ -76,23 +76,23 @@ If you write a lot by pc, this program will be fit for you
 
 1. Do Power Delete
 
-<img src="imagedelete.gif" alt="Power Delete" width="800"/>
+<img src="image/delete.gif" alt="Power Delete" width="800"/>
 
 2. Move Text Cursor very fast or Jump
 
-<img src="imagemove.gif" alt="fast or Jump" width="800"/>
+<img src="image/move.gif" alt="fast or Jump" width="800"/>
 
 3. Scroll without mouse
 
-<img src="imagescroll.gif" alt="Power Delete" width="800"/>
+<img src="image/scroll.gif" alt="Power Delete" width="800"/>
 
 4. select text by shortcut
 
-<img src="imageselect.gif" alt="Power Delete" width="800"/>
+<img src="image/select.gif" alt="Power Delete" width="800"/>
 
 5. Click without mouse
 
-<img src="imageclick.gif" alt="Power Delete" width="800"/>
+<img src="image/click.gif" alt="Power Delete" width="800"/>
 
 
 <br/>
@@ -124,6 +124,9 @@ This Program coulb be considered as game hack
 - [Documentation](https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg)
 
 # How to Contribute
+
+This Project is only for windows but another project [robota]() is developing
+which support mac os, and linux but this will be maintained
 
 - ahk user can contribute to core
 - js user can contribute electron, vue
