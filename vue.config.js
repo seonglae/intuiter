@@ -17,8 +17,8 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         extraResources: [
-          { from: './resources/ahk/', to: 'ahk' },
-          { from: './resources/gif/', to: 'gif' }
+          { from: './src/assets/ahk/', to: 'ahk' },
+          { from: './src/assets/gif/', to: 'gif' }
         ],
         nsis: { include: 'src/nsis/remove_startup.nsh' },
         productName: 'Intuiter',
