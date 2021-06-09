@@ -5,8 +5,10 @@
 
 <br/>
 
-# intuiter
+# Intuiter
+## If you **Use** PC, this program will definitely help you.
 ### Windows global version Vim Substitute and more++
+
 Vim and Emacs are too hard and not intuitive.
 So I developed new key map which can be used by not only for developers but also normal users.
 
@@ -14,7 +16,6 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 
 둘다 마음에 차지 않는 부분이 있었고, 개발자 뿐만 아니라 일반 사용자도 높은 생산성과 접근성을 가질 수 있도록 설계했습니다
 
-If you **Use** computer, this program will definitely help you.
 
 <br/>
 
