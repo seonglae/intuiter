@@ -1,15 +1,16 @@
-'use strict'
-
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
-const isDevelopment = process.env.NODE_ENV !== 'production'
 
 let win
+const isDevelopment = process.env.NODE_ENV !== 'production'
+if (isDevelopment)
+  if (process.platform === 'win32') process.on('message', data => (data === 'graceful-exit' ? app.quit() : null))
+  else process.on('SIGTERM', () => app.quit())
 
-// Scheme must be registered before the app is ready
-protocol.registerSchemesAsPrivileged([
-  { scheme: 'app', privileges: { secure: true, standard: true } }
-])
+app.on('window-all-closed', () => (process.platform !== 'darwin' ? app.quit() : null))
+app.on('activate', () => (win === null ? createWindow() : null))
+app.on('ready', async () => createWindow())
+protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { secure: true, standard: true } }])
 
 function createWindow() {
   win = new BrowserWindow({
@@ -20,9 +21,7 @@ function createWindow() {
     transparent: true,
     frame: false,
     titleBarStyle: 'hiddenInset',
-    webPreferences: {
-      nodeIntegration: true
-    }
+    webPreferences: { nodeIntegration: true, contextIsolation: false }
   })
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
@@ -34,20 +33,3 @@ function createWindow() {
   win.on('closed', () => (win = null))
   win.setMenu(null)
 }
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit()
-})
-
-app.on('activate', () => {
-  if (win === null) createWindow()
-})
-app.on('ready', async () => createWindow())
-
-// Exit cleanly on request from parent process in development mode.
-if (isDevelopment)
-  if (process.platform === 'win32')
-    process.on('message', (data) => {
-      if (data === 'graceful-exit') app.quit()
-    })
-  else process.on('SIGTERM', () => app.quit())

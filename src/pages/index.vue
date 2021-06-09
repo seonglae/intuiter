@@ -5,17 +5,15 @@
         <span>Intuiter - </span>
         <span class="font-weight-light">Intuit Manager</span>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn v-on:click="doc" class="mr-2">
+      <v-spacer />
+      <v-btn v-on:click="openDoc" class="mr-2">
         Doc
       </v-btn>
-      <v-btn text v-on:click="close">
+      <v-btn v-on:click="remote.getCurrentWindow().close" color="blue-grey darken-3">
         Exit
       </v-btn>
     </v-app-bar>
-
     <v-main>
-      <!-- <side-bar/> -->
       <make-space />
     </v-main>
   </v-app>
@@ -23,22 +21,20 @@
 
 <script>
 import MakeSpace from '../comps/MakeSpace'
-import { shell, remote } from 'electron'
+import { defineComponent } from '@vue/composition-api'
 
-export default {
-  name: 'App',
+const DOC = 'https://github.com/seonglae/intuiter'
+
+export default defineComponent({
+  name: 'index',
   components: { MakeSpace },
-  methods: {
-    close() {
-      let win = remote.getCurrentWindow()
-      win.close()
-    },
-    doc() {
-      const url = 'https://github.com/seonglae/intuiter'
-      shell.openExternal(url)
-    }
+  setup() {
+    const electron = require('electron')
+    const { shell, remote } = electron
+    const openDoc = () => shell.openExternal(DOC)
+    return { openDoc, remote }
   }
-}
+})
 </script>
 
 <style>
