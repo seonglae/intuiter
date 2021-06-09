@@ -38,10 +38,10 @@ if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-in
 
 # How to Use
 
-![Alt Text](gif/program.png)
+![Alt Text](imageprogram.png)
 ### Just Press **Make and Run** Button
 
-![Alt Text](gif/tray.png)
+![Alt Text](imagetray.png)
 
 If System Icon Appear like this, the program is running
 
@@ -76,23 +76,23 @@ If you write a lot by pc, this program will be fit for you
 
 1. Do Power Delete
 
-<img src="gif/delete.gif" alt="Power Delete" width="800"/>
+<img src="imagedelete.gif" alt="Power Delete" width="800"/>
 
 2. Move Text Cursor very fast or Jump
 
-<img src="gif/move.gif" alt="fast or Jump" width="800"/>
+<img src="imagemove.gif" alt="fast or Jump" width="800"/>
 
 3. Scroll without mouse
 
-<img src="gif/scroll.gif" alt="Power Delete" width="800"/>
+<img src="imagescroll.gif" alt="Power Delete" width="800"/>
 
 4. select text by shortcut
 
-<img src="gif/select.gif" alt="Power Delete" width="800"/>
+<img src="imageselect.gif" alt="Power Delete" width="800"/>
 
 5. Click without mouse
 
-<img src="gif/click.gif" alt="Power Delete" width="800"/>
+<img src="imageclick.gif" alt="Power Delete" width="800"/>
 
 
 <br/>

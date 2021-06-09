@@ -17,17 +17,11 @@ module.exports = {
     electronBuilder: {
       builderOptions: {
         extraResources: [
-          {
-            from: './resources/ahk/',
-            to: 'ahk'
-          },
-          {
-            from: './gif/',
-            to: 'gif'
-          }
+          { from: './resources/ahk/', to: 'ahk' },
+          { from: './resources/gif/', to: 'gif' }
         ],
         nsis: {
-          include: 'nsis/remove_startup.nsh'
+          include: 'src/nsis/remove_startup.nsh'
         },
         appx: {
           identityName: 'sungleCho.Intuiter',
@@ -41,15 +35,9 @@ module.exports = {
           output: 'dist'
         },
         win: {
-          target: [
-            'nsis'
-            // 'appx'
-          ],
+          target: ['nsis'],
           requestedExecutionLevel: 'highestAvailable',
-          // certificateFile: 'Seonglae.pfx',
-          // certificatePassword: process.env.PASS,
           icon: 'gif/white.png',
-          // certificateSubjectName: 'CN=developmentca',
           rfc3161TimeStampServer:
             'http://timestamp.globalsign.com/scripts/timstamp.dll'
         }
