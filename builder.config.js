@@ -14,11 +14,11 @@ module.exports = {
   asar: false,
   productName: 'Intuiter',
   appId: 'com.seonglae.intuiter',
-  artifactName: 'setup-${version}.${ext}',
+  artifactName: 'Intuiter-${version}.${ext}',
   directories: {
     output: 'build'
   },
-  extraResources: [{ from: './src/resources/ahk/', to: 'ahk' }],
+  extraResources: [{ from: './resources/ahk/', to: 'ahk' }],
   files: [
     'package.json',
     {

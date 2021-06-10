@@ -9,7 +9,7 @@
       <v-btn v-on:click="openDoc" class="mr-2">
         Doc
       </v-btn>
-      <v-btn v-on:click="remote.getCurrentWindow().close" color="blue-grey darken-3">
+      <v-btn v-on:click="() => remote.app.exit(0)" color="blue-grey darken-3">
         Exit
       </v-btn>
     </v-app-bar>
