@@ -8,7 +8,8 @@
       <v-spacer />
       <v-btn v-on:click="openDoc" class="mr-2">
         Doc
-           <v-btn v-on:click="() => remote.app.exit(0)" color="blue-grey darken-3">
+      </v-btn>
+      <v-btn v-on:click="() => remote.app.exit(0)" color="blue-grey darken-3">
         Exit
       </v-btn>
     </v-app-bar>
@@ -20,7 +21,7 @@
 
 <script lang="ts">
 import MakeSpace from '@/components/MakeSpace.vue'
-import { defineComponent } from '@vue/composition-111api'
+import { defineComponent } from '@vue/composition-api'
 import { shell, remote } from 'electron'
 
 const DOC = 'https://github.com/seonglae/intuiter'
@@ -29,7 +30,6 @@ export default defineComponent({
   name: 'index',
   components: { MakeSpace },
   setup() {
-st { shell, remote } = electron
     const openDoc = () => shell.openExternal(DOC)
     return { openDoc, remote }
   }
