@@ -1,38 +1,50 @@
 {
   "name": "intuiter",
-  "version": "0.5.6",
+  "displayName": "Intuiter",
+  "description": "Global Windows Productivity Application",
+  "version": "0.6.0",
   "private": false,
   "license": "MIT",
-  "description": "Productivity Electron AHK Appliction",
   "author": {
     "name": "Seonglae Cho",
     "email": "sungle3737@gmail.com"
   },
   "scripts": {
-    "dev": "vue-cli-service electron:serve",
-    "build": "vue-cli-service electron:build",
-    "postinstall": "electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps"
+    "dev": "node .electron-nuxt/dev.js",
+    "build": "node .electron-nuxt/build.js",
+    "preinstall": "node .electron-nuxt/check-engines.js",
+    "postinstall": "electron-builder install-app-deps "
   },
   "main": "index.js",
   "dependencies": {
     "@vue/composition-api": "^1.0.0-rc.11",
-    "consola": "^2.15.3",
-    "electron": "^11.0.0",
-    "node-cmd": "^4.0.0",
-    "vue": "^2.6.14",
-    "vuetify": "^2.5.3"
+    "@mdi/font": "5.6.55",
+    "@nuxt/typescript-build": "0.5.8",
+    "@nuxtjs/vuetify": "1.11.2",
+    "@xpda-dev/core": "^0.1.5",
+    "@xpda-dev/electron-builder": "^0.2.1",
+    "@xpda-dev/electron-launcher": "^0.2.1",
+    "@xpda-dev/webpack-step": "^0.1.2",
+    "browser-env": "3.3.0",
+    "cross-env": "7.0.2",
+    "deepmerge": "4.2.2",
+    "electron": "8.3.0",
+    "electron-builder": "22.8.1",
+    "electron-debug": "3.1.0",
+    "native-ext-loader": "2.3.0",
+    "nuxt": "2.14.5",
+    "roboto-fontface": "0.10.0",
+    "typescript": "3.7.5",
+    "vue-devtools": "5.1.4",
+    "vuetify": "2.3.12",
+    "webpack": "4.44.2",
+    "webpack-node-externals": "2.5.2"
   },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.5.13",
-    "@vue/cli-service": "^4.5.13",
-    "devtron": "^1.4.0",
-    "sass": "~1.32.6",
-    "sass-loader": "^10.0.0",
-    "vue-cli-plugin-electron-builder": "^1.4.5",
-    "vue-cli-plugin-vuetify": "^2.4.1",
-    "vue-template-compiler": "^2.6.14",
-    "vuetify-loader": "^1.7.2"
+  "resolutions": {
+    "@types/node": "12.12.6"
+  },
+  "engines": {
+    "node": ">=12.*.*"
   },
   "repository": {
     "type": "git",
