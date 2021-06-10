@@ -7,6 +7,13 @@ const windowsOS = {
     publisherName: 'seonglae',
     target: 'nsis'
   },
+  appx: {
+    identityName: 'sungleCho.Intuiter',
+    applicationId: 'Intuiter',
+    publisher: 'CN=169E7280-3382-426D-AE3B-5FB3786A703F',
+    publisherDisplayName: 'seonglae'
+  },
+  rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll',
   nsis: { differentialPackage: true, include: 'src/nsis/remove_startup.nsh' }
 }
 
