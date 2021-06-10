@@ -6,17 +6,10 @@ const windowsOS = {
   win: {
     icon: ICONS_DIR + 'white.ico',
     requestedExecutionLevel: 'highestAvailable',
-    publisherName: 'seonglae',
     target: 'nsis',
     certificateFile: 'Seonglae.pfx',
     certificatePassword: process.env.PASS,
     rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
-  },
-  appx: {
-    identityName: 'sungleCho.Intuiter',
-    applicationId: 'Intuiter',
-    publisher: 'CN=169E7280-3382-426D-AE3B-5FB3786A703F',
-    publisherDisplayName: 'seonglae'
   },
   nsis: { differentialPackage: true, include: 'src/nsis/remove_startup.nsh' }
 }
