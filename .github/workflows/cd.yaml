@@ -50,9 +50,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: make artiface
-          path: |
-            build
-            Intuiter.exe
+          path: build
 
       - name: Create Release
         id: create_release
