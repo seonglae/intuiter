@@ -1,4 +1,4 @@
-name: CI/CD to Seonglae Server
+name: Build Artifact
 
 on:
   push:
