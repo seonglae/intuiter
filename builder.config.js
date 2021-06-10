@@ -5,7 +5,8 @@ const windowsOS = {
     icon: ICONS_DIR + 'white.ico',
     requestedExecutionLevel: 'highestAvailable',
     publisherName: 'seonglae',
-    target: 'nsis'
+    target: 'nsis',
+    rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
   },
   appx: {
     identityName: 'sungleCho.Intuiter',
@@ -13,7 +14,6 @@ const windowsOS = {
     publisher: 'CN=169E7280-3382-426D-AE3B-5FB3786A703F',
     publisherDisplayName: 'seonglae'
   },
-  rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll',
   nsis: { differentialPackage: true, include: 'src/nsis/remove_startup.nsh' }
 }
 
