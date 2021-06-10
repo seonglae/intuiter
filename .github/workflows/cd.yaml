@@ -46,7 +46,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: make artiface
+          name: Upload Artifact
           path: |
             build
             build/Intuiter.exe
@@ -59,10 +59,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
+          body_path: docs/versions/${{ env.RELEASE_VERSION }}.md
           draft: false
           prerelease: false
 
