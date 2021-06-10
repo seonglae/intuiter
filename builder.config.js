@@ -10,7 +10,6 @@ const windowsOS = {
     target: 'nsis',
     certificateFile: 'Seonglae.pfx',
     certificatePassword: process.env.PASS,
-    certificateSubjectName: 'CN=developmentca',
     rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
   },
   appx: {
