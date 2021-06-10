@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
       - name: get-key
         shell: bash
         run: |
@@ -50,7 +53,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
@@ -71,3 +74,10 @@ jobs:
           asset_path: Intuiter.exe
           asset_name: Intuiter.exe
           asset_content_type: application/exe
+
+      - name: Clone window
+        shell: bash
+        run: |
+          git clone https://github.com/seonglae/winget-pkgs
+          cd winget-pkgs/manifests/s/Seonglae/Intuiter
+          echo $RELEASE_VERSION
