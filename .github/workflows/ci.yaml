@@ -10,13 +10,14 @@ jobs:
   release:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      - name: Set env
+      - name: Set Github Token
         shell: bash
         run: echo "GH_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
-      - name: get-key
+      - name: Get Seonglae Key
         shell: bash
         run: |
           echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx

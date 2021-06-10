@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const ICONS_DIR = 'build/icons/'
 
 const windowsOS = {
@@ -6,6 +8,9 @@ const windowsOS = {
     requestedExecutionLevel: 'highestAvailable',
     publisherName: 'seonglae',
     target: 'nsis',
+    certificateFile: 'Seonglae.pfx',
+    certificatePassword: process.env.PASS,
+    certificateSubjectName: 'CN=developmentca',
     rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
   },
   appx: {
