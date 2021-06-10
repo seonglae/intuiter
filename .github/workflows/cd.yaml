@@ -46,17 +46,13 @@ jobs:
           yarn build
           ln build/Intuiter*.exe Intuiter.exe
 
-      - name: Upload build Folder
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: make artiface
-          path: build
-
-      - name: Upload executive File
-        uses: actions/upload-artifact@v2
-        with:
-          name: make artiface
-          path: build/Intuiter.exe
+          path: |
+            build
+            Intuiter.exe
 
       - name: Create Release
         id: create_release
