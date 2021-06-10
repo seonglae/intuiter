@@ -7,7 +7,10 @@ const winHandler = new BrowserWinHandler({
   minHeight: 500,
   transparent: true,
   frame: false,
-  titleBarStyle: 'hiddenInset'
+  titleBarStyle: 'hiddenInset',
+  webPreferences: {
+    enableRemoteModule: true
+  }
 })
 
 winHandler.onCreated(_browserWindow => winHandler.loadPage('/'))

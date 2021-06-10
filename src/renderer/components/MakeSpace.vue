@@ -15,13 +15,15 @@ import { get } from 'node-cmd'
 import { defineComponent } from '@vue/composition-api'
 import { resolve } from 'path'
 import consola from 'consola'
-import { remote, app } from 'electron'
+import { remote } from 'electron'
 
 const AHK_PATH = 'resources\\ahk\\exe\\ahk\\AutoHotkey.exe'
 const MAKER_PATH = 'resources\\ahk\\make.ahk'
 
 export default defineComponent({
   setup(props, context) {
+    const app = remote.app
+
     // Run Command
     function make() {
       const root = resolve(app.getAppPath(), '../../')
@@ -33,7 +35,7 @@ export default defineComponent({
 
     // Close After run
     function afterMake(err, data, stderr) {
-      if (!err) return remote.getCurrentWindow().close()
+      if (!err) return remote.app.exit(0)
       ifError(stderr, err)
     }
 
