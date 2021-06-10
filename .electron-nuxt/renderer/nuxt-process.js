@@ -20,20 +20,26 @@ process.on('message', async ({ action, target }) => {
   const generator = new Generator(nuxt, builder)
 
   if (target === 'development') {
-    builder.build().then(() => {
-      nuxt.listen(SERVER_PORT)
-      process.send({ status: 'ok' })
-    }).catch(err => {
-      console.error(err)
-      process.send({ status: 'error', err: err.message })
-    })
+    builder
+      .build()
+      .then(() => {
+        nuxt.listen(SERVER_PORT)
+        process.send({ status: 'ok' })
+      })
+      .catch(err => {
+        console.error(err)
+        process.send({ status: 'error', err: err.message })
+      })
   } else {
-    generator.generate({ build: true, init: true }).then(({ errors }) => {
-      if (errors.length === 0) process.send({ status: 'ok' })
-      else process.send({ status: 'error', err: 'Error occurred while generating pages' })
-    }).catch(err => {
-      console.error(err)
-      process.send({ status: 'error', err: err.message })
-    })
+    generator
+      .generate({ build: true, init: true })
+      .then(({ errors }) => {
+        if (errors.length === 0) process.send({ status: 'ok' })
+        else process.send({ status: 'error', err: 'Error occurred while generating pages' })
+      })
+      .catch(err => {
+        console.error(err)
+        process.send({ status: 'error', err: err.message })
+      })
   }
 })

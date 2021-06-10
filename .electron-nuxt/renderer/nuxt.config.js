@@ -20,17 +20,19 @@ const baseConfig = {
   generate: {
     dir: path.join(DIST_DIR, 'renderer')
   }
-};
+}
 
 const baseExtend = (config, { isClient }) => {
-  config.externals = [nodeExternals({
-    modulesFromFile: {
-      include: ['dependencies']
-    }
-  })]
+  config.externals = [
+    nodeExternals({
+      modulesFromFile: {
+        include: ['dependencies']
+      }
+    })
+  ]
 
   config.target = 'electron-renderer'
-  
+
   config.node = {
     __dirname: !isProduction,
     __filename: !isProduction
@@ -38,7 +40,7 @@ const baseExtend = (config, { isClient }) => {
 
   config.plugins.push(
     new webpack.DefinePlugin({
-      'global': 'window',
+      global: 'window',
       'process.resourcesPath': isClient ? resourcesPath.nuxtClient() : resourcesPath.nuxtServer()
     })
   )
@@ -51,25 +53,23 @@ const baseExtend = (config, { isClient }) => {
     const jsLoader = config.module.rules.find(el => el.test.test('sample.js') === true)
     if (jsLoader) jsLoader.use = [path.join(__dirname, 'do-nothing-loader.js')]
   }
-
 }
 
 const mergeConfig = customConfig => {
-  const hasExtendFunction = (customConfig.build !== undefined && customConfig.build.extend !== undefined);
-  if(hasExtendFunction){
-    const userExtend = customConfig.build.extend;
+  const hasExtendFunction = customConfig.build !== undefined && customConfig.build.extend !== undefined
+  if (hasExtendFunction) {
+    const userExtend = customConfig.build.extend
     customConfig.build.extend = function() {
       baseExtend(...arguments) // eslint-disable-line prefer-rest-params
       userExtend(...arguments) // eslint-disable-line prefer-rest-params
     }
   } else {
-    if(baseConfig.build === undefined) baseConfig.build = {};
-    baseConfig.build.extend = baseExtend;
+    if (baseConfig.build === undefined) baseConfig.build = {}
+    baseConfig.build.extend = baseExtend
   }
-  return deepmerge(baseConfig, customConfig);
+  return deepmerge(baseConfig, customConfig)
 }
 
-
-module.exports = mergeConfig(userNuxtConfig);
-module.exports.mergeConfig = mergeConfig;
-module.exports.baseConfig = baseConfig;
+module.exports = mergeConfig(userNuxtConfig)
+module.exports.mergeConfig = mergeConfig
+module.exports.baseConfig = baseConfig
