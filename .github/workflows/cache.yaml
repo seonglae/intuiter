@@ -1,37 +1,48 @@
-name: caching
+name: CI/CD to Seonglae Server
 
 on:
   push:
     branches:
-      - master
+      - develop
+      - release
 
 jobs:
-  caching:
+  release:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: get-key
-      shell: bash
-      run: |
-        echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
-        echo "${{ secrets.ENV }}" > .env
+      - name: get-key
+        shell: bash
+        run: |
+          echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
+          echo "${{ secrets.ENV }}" > .env
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 10.x
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
 
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      with:
-        path: |
-          **/node_modules
-        key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.OS }}-build-
-          ${{ runner.OS }}-
+      - name: Install npm dependencies
+        run: yarn
 
-    - name: yarn install
-      run: yarn
+      - name: Run build task
+        shell: bash
+        run: |
+          yarn build
+          ln build/Intuiter*.exe Intuiter.exe
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: make artiface
+          path: build
