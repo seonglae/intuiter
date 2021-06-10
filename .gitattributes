@@ -3,6 +3,7 @@
 # git objects as binary
 *.png binary
 *.ico binary
+*.exe binary
 *.icns binary
 *.vue text
 
