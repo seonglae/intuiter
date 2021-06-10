@@ -81,3 +81,24 @@ jobs:
           git clone https://github.com/seonglae/winget-pkgs
           cd winget-pkgs/manifests/s/Seonglae/Intuiter
           echo $RELEASE_VERSION
+          mkdir $RELEASE_VERSION
+          cd $RELEASE_VERSION
+          echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
+          echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
+          echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
+          echo "PackageVersion: ${{ env.RELEASE_VERSION }}" >> Seonglae.Intuiter.yaml
+          echo "License: MIT" >> Seonglae.Intuiter.yaml
+          echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
+          echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
+          echo "  Silent: /S" >> Seonglae.Intuiter.yaml
+          echo "  SilentWithProgress: /S" >> Seonglae.Intuiter.yaml
+          echo "Installers:" >> Seonglae.Intuiter.yaml
+          echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
+          echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: `sha256sum build/Intuiter-0.6.0.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
+          echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
+          echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
+          echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
+          echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
+          git add .
+          git commit -am ""
