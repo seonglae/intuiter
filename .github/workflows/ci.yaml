@@ -45,4 +45,6 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: make artiface
-          path: build
+          path: |
+            build
+            build/Intuiter.exe
