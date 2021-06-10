@@ -9,7 +9,7 @@ const windowsOS = {
     target: 'nsis',
     // certificateFile: 'Seonglae.pfx',
     // certificatePassword: process.env.PASS,
-    rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
+    rfc3161TimeStampServer: 'http://timestamp.verisign.com/scripts/timestamp.dll'
   },
   nsis: { differentialPackage: true, include: 'src/nsis/remove_startup.nsh' }
 }

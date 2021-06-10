@@ -1,5 +1,4 @@
 * text=auto
-* text eol=lf
 
 # git objects as binary
 *.png binary
