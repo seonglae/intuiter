@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Set env
+        shell: bash
+        run: echo ${{ secrets.GITHUB_TOKEN }} >> $GH_TOKEN
+
       - name: get-key
         shell: bash
         run: |
