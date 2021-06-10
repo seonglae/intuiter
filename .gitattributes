@@ -1,0 +1,16 @@
+* text=auto
+* text eol=lf
+
+# git objects as binary
+*.png binary
+*.ico binary
+*.icns binary
+*.vue text
+
+# git objects as text for diff
+*.md text
+*.js text
+*.yml text
+.editorconfig text
+.gitattributes text
+.gitignore text

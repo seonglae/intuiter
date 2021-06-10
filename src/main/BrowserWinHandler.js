@@ -1,7 +1,10 @@
+/* eslint-disable */
 import { EventEmitter } from 'events'
 import { BrowserWindow, app } from 'electron'
-const isProduction = process.env.NODE_ENV === 'production'
 
+const DEV_SERVER_URL = process.env.DEV_SERVER_URL
+const isProduction = process.env.NODE_ENV === 'production'
+const isDev = process.env.NODE_ENV === 'development'
 export default class BrowserWinHandler {
   /**
    * @param [options] {object} - browser window options
@@ -16,15 +19,12 @@ export default class BrowserWinHandler {
   }
 
   _createInstance() {
-    // This method will be called when Electron has finished
-    // initialization and is ready to create browser windows.
-    // Some APIs can only be used after this event occurs.
-    app.on('ready', () => {
-      this._create()
-    })
-
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
+    if (app.isReady()) this._create()
+    else {
+      app.once('ready', () => {
+        this._create()
+      })
+    }
     if (!this.allowRecreate) return
     app.on('activate', () => this._recreate())
   }
@@ -34,13 +34,12 @@ export default class BrowserWinHandler {
       ...this.options,
       webPreferences: {
         ...this.options.webPreferences,
-        webSecurity: isProduction, // disable on dev to allow loading local resources
-        nodeIntegration: true, // allow loading modules via the require () function
-        devTools: !process.env.SPECTRON, // disable on e2e test environment
-      },
+        webSecurity: isProduction,
+        nodeIntegration: true,
+        contextIsolation: false
+      }
     })
     this.browserWindow.on('closed', () => {
-      // Dereference the window object
       this.browserWindow = null
     })
     this._eventEmitter.emit('created')
@@ -51,18 +50,21 @@ export default class BrowserWinHandler {
   }
 
   /**
-   * @callback onReadyCallback
-   * @param {BrowserWindow}
-   */
-
-  /**
    *
    * @param callback {onReadyCallback}
    */
   onCreated(callback) {
+    if (this.browserWindow !== null) return callback(this.browserWindow)
     this._eventEmitter.once('created', () => {
       callback(this.browserWindow)
     })
+  }
+
+  async loadPage(pagePath) {
+    if (!this.browserWindow) return Promise.reject(new Error("The page could not be loaded before win 'created' event"))
+    const serverUrl = isDev ? DEV_SERVER_URL : 'app://./index.html'
+    const fullPath = serverUrl + '#' + pagePath
+    await this.browserWindow.loadURL(fullPath)
   }
 
   /**
@@ -71,9 +73,7 @@ export default class BrowserWinHandler {
    */
   created() {
     return new Promise(resolve => {
-      this._eventEmitter.once('created', () => {
-        resolve(this.browserWindow)
-      })
+      this.onCreated(() => resolve(this.browserWindow))
     })
   }
 }

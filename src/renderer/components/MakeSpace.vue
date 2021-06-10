@@ -9,42 +9,42 @@
   </v-container>
 </template>
 
-<script>
+<script lang="ts">
 import { existsSync } from 'fs'
 import { get } from 'node-cmd'
 import { defineComponent } from '@vue/composition-api'
 import { resolve } from 'path'
 import consola from 'consola'
+import { remote, app } from 'electron'
 
 const AHK_PATH = 'resources\\ahk\\exe\\ahk\\AutoHotkey.exe'
 const MAKER_PATH = 'resources\\ahk\\make.ahk'
 
 export default defineComponent({
   setup(props, context) {
-    const electron = require('electron').app
-    const remote = require('electron').remote
-    const root = resolve(app.getAppPath(), '../../')
-
     // Run Command
     function make() {
+      const root = resolve(app.getAppPath(), '../../')
       const ahkPath = resolve(root, AHK_PATH)
       const makePath = resolve(root, MAKER_PATH)
-      if (!existsSync(ahkPath) || !existsSync(makePath)) return ifError('No Files')
+      if (!existsSync(ahkPath) || !existsSync(makePath)) return ifError('No Files', new Error())
       get(`"${ahkPath}" "${makePath}"`, afterMake)
     }
 
     // Close After run
     function afterMake(err, data, stderr) {
-      if (!err) remote.getCurrentWindow().close()
-      ifError(stderr)
+      if (!err) return remote.getCurrentWindow().close()
+      ifError(stderr, err)
     }
 
     // Error Dialog
-    function ifError(stderr) {
+    function ifError(stderr, err) {
       const options = { type: 'error', title: 'Error', message: 'Some Error Occured', detail: stderr }
       const dialog = remote.dialog
-      dialog.showMessageBox(null, options)
+      dialog.showMessageBox(err, options)
     }
+
+    return { make }
   }
 })
 </script>

@@ -33,7 +33,6 @@
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/composition-api": "^0.24.4",
     "@nuxtjs/vuetify": "1.11.3",
-    "@vue/composition-api": "^1.0.0-rc.11",
     "@xpda-dev/core": "^0.1.6",
     "@xpda-dev/electron-builder": "^0.2.1",
     "@xpda-dev/electron-launcher": "^0.3.0",

@@ -1,28 +1,9 @@
-.DS_Store
+.nuxt
+dist
+build/*
+!build/icons
 node_modules
-/dist
-appx
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
+yarn-error.log
+Intuit.exe
+Intuiter.exe
 .vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-node_modules
-
-#Electron-builder output
-/dist_electron
-
-*.pfx
-.env
