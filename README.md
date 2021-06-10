@@ -57,21 +57,27 @@ If you write a lot by pc, this program will be fit for you
 ## Best Features (not all)
 
 ### Text Control
-- `alt` + `ikjl` - power arrow
-- `alt` + `esdf` - normal arrow
-- `alt` + `bi` - backspace, delete
-- `alt` + `a` - select line
-- `alt` + `w` - select word
+Default Magic Key is `Alt`
+- `Alt` + `ikjl` - power arrow
+- `Alt` + `esdf` - normal arrow
+- `Alt` + `bi` - backspace, delete
+- `Alt` + `a` - select line
+- `Alt` + `w` - select word
 
 ### Global Control
-- `alt` + `yp` - tab control
-- `alt` + `uo` - mouse scroll with **acceleration**
+- `Alt` + `yp` - tab control
+- `Alt` + `uo` - mouse scroll with **acceleration**
+
+
+### Meta key Shortcuts
+Win key is Meta key in Windows
 - `win` + `ikjl` - mouse control with **accelleration**
 
 <br/>
 
 - `ctrl` means `power`
-- `shift` means `speed`
+- `shift` means `speed` with magic key
+- `shift` means `speed` with `Magic key` and Original keybinding with Window Key
 
 ### Try press ctrl or shift while using upper shortcuts
 
