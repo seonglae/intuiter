@@ -19,9 +19,10 @@
   </v-app>
 </template>
 
-<script>
-import MakeSpace from '../comps/MakeSpace'
+<script lang="ts">
+import MakeSpace from '@/components/MakeSpace.vue'
 import { defineComponent } from '@vue/composition-api'
+import { shell, remote } from 'electron'
 
 const DOC = 'https://github.com/seonglae/intuiter'
 
@@ -29,8 +30,6 @@ export default defineComponent({
   name: 'index',
   components: { MakeSpace },
   setup() {
-    const electron = require('electron')
-    const { shell, remote } = electron
     const openDoc = () => shell.openExternal(DOC)
     return { openDoc, remote }
   }
