@@ -25,7 +25,8 @@
     "node": ">=12.13.0"
   },
   "resolutions": {
-    "@types/node": "12.12.6"
+    "@types/node": "12.12.6",
+    "@nuxtjs/vuetify/**/sass": "1.32.12"
   },
   "devDependencies": {
     "@mdi/font": "5.9.55",
@@ -49,6 +50,7 @@
     "roboto-fontface": "0.10.0",
     "vuetify": "2.5.1",
     "webpack": "4.44.2",
+    "sass": "~1.32.12",
     "webpack-node-externals": "2.5.2"
   }
 }
