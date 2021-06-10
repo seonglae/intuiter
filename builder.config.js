@@ -7,8 +7,8 @@ const windowsOS = {
     icon: ICONS_DIR + 'white.ico',
     requestedExecutionLevel: 'highestAvailable',
     target: 'nsis',
-    certificateFile: 'Seonglae.pfx',
-    certificatePassword: process.env.PASS,
+    // certificateFile: 'Seonglae.pfx',
+    // certificatePassword: process.env.PASS,
     rfc3161TimeStampServer: 'http://timestamp.globalsign.com/scripts/timstamp.dll'
   },
   nsis: { differentialPackage: true, include: 'src/nsis/remove_startup.nsh' }
