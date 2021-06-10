@@ -1,76 +1,73 @@
 name: CI/CD to Seonglae Server
 
-
 on:
   push:
     tags:
       - '[0-9]\.[0-9]\.[0-9]'
 
-
 jobs:
   release:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: get-key
-      shell: bash
-      run: |
-        echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
-        echo "${{ secrets.ENV }}" > .env
+      - name: get-key
+        shell: bash
+        run: |
+          echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
+          echo "${{ secrets.ENV }}" > .env
 
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 10.x
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 10.x
 
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      with:
-        path: |
-          **/node_modules
-        key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.OS }}-build-
-          ${{ runner.OS }}-
+      - name: Install npm dependencies
+        run: yarn
 
-    - name: Install npm dependencies
-      run: yarn
+      - name: Run build task
+        shell: bash
+        run: |
+          yarn build
+          ln dist/Intuiter*.exe Intuiter.exe
 
-    - name: Run build task
-      shell: bash
-      run: |
-        yarn build
-        ln dist/Intuiter*.exe Intuiter.exe
+      - uses: actions/upload-artifact@v2
+        with:
+          name: make artiface
+          path: dist
 
-    - uses: actions/upload-artifact@v2
-      with:
-        name: make artiface
-        path: dist
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Changes in this Release
+            - First Change
+            - Second Change
+          draft: false
+          prerelease: false
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body: |
-          Changes in this Release
-          - First Change
-          - Second Change
-        draft: false
-        prerelease: false
-
-    - name: Upload Release Asset
-      id: upload-release-asset 
-      uses: actions/upload-release-asset@v2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: Intuiter.exe
-        asset_name: Intuiter.exe
-        asset_content_type: application/exe
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: Intuiter.exe
+          asset_name: Intuiter.exe
+          asset_content_type: application/exe
