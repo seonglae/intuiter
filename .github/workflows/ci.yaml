@@ -58,12 +58,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          repository: https://github.com/microsoft/winget-pkgs
 
       - name: Clone window
         shell: bash
         run: |
-          git clone https://github.com/seonglae/winget-pkgs
-          cd winget-pkgs/manifests/s/Seonglae/Intuiter
+          cd manifests/s/Seonglae/Intuiter
           mkdir lastest
           cd lastest
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
@@ -85,4 +86,3 @@ jobs:
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
           winget validate --manifest .
           winget validate --manifest .
-      
