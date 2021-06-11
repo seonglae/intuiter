@@ -52,3 +52,37 @@ jobs:
         with:
           name: make artiface
           path: build
+
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Clone window
+        shell: bash
+        run: |
+          git clone https://github.com/seonglae/winget-pkgs
+          cd winget-pkgs/manifests/s/Seonglae/Intuiter
+          mkdir lastest
+          cd lastest
+          echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
+          echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
+          echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
+          echo "PackageVersion: lastest >> Seonglae.Intuiter.yaml
+          echo "License: MIT" >> Seonglae.Intuiter.yaml
+          echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
+          echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
+          echo "  Silent: /S" >> Seonglae.Intuiter.yaml
+          echo "  SilentWithProgress: /S" >> Seonglae.Intuiter.yaml
+          echo "Installers:" >> Seonglae.Intuiter.yaml
+          echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
+          echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: `sha256sum build/Intuiter-0.6.0.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
+          echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
+          echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
+          echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
+          echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
+          winget validate --manifest .
+          winget validate --manifest .
+      
