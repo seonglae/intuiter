@@ -2,11 +2,11 @@
   "name": "intuiter",
   "displayName": "Intuiter",
   "description": "Global Windows Productivity Application",
-  "version": "0.6.2",
+  "version": "0.6.0",
   "main": "./dist/main/index.js",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",
-    "build": "node .electron-nuxt/build.js",
+    "build": "node .electron-nuxt/build.js --publish=onTag",
     "preinstall": "node .electron-nuxt/check-engines.js",
     "postinstall": "electron-builder install-app-deps "
   },

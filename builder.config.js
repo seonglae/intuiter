@@ -1,13 +1,17 @@
+require('dotenv').config()
+
 const ICONS_DIR = 'build/icons/'
 
-const windowsOS = {
+const windows = {
   win: {
     icon: ICONS_DIR + 'white.ico',
     requestedExecutionLevel: 'highestAvailable',
-    publisherName: 'seonglae',
-    target: 'nsis'
+    target: 'nsis',
+    // certificateFile: 'Seonglae.pfx',
+    // certificatePassword: process.env.PASS,
+    rfc3161TimeStampServer: 'http://timestamp.verisign.com/scripts/timestamp.dll'
   },
-  nsis: { differentialPackage: true, include: 'src/nsis/remove_startup.nsh' }
+  nsis: { include: 'src/nsis/remove_startup.nsh' }
 }
 
 module.exports = {
@@ -30,5 +34,5 @@ module.exports = {
       to: 'dist/renderer/'
     }
   ],
-  ...windowsOS
+  ...windows
 }

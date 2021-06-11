@@ -46,12 +46,11 @@ jobs:
           yarn build
           ln build/Intuiter*.exe Intuiter.exe
 
-      - uses: actions/upload-artifact@v2
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
         with:
-          name: Upload Artifact
-          path: |
-            build
-            build/Intuiter.exe
+          name: make artiface
+          path: build
 
       - name: Create Release
         id: create_release

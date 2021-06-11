@@ -7,3 +7,5 @@ yarn-error.log
 Intuit.exe
 Intuiter.exe
 .vscode
+*.pfx
+*.env
