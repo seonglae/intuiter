@@ -49,7 +49,6 @@ const baseExtend = (config, { isClient }) => {
   config.module.rules = config.module.rules || []
 
   if (DISABLE_BABEL_LOADER) {
-    // https://github.com/nuxt/typescript/blob/master/packages/typescript-build/src/index.ts#L55
     const jsLoader = config.module.rules.find(el => el.test.test('sample.js') === true)
     if (jsLoader) jsLoader.use = [path.join(__dirname, 'do-nothing-loader.js')]
   }
@@ -60,8 +59,8 @@ const mergeConfig = customConfig => {
   if (hasExtendFunction) {
     const userExtend = customConfig.build.extend
     customConfig.build.extend = function() {
-      baseExtend(...arguments) // eslint-disable-line prefer-rest-params
-      userExtend(...arguments) // eslint-disable-line prefer-rest-params
+      baseExtend(...arguments)
+      userExtend(...arguments)
     }
   } else {
     if (baseConfig.build === undefined) baseConfig.build = {}
