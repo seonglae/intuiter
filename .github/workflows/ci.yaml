@@ -61,11 +61,6 @@ jobs:
         with:
           repository: microsoft/winget-pkgs
 
-      - name: Set env
-        shell: bash
-        run:
-          HASH=$(curl https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe | sha256sum | cut -c-64)
-          echo "HASH=${HASH}" >> $GITHUB_ENV
 
 
       - name: Make Manifest
@@ -74,7 +69,7 @@ jobs:
           cd manifests/s/Seonglae/Intuiter
           mkdir lastest
           cd lastest
-          echo ${{ env.HASH }}
+          HASH=$(curl https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe | sha256sum | cut -c-64)
 
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
@@ -88,7 +83,7 @@ jobs:
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe" >> Seonglae.Intuiter.yaml
-          echo "  InstallerSha256: ${{ env.HASH }}" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: ${HASH}" >> Seonglae.Intuiter.yaml
           echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
