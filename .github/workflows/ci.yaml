@@ -74,6 +74,7 @@ jobs:
           cd manifests/s/Seonglae/Intuiter
           mkdir lastest
           cd lastest
+
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
@@ -114,6 +115,7 @@ jobs:
       - name: Validate Manifest
         shell: powershell
         run: |
+          cat manifests/s/Seonglae/Intuiter/lastest/Seonglae.Intuiter.yaml
           winget validate --manifest manifests/s/Seonglae/Intuiter/lastest
           winget install --manifest manifests/s/Seonglae/Intuiter/lastest
 
