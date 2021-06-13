@@ -73,21 +73,26 @@ jobs:
         with:
           repository: microsoft/winget-pkgs
 
-      - name: Set env
+      - name: Set VERSION env
         shell: bash
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
-      - name: Clone window
+      - name: Set HASH env
+        shell: bash
+        run:
+          HASH=$(curl https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe | sha256sum | cut -c-64)
+          echo "HASH=${HASH}" >> $GITHUB_ENV
+
+      - name: Make Manifest
         shell: bash
         run: |
           cd manifests/s/Seonglae/Intuiter
-          echo $RELEASE_VERSION
-          mkdir $RELEASE_VERSION
-          cd $RELEASE_VERSION
+          mkdir ${{ env.RELEASE_VERSION }}
+          cd ${{ env.RELEASE_VERSION }}
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
-          echo "PackageVersion: ${{ env.RELEASE_VERSION }}" >> Seonglae.Intuiter.yaml
+          echo "PackageVersion: ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
           echo "License: MIT" >> Seonglae.Intuiter.yaml
           echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
           echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
@@ -96,10 +101,14 @@ jobs:
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe" >> Seonglae.Intuiter.yaml
-          echo "  InstallerSha256: `sha256sum build/Intuiter-0.6.0.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: `sha256sum build/Intuiter-${{ env.RELEASE_VERSION }}.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
           echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
-          git add .
-          git commit -am ""
+
+      - name: Validate Manifest
+        shell: bash
+        run: |
+          winget validate --manifest manifests/s/Seonglae/Intuiter/${{ env.RELEASE_VERSION }}
+          winget install --manifest manifests/s/Seonglae/Intuiter/${{ env.RELEASE_VERSION }}
