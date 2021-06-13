@@ -87,7 +87,7 @@ jobs:
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe" >> Seonglae.Intuiter.yaml
-          echo "  InstallerSha256: ${{ env.HASH }} >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: ${{ env.HASH }}" >> Seonglae.Intuiter.yaml
           echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
