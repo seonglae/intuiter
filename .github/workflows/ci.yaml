@@ -113,10 +113,3 @@ jobs:
         run: |
           cat manifests/s/Seonglae/Intuiter/latest/Seonglae.Intuiter.yaml
           winget validate --manifest manifests/s/Seonglae/Intuiter/latest
-          winget install --manifest manifests/s/Seonglae/Intuiter/latest
-
-      - name: Create Pull request
-        shell: powershell
-        run: |
-          winget validate --manifest manifests/s/Seonglae/Intuiter/latest
-          winget install --manifest manifests/s/Seonglae/Intuiter/latest
