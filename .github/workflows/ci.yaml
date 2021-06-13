@@ -101,7 +101,7 @@ jobs:
           Invoke-WebRequest $vclibs -OutFile Microsoft.VCLibs.140.00_8wekyb3d8bbwe.appx
           Add-AppxPackage -Path .\Microsoft.VCLibs.140.00.UWPDesktop_8wekyb3d8bbwe.appx
           Add-AppxPackage -Path .\Microsoft.VCLibs.140.00_8wekyb3d8bbwe.appx
-          Invoke-WebRequest https://github.com/microsoft/winget-cli/releases/download/v1.0.11451/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle
+          Invoke-WebRequest https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle
           Add-AppxPackage -Path .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle
           # Create reparse point
           $installationPath = (Get-AppxPackage Microsoft.DesktopAppInstaller).InstallLocation
