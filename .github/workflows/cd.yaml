@@ -64,7 +64,7 @@ jobs:
           draft: false
           prerelease: false
 
-  pr:
+  publish:
     runs-on: windows-latest
     needs: release
     steps:
