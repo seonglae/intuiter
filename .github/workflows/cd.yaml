@@ -83,7 +83,7 @@ jobs:
           cd manifests/s/Seonglae/Intuiter
           mkdir ${{ env.RELEASE_VERSION }}
           cd ${{ env.RELEASE_VERSION }}
-          HASH=$(curl https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe | sha256sum | cut -c-64)
+          HASH=$(curl -sL https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe | sha256sum | cut -c-64)
 
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
