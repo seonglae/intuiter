@@ -111,6 +111,8 @@ jobs:
         run: |
           cat manifests/s/Seonglae/Intuiter/latest/Seonglae.Intuiter.yaml
           winget validate --manifest manifests/s/Seonglae/Intuiter/latest
+          git config --local user.email "sungle3737@gmail.com"
+          git config --local user.name "seonglae"
           git add .
           git commit -am "Submitting  Intuiter version latest.yaml"
 
