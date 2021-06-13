@@ -112,13 +112,13 @@ jobs:
           explorer.exe "shell:appsFolder\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe!winget"
 
       - name: Validate Manifest
-        shell: bash
+        shell: powershell
         run: |
           winget validate --manifest manifests/s/Seonglae/Intuiter/lastest
           winget install --manifest manifests/s/Seonglae/Intuiter/lastest
 
       - name: Create Pull request
-        shell: bash
+        shell: powershell
         run: |
           winget validate --manifest manifests/s/Seonglae/Intuiter/lastest
           winget install --manifest manifests/s/Seonglae/Intuiter/lastest
