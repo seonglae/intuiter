@@ -61,7 +61,14 @@ jobs:
         with:
           repository: microsoft/winget-pkgs
 
-      - name: Clone window
+      - name: Set env
+        shell: bash
+        run:
+          HASH=$(curl https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe | sha256sum | cut -c-64)
+          echo "HASH=${HASH}" >> $GITHUB_ENV
+
+
+      - name: Make Manifest
         shell: bash
         run: |
           cd manifests/s/Seonglae/Intuiter
@@ -79,10 +86,14 @@ jobs:
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe" >> Seonglae.Intuiter.yaml
-          echo "  InstallerSha256: `sha256sum build/Intuiter-0.6.0.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: ${{ env.HASH }} >> Seonglae.Intuiter.yaml
           echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
-          winget validate --manifest .
-          winget install --manifest .
+
+      - name: Validate Manifest
+        shell: bash
+        run: |
+          winget validate --manifest manifests/s/Seonglae/Intuiter/lastest
+          winget install --manifest manifests/s/Seonglae/Intuiter/lastest
