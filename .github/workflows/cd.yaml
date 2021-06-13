@@ -77,19 +77,13 @@ jobs:
         shell: bash
         run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
-      - name: Set HASH env
-        shell: bash
-        run:
-          HASH=$(curl https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe | sha256sum | cut -c-64)
-          echo "HASH=${HASH}" >> $GITHUB_ENV
-          echo ${{ env.HASH }}"
-
       - name: Make Manifest
         shell: bash
         run: |
           cd manifests/s/Seonglae/Intuiter
           mkdir ${{ env.RELEASE_VERSION }}
           cd ${{ env.RELEASE_VERSION }}
+          HASH=$(curl https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe | sha256sum | cut -c-64)
 
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
