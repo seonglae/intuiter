@@ -66,6 +66,7 @@ jobs:
         run:
           HASH=$(curl https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe | sha256sum | cut -c-64)
           echo "HASH=${HASH}" >> $GITHUB_ENV
+          echo ${{ env.HASH }}"
 
 
       - name: Make Manifest
@@ -109,7 +110,6 @@ jobs:
           Add-AppxPackage -Path .\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.appxbundle
           # Create reparse point
           $installationPath = (Get-AppxPackage Microsoft.DesktopAppInstaller).InstallLocation
-          Set-ExecutionAlias -Path "C:\Windows\System32\winget.exe" -PackageName "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe" -EntryPoint "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe!winget" -Target "$installationPath\AppInstallerCLI.exe" -AppType Desktop -Version 3
           explorer.exe "shell:appsFolder\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe!winget"
 
       - name: Validate Manifest
