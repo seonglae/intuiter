@@ -66,7 +66,6 @@ jobs:
         run:
           HASH=$(curl https://github.com/seonglae/intuiter/releases/lastest/download/Intuiter.exe | sha256sum | cut -c-64)
           echo "HASH=${HASH}" >> $GITHUB_ENV
-          echo ${{ env.HASH }}"
 
 
       - name: Make Manifest
@@ -75,6 +74,7 @@ jobs:
           cd manifests/s/Seonglae/Intuiter
           mkdir lastest
           cd lastest
+          echo ${{ env.HASH }}"
 
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
