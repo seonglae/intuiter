@@ -59,7 +59,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/microsoft/winget-pkgs
+          repository: microsoft/winget-pkgs
 
       - name: Clone window
         shell: bash
@@ -85,4 +85,4 @@ jobs:
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
           winget validate --manifest .
-          winget validate --manifest .
+          winget install --manifest .
