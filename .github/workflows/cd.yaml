@@ -89,6 +89,7 @@ jobs:
           cd manifests/s/Seonglae/Intuiter
           mkdir ${{ env.RELEASE_VERSION }}
           cd ${{ env.RELEASE_VERSION }}
+          
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
