@@ -92,7 +92,7 @@ jobs:
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
-          echo "PackageVersion: ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
+          echo "PackageVersion:" ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
           echo "License: MIT" >> Seonglae.Intuiter.yaml
           echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
           echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
