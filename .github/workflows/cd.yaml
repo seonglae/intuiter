@@ -122,14 +122,7 @@ jobs:
           git config --local user.name "seonglae"
           git add .
           git commit -am "Submitting  Intuiter version latest.yaml"
-
-      - name: Push Manifest
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.PAT }}
-          branch: master
-          repository: seonglae/winget-pkgs
-          force: true
+          git push
 
       - name: Create pull request
         uses: vsoch/pull-request-action@master
