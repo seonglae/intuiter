@@ -6,8 +6,8 @@ IME_CHECK(WinTitle){
 }
 
 Send_ImeControl(DefaultIMEWnd, wParam, lParam){
-    DetectSave := A_DetectHiddenWindows       
-    DetectHiddenWindows,ON                          
+    DetectSave := A_DetectHiddenWindows
+    DetectHiddenWindows,ON
     SendMessage 0x283, wParam,lParam,,ahk_id %DefaultIMEWnd%
     if (DetectSave <> A_DetectHiddenWindows)
         DetectHiddenWindows,%DetectSave%
@@ -19,7 +19,7 @@ ImmGetDefaultIMEWnd(hWnd){
 }
 
 SendEng(tex){
-    ret:=IME_CHECK("A") ; program in now 
+    ret:=IME_CHECK("A") ; program in now
     if ret=1
         Send, {vk15sc1F2}
     SendInput %tex%

@@ -56,7 +56,7 @@ return
 Lwin & o::
     if (!GetKeyState("shift")){
         click_right("o")
-        
+
     }
     else if (GetKeyState("shift")){
         send, #o
@@ -129,7 +129,7 @@ Lalt & u::
         scroll_left("u")
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-        
+
     }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
         send, {home}
@@ -146,8 +146,8 @@ Lalt & o::
         scroll_right("o")
     }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-        
-    } 
+
+    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
         send, {end}
     }

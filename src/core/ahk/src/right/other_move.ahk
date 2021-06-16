@@ -28,4 +28,3 @@ Lalt & p::
     else if (GetKeyState("Lwin")){
     }
 Return
-

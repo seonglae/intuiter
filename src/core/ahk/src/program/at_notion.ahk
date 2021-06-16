@@ -74,4 +74,3 @@ Lalt & 9::
     else if (GetKeyState("Lwin")){
     }
 Return
-

@@ -85,10 +85,10 @@ Lalt & q::
             Run exe\screen_save
         else
             run C:\Windows\System32\scrnsave.scr
-        return 
+        return
     }
 Return
-        
+
 
 
 
