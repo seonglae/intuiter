@@ -60,9 +60,21 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body_path: docs/versions/${{ env.RELEASE_VERSION }}.md
+          body: | 
+            # [Doc Page](https://intuiter.vercel.app/versions/${{ env.RELEASE_VERSION }})
           draft: false
           prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: Intuiter.exe
+          asset_name: Intuiter.exe
+          asset_content_type: application/exe
 
   publish:
     runs-on: ubuntu-latest
@@ -71,7 +83,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
+          token: ${{ secrets.PAT }}
           repository: microsoft/winget-pkgs
+          ref: master
 
       - name: Set VERSION env
         shell: bash
@@ -97,31 +111,22 @@ jobs:
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe" >> Seonglae.Intuiter.yaml
-          echo "  InstallerSha256: `sha256sum build/Intuiter-${{ env.RELEASE_VERSION }}.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: ${HASH}" >> Seonglae.Intuiter.yaml
           echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
 
-      - name: Commit Manifest
-        run: |
-          git config --local user.email "sungle3737@gmail.com"
-          git config --local user.name "seonglae"
-          git add .
-          git commit -am "Submitting  Intuiter version latest.yaml"
-
       - name: Create pull request
-        uses: vsoch/pull-request-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_BRANCH: master
-          PULL_REQUEST_REPOSITORY: microsoft/winget-pkgs
-          PULL_REQUEST_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PULL_REQUEST_FROM_BRANCH: master
-          PULL_REQUEST_BODY: |
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Submitting  Intuiter version ${{ env.RELEASE_VERSION }}.yaml
+          token: ${{ secrets.PAT }}
+          push-to-fork: seonglae/winget-pkgs
+          body: |
             - [o] Have you signed the [Contributor License Agreement](https://cla.opensource.microsoft.com/microsoft/winget-pkgs)?
             - [o] Have you checked that there aren't other open [pull requests](https://github.com/microsoft/winget-pkgs/pulls) for the same manifest update/change?
             - [o] Have you validated your manifest locally with `winget validate --manifest <path>`? 
             - [o] Have you tested your manifest locally with `winge@mast install --manifest <path>`?
             - [o] Does your manifest conform to the [1.0 schema](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv1.0.md)?
-          PULL_REQUEST_TITLE: Submitting  Intuiter version latest.yaml
+          title: Submitting  Intuiter version ${{ env.RELEASE_VERSION }}.yaml

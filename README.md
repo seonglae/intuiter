@@ -3,13 +3,17 @@
 Intuiter
 </h1>
 <p align="center">
-<img src="./build/icons/white.png" width="100"/>
+<img src="./asset/icons/white.png" width="100"/>
 </p>
 
-[![Electron Badge](https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white)](https://electronjs.org/)
-[![Languages](https://img.shields.io/github/languages/count/sungle3737/intuiter)](https://github.com/sungle3737/intuiter/blob/master/vue.config.js)
-[![Main Language](https://img.shields.io/github/languages/top/sungle3737/intuiter)](https://github.com/sungle3737/intuiter/tree/master/resources/ahk)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/sungle3737/intuiter/blob/master/LICENSE)
+
+<p align="center">
+<img src="https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white"/>
+<img src="https://img.shields.io/github/languages/top/seonglae/intuiter"/>
+<img src="https://img.shields.io/github/languages/count/sungle3737/intuiter"/>
+<img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"/>
+</p>
+
 
 ## If you **Use** PC, this program will definitely help you.
 ### Windows global version Vim Substitute and more++
@@ -44,10 +48,10 @@ if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-in
 
 # How to Use
 
-![Alt Text](image/program.png)
+![Alt Text](asset/images/program.png)
 ### Just Press **Make and Run** Button
 
-![Alt Text](image/tray.png)
+![Alt Text](asset/images/tray.png)
 
 If System Icon Appear like this, the program is running
 
@@ -88,23 +92,23 @@ Win key is Meta key in Windows
 
 1. Do Power Delete
 
-<img src="image/delete.gif" alt="Power Delete" width="800"/>
+<img src="asset/images/delete.gif" alt="Power Delete" width="800"/>
 
 2. Move Text Cursor very fast or Jump
 
-<img src="image/move.gif" alt="fast or Jump" width="800"/>
+<img src="asset/images/move.gif" alt="fast or Jump" width="800"/>
 
 3. Scroll without mouse
 
-<img src="image/scroll.gif" alt="Power Delete" width="800"/>
+<img src="asset/images/scroll.gif" alt="Power Delete" width="800"/>
 
 4. select text by shortcut
 
-<img src="image/select.gif" alt="Power Delete" width="800"/>
+<img src="asset/images/select.gif" alt="Power Delete" width="800"/>
 
 5. Click without mouse
 
-<img src="image/click.gif" alt="Power Delete" width="800"/>
+<img src="asset/images/click.gif" alt="Power Delete" width="800"/>
 
 
 <br/>
