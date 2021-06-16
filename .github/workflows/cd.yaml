@@ -83,6 +83,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: seonglae/winget-pkgs
+          ref: master
 
       - name: Set VERSION env
         shell: bash
@@ -127,6 +128,7 @@ jobs:
           github_token: ${{ secrets.PAT }}
           branch: master
           repository: seonglae/winget-pkgs
+          force: true
 
       - name: Create pull request
         uses: vsoch/pull-request-action@master
