@@ -83,7 +83,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.PAT }}
-          repository: seonglae/winget-pkgs
+          repository: microsoft/winget-pkgs
           ref: master
 
       - name: Set VERSION env
@@ -116,19 +116,12 @@ jobs:
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
 
-      - name: Commit Manifest
-        run: |
-          git config --local user.email "sungle3737@gmail.com"
-          git config --local user.name "seonglae"
-          git add .
-          git commit -am "Submitting  Intuiter version latest.yaml"
-          git push
-
       - name: Create pull request
         uses: peter-evans/create-pull-request@v3
         with:
+          commit-message: Submitting  Intuiter version latest.yaml
           token: ${{ secrets.PAT }}
-          push-to-fork: microsoft/winget-pkgs
+          push-to-fork: seonglae/winget-pkgs
           body: |
             - [o] Have you signed the [Contributor License Agreement](https://cla.opensource.microsoft.com/microsoft/winget-pkgs)?
             - [o] Have you checked that there aren't other open [pull requests](https://github.com/microsoft/winget-pkgs/pulls) for the same manifest update/change?
