@@ -137,6 +137,6 @@ This Program coulb be considered as game hack
 
 # How to Contribute
 
-- AHK user can contribute to /resources/ahk Core
-- TS user can contribute to /src/renderer UI
+- **AHK user** can contribute to `/resources/ahk` **Core**
+- **TS user** can contribute to `/src/renderer` **UI**
 
