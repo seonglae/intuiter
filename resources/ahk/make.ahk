@@ -7,18 +7,12 @@
 ; meta - sc11D - right control
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; meta - ctrl is power
-; meta - shift is default
-; meta - alt is convention
-; meta - shift + ctrl is complex
-; meta - win is global
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ; meta - Administrator and Set Options
 #NoTrayIcon
 #SingleInstance Force
+    
 SetWorkingDir %A_ScriptDir%
+
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%"
 
