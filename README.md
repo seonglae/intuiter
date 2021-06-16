@@ -50,18 +50,24 @@ if you don't have `winget` [press here](https://www.microsoft.com/ko-kr/p/app-in
 
 - [Documents](https://intuiter.vercel.app)
 
-![Alt Text](asset/images/program.png)
+<p align="center">
+<img src="./asset/images/program.png" width="500"/>
+</p>
+
 ### Just Press **Make and Run** Button
 
-![Alt Text](asset/images/tray.png)
+<p align="center">
+<img src="./asset/images/tray.png" width="250"/>
+</p>
+
 
 If System Icon Appear like this, the program is running
 
 ### Intuiter use **wasd movement** concept in gaming to **text** and **screen** like vim but more better and wider
 
-
-<img src="https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg" alt="wasd" width="500"/>
-
+<p align="center">
+<img src="https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg" alt="wasd" width="250"/>
+</p>
 
 If you write a lot by pc, this program will be fit for you
 
