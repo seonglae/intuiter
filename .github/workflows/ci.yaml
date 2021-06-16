@@ -48,12 +48,6 @@ jobs:
           yarn build
           ln build/Intuiter*.exe Intuiter.exe
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: make artiface
-          path: build
-
   validate:
     runs-on: windows-latest
     steps:
