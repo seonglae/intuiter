@@ -10,6 +10,8 @@ Intuiter
 <p align="center">
 <img src="https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white"/>
 <img src="https://img.shields.io/github/languages/top/seonglae/intuiter"/>
+<img src="https://img.shields.io/github/languages/count/sungle3737/intuiter"/>
+<img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"/>
 </p>
 
 
