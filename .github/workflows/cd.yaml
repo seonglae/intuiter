@@ -80,6 +80,8 @@ jobs:
       - name: Make Manifest
         shell: bash
         run: |
+          git config --local user.email "sungle3737@gmail.com"
+          git config --local user.name "seonglae"
           git remote add microsoft git://github.com/microsoft/winget-pkgs.git
           git pull microsoft master
           cd manifests/s/Seonglae/Intuiter
@@ -107,8 +109,6 @@ jobs:
 
       - name: Commit Manifest
         run: |
-          git config --local user.email "sungle3737@gmail.com"
-          git config --local user.name "seonglae"
           git add .
           git commit -am "Submitting  Intuiter version latest.yaml"
 
