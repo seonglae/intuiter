@@ -60,7 +60,8 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body_path: docs/versions/${{ env.RELEASE_VERSION }}.md
+          body: | 
+            # [Doc Page](https://intuiter.vercel.app/versions/${{ env.RELEASE_VERSION }})
           draft: false
           prerelease: false
 

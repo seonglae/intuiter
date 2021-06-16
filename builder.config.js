@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const ICONS_DIR = 'build/icons/'
+const ICONS_DIR = 'asset/icons/'
 
 const windows = {
   win: {
@@ -11,7 +11,7 @@ const windows = {
     // certificatePassword: process.env.PASS,
     rfc3161TimeStampServer: 'http://timestamp.verisign.com/scripts/timestamp.dll',
   },
-  nsis: { include: 'src/nsis/remove_startup.nsh' },
+  nsis: { include: 'src/install/remove_startup.nsh' },
 }
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
   appId: 'com.seonglae.intuiter',
   artifactName: 'Intuiter-${version}.${ext}',
   directories: { output: 'build' },
-  extraResources: [{ from: './resources/ahk/', to: 'ahk' }],
+  extraResources: [{ from: './src/core/ahk/', to: 'ahk' }],
   files: ['package.json', { from: 'dist/main/', to: 'dist/main/' }, { from: 'dist/renderer', to: 'dist/renderer/' }],
   ...windows,
 }
