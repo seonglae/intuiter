@@ -88,6 +88,28 @@ jobs:
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
 
+      - name: Commit Manifest
+        run: |
+          git config --local user.email "sungle3737@gmail.com"
+          git config --local user.name "seonglae"
+          git add .
+          git commit -am "Submitting  Intuiter version latest.yaml"
+
+      - name: Create pull request
+        uses: vsoch/pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_REPOSITORY: microsoft/winget-pkgs
+          PULL_REQUEST_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_FROM_BRANCH: master
+          PULL_REQUEST_BODY: |
+            - [o] Have you signed the [Contributor License Agreement](https://cla.opensource.microsoft.com/microsoft/winget-pkgs)?
+            - [o] Have you checked that there aren't other open [pull requests](https://github.com/microsoft/winget-pkgs/pulls) for the same manifest update/change?
+            - [o] Have you validated your manifest locally with `winget validate --manifest <path>`? 
+            - [o] Have you tested your manifest locally with `winge@mast install --manifest <path>`?
+            - [o] Does your manifest conform to the [1.0 schema](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv1.0.md)?
+          PULL_REQUEST_TITLE: Submitting  Intuiter version latest.yaml
+
       - name: Install winget
         shell: powershell
         run: |
