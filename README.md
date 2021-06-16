@@ -119,21 +119,6 @@ This Program coulb be considered as game hack
 
 <br/>
 
-# Info
-## How I Developed
-
-- `Electron` - Engine
-- `Vue, Vuetify` - Front
-- `AutoHotkey` - Core
-- `Github Action` - Distribution
-
-## How to Use
-
-- Use free
-- Please report issue by github or below link comment
-- below link contains precise usage
-
-- [Documentation](https://images.pexels.com/photos/2755173/pexels-photo-2755173.jpeg?cs=srgb&dl=wasd-2755173.jpg)
 
 # How to Contribute
 
