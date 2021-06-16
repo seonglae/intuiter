@@ -137,10 +137,6 @@ This Program coulb be considered as game hack
 
 # How to Contribute
 
-- ahk user can contribute to core
-- js user can contribute electron, vue
+- AHK user can contribute to /resources/ahk Core
+- TS user can contribute to /src/renderer UI
 
-# To do List
-
-- ahk extension
-- custom keybinding feature
