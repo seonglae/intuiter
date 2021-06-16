@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout text-center wrap>
-      <v-flex class="mt-6">
+      <v-flex class="mt-6 container">
         <h1 class="display-2 font-weight-bold mb-3">Intuiter</h1>
         <v-btn v-on:click="make">Make and Run</v-btn>
       </v-flex>

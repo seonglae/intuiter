@@ -4,8 +4,11 @@
   </div>
 </template>
 
-<script>
-export default {}
+<script lang="ts">
+import { defineComponent } from '@vue/composition-api'
+import '@mdi/font/css/materialdesignicons.css'
+
+export default defineComponent({})
 </script>
 
 <style>

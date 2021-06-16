@@ -5,8 +5,8 @@ module.exports = {
     title: 'intuiter',
     meta: [{ charset: 'utf-8' }]
   },
+  components: [""],
   loading: false,
-  plugins: ['@/plugins/icons.js'],
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
   modules: ['@nuxtjs/vuetify'],
   vuetify: {
