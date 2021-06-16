@@ -6,7 +6,6 @@ module.exports = {
     meta: [{ charset: 'utf-8' }]
   },
   loading: false,
-  plugins: ['@/plugins/icons.js'],
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
   modules: ['@nuxtjs/vuetify'],
   vuetify: {
