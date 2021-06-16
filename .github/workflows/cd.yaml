@@ -125,7 +125,8 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          branch: master
+          repository: seonglae/winget-pkgs
 
       - name: Create pull request
         uses: vsoch/pull-request-action@master
