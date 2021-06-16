@@ -71,7 +71,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          repository: microsoft/winget-pkgs
+          repository: seonglae/winget-pkgs
 
       - name: Set VERSION env
         shell: bash
@@ -80,6 +80,8 @@ jobs:
       - name: Make Manifest
         shell: bash
         run: |
+          git remote add microsoft git://github.com/microsoft/winget-pkgs.git
+          git pull microsoft master
           cd manifests/s/Seonglae/Intuiter
           mkdir ${{ env.RELEASE_VERSION }}
           cd ${{ env.RELEASE_VERSION }}
