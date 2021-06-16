@@ -3,8 +3,8 @@ import BrowserWinHandler from './BrowserWinHandler'
 const winHandler = new BrowserWinHandler({
   width: 850,
   height: 500,
-  minWidth: 850,
-  minHeight: 500,
+  minWidth: 1000,
+  minHeight: 600,
   transparent: true,
   frame: false,
   titleBarStyle: 'hiddenInset',

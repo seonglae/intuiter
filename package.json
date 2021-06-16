@@ -47,7 +47,6 @@
     "electron-devtools-installer": "3.2.0",
     "node-cmd": "^4.0.0",
     "nuxt": "2.15.6",
-    "roboto-fontface": "0.10.0",
     "vuetify": "2.5.1",
     "webpack": "4.44.2",
     "sass": "~1.32.12",
