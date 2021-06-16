@@ -1,11 +1,16 @@
+
+<h1 align="center">
+Intuiter
+</h1>
+<p align="center">
+<img src="./build/icons/white.png" width="100"/>
+</p>
+
 [![Electron Badge](https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white)](https://electronjs.org/)
 [![Languages](https://img.shields.io/github/languages/count/sungle3737/intuiter)](https://github.com/sungle3737/intuiter/blob/master/vue.config.js)
 [![Main Language](https://img.shields.io/github/languages/top/sungle3737/intuiter)](https://github.com/sungle3737/intuiter/tree/master/resources/ahk)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/sungle3737/intuiter/blob/master/LICENSE)
 
-<br/>
-
-# Intuiter
 ## If you **Use** PC, this program will definitely help you.
 ### Windows global version Vim Substitute and more++
 

@@ -64,29 +64,31 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Intuiter.exe
-          asset_name: Intuiter.exe
-          asset_content_type: application/exe
+          repository: microsoft/winget-pkgs
 
-      - name: Clone window
+      - name: Set VERSION env
+        shell: bash
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+
+      - name: Make Manifest
         shell: bash
         run: |
-          git clone https://github.com/seonglae/winget-pkgs
-          cd winget-pkgs/manifests/s/Seonglae/Intuiter
-          echo $RELEASE_VERSION
-          mkdir $RELEASE_VERSION
-          cd $RELEASE_VERSION
+          cd manifests/s/Seonglae/Intuiter
+          mkdir ${{ env.RELEASE_VERSION }}
+          cd ${{ env.RELEASE_VERSION }}
+          HASH=$(curl -sL https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe | sha256sum | cut -c-64)
+
           echo "PackageIdentifier: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
-          echo "PackageVersion: ${{ env.RELEASE_VERSION }}" >> Seonglae.Intuiter.yaml
+          echo "PackageVersion:" ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
           echo "License: MIT" >> Seonglae.Intuiter.yaml
           echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
           echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
@@ -95,10 +97,31 @@ jobs:
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe" >> Seonglae.Intuiter.yaml
-          echo "  InstallerSha256: `sha256sum build/Intuiter-0.6.0.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
+          echo "  InstallerSha256: `sha256sum build/Intuiter-${{ env.RELEASE_VERSION }}.exe | cut -c1-64`" >> Seonglae.Intuiter.yaml
           echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
+
+      - name: Commit Manifest
+        run: |
+          git config --local user.email "sungle3737@gmail.com"
+          git config --local user.name "seonglae"
           git add .
-          git commit -am ""
+          git commit -am "Submitting  Intuiter version latest.yaml"
+
+      - name: Create pull request
+        uses: vsoch/pull-request-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_BRANCH: master
+          PULL_REQUEST_REPOSITORY: microsoft/winget-pkgs
+          PULL_REQUEST_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_FROM_BRANCH: master
+          PULL_REQUEST_BODY: |
+            - [o] Have you signed the [Contributor License Agreement](https://cla.opensource.microsoft.com/microsoft/winget-pkgs)?
+            - [o] Have you checked that there aren't other open [pull requests](https://github.com/microsoft/winget-pkgs/pulls) for the same manifest update/change?
+            - [o] Have you validated your manifest locally with `winget validate --manifest <path>`? 
+            - [o] Have you tested your manifest locally with `winge@mast install --manifest <path>`?
+            - [o] Does your manifest conform to the [1.0 schema](https://github.com/microsoft/winget-cli/blob/master/doc/ManifestSpecv1.0.md)?
+          PULL_REQUEST_TITLE: Submitting  Intuiter version latest.yaml
