@@ -1,6 +1,10 @@
 <template>
-  <v-app>
-    <v-app-bar app style="-webkit-app-region: drag">
+  <v-app
+    style="
+  border-radius: 10px;
+  overflow: hidden;"
+  >
+    <v-app-bar app style="-webkit-app-region: drag;  border-radius: 10px; overflow: hidden;">
       <v-app-bar-title class="headline text-uppercase">
         <span>Intuit </span>
         <span class="font-weight-light">Manager</span>
