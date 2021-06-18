@@ -104,5 +104,6 @@ jobs:
       - name: Validate Manifest
         shell: powershell
         run: |
+          $ErrorActionPreference = 'Continue'
           cat manifests/s/Seonglae/Intuiter/latest/Seonglae.Intuiter.yaml
           winget validate --manifest manifests/s/Seonglae/Intuiter/latest
