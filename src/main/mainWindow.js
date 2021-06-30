@@ -1,8 +1,8 @@
 import BrowserWinHandler from './BrowserWinHandler'
 
 const winHandler = new BrowserWinHandler({
-  width: 850,
-  height: 500,
+  width: 1000,
+  height: 600,
   minWidth: 1000,
   minHeight: 600,
   transparent: true,
