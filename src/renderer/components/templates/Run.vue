@@ -1,12 +1,10 @@
 <template>
-  <v-container>
-    <v-layout text-center wrap>
-      <v-flex class="mt-6 container">
-        <h1 class="display-2 font-weight-bold mb-3">Intuiter</h1>
-        <v-btn v-on:click="make">Make and Run</v-btn>
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <div class="flex" text-center>
+    <div class="main" text-center>
+      <h1 class="display-2 font-weight-bold mb-3">Intuiter</h1>
+      <v-btn v-on:click="make">Make and Run</v-btn>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -29,14 +27,12 @@ export default defineComponent({
       const root = resolve(app.getAppPath(), '../../')
       const ahkPath = resolve(root, AHK_PATH)
       const makePath = resolve(root, MAKER_PATH)
-      console.log(ahkPath)
       if (!existsSync(ahkPath) || !existsSync(makePath)) return ifError('No Files')
       run(`"${ahkPath}" "${makePath}"`, afterMake)
     }
 
     // Close After run
     function afterMake(err: Error, data, stderr: string) {
-      console.log(data)
       if (!err) return remote.app.exit(0)
       ifError(stderr)
     }
@@ -52,3 +48,17 @@ export default defineComponent({
   }
 })
 </script>
+
+<style scoped lang="postcss">
+.flex {
+  height: 100vh;
+  display: flex;
+}
+.main {
+  flex: 1 1 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+</style>

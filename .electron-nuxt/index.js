@@ -1,4 +1,3 @@
-
 const path = require('path')
 const webpack = require('webpack')
 const electron = require('electron')
@@ -22,7 +21,7 @@ const launcher = new ElectronLauncher({
   entryFile: path.join(DIST_DIR, 'main/index.js')
 })
 
-function hasConfigArgument (array) {
+function hasConfigArgument(array) {
   for (const el of array) if (el === '--config' || el === '-c') return true
   return false
 }
@@ -34,9 +33,7 @@ const builder = new ElectronBuilder({
 })
 
 const webpackConfig = Webpack.getBaseConfig({
-  entry: isDev
-    ? path.join(MAIN_PROCESS_DIR, 'boot/index.dev.js')
-    : path.join(MAIN_PROCESS_DIR, 'boot/index.prod.js'),
+  entry: isDev ? path.join(MAIN_PROCESS_DIR, 'boot/index.dev.js') : path.join(MAIN_PROCESS_DIR, 'boot/index.prod.js'),
   output: {
     filename: 'index.js',
     path: path.join(DIST_DIR, 'main')
