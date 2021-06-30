@@ -9,9 +9,9 @@ const windows = {
     target: 'nsis',
     // certificateFile: 'Seonglae.pfx',
     // certificatePassword: process.env.PASS,
-    rfc3161TimeStampServer: 'http://timestamp.verisign.com/scripts/timestamp.dll',
+    rfc3161TimeStampServer: 'http://timestamp.verisign.com/scripts/timestamp.dll'
   },
-  nsis: { include: 'src/install/remove_startup.nsh' },
+  nsis: { include: 'src/install/remove_startup.nsh' }
 }
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
   appId: 'com.seonglae.intuiter',
   artifactName: 'Intuiter-${version}.${ext}',
   directories: { output: 'build' },
-  extraResources: [{ from: './src/core/ahk/', to: 'ahk' }],
+  extraResources: [{ from: './resources/ahk/', to: 'ahk' }],
   files: ['package.json', { from: 'dist/main/', to: 'dist/main/' }, { from: 'dist/renderer', to: 'dist/renderer/' }],
-  ...windows,
+  ...windows
 }

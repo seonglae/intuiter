@@ -13,7 +13,7 @@ const config = {
   SRC_DIR,
   MAIN_PROCESS_DIR: path.join(SRC_DIR, 'main'),
   RENDERER_PROCESS_DIR: path.join(SRC_DIR, 'renderer'),
-  RESOURCES_DIR: path.join(SRC_DIR, 'core'),
+  RESOURCES_DIR: path.join(PROJECT_ROOT, 'resources'),
   DIST_DIR: path.join(PROJECT_ROOT, 'dist'),
   BUILD_DIR: path.join(PROJECT_ROOT, 'build'),
 
