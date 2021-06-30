@@ -1,4 +1,4 @@
-; meta - display rotate 
+; meta - display rotate
 
 Lalt & up::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){

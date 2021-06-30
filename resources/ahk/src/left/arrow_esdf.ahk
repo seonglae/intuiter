@@ -50,7 +50,7 @@ Lalt & e::
         send, +!^e
     }
     else if (GetKeyState("Lwin")){
-        send #{up}  
+        send #{up}
     }
 Return
 
