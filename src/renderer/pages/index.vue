@@ -24,9 +24,16 @@
       </v-btn>
     </v-app-bar>
 
-    <v-main>
-      <templates-run />
-    </v-main>
+    <v-main> </v-main>
+
+    <v-tabs-items v-model="index" class="wrapper" style="background: #121213" touchless>
+      <v-tab-item v-for="(tab, i) in tabs" :key="i" eager>
+        <templates-run v-if="tab.key === 'home'" />
+        <templates-opts v-else-if="tab.key === 'opt'" />
+        <templates-shortcuts v-else-if="tab.key === 'shortcut'" />
+        <templates-exts v-else-if="tab.key === 'ext'" />
+      </v-tab-item>
+    </v-tabs-items>
   </v-app>
 </template>
 
