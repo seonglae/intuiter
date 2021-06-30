@@ -1,31 +1,22 @@
 const { RESOURCES_DIR } = require('./config')
 
 const RESOURCES_DIR_PATH = RESOURCES_DIR.replace(/\\/g, '/')
-
 const isProduction = process.env.NODE_ENV === 'production'
 
-function devPath () {
-  return `'${RESOURCES_DIR_PATH}'` // Overwrite path
+function devPath() {
+  return `'${RESOURCES_DIR_PATH}'`
 }
 
-function productionPath () {
-  return `process.resourcesPath`; // Keep path provided by Electron
+function productionPath() {
+  return `process.resourcesPath`
 }
 
 module.exports = {
-
-  // MAIN PROCESS
-
-  mainProcess () {
+  mainProcess() {
     return isProduction ? productionPath() : devPath()
   },
-
-  // RENDERER PROCESS
-
-  nuxtClient () {
+  nuxtClient() {
     return isProduction ? productionPath() : devPath()
   },
-
   nuxtServer: devPath
-
 }

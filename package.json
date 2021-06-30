@@ -2,7 +2,7 @@
   "name": "intuiter",
   "displayName": "Intuiter",
   "description": "Global Windows Productivity Application",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "./dist/main/index.js",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",
