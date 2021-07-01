@@ -1,9 +1,9 @@
 
-<h1 align="center">
-Intuiter
-</h1>
 <p align="center">
 <img src="./asset/icons/white.png" width="100"/>
+</p>
+<p align="center">
+<img src="./asset/images/button.gif"/>
 </p>
 
 

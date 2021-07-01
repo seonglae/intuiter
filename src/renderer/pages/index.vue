@@ -15,7 +15,7 @@
       <v-btn v-on:click="openDoc" class="mr-2">
         Doc
       </v-btn>
-      <v-btn v-on:click="() => remote.app.exit(0)" color="blue-grey darken-3">
+      <v-btn v-on:click="() => remote.app.exit(0)" class="blue-grey darken-3">
         Exit
       </v-btn>
     </v-app-bar>
@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent, ref, onMounted } from '@vue/composition-api'
 import { shell, remote } from 'electron'
 
 const DOC = 'https://github.com/seonglae/intuiter'
@@ -49,6 +49,7 @@ export default defineComponent({
       { name: 'Extension', key: 'ext' }
     ]
     const index = ref(0)
+
     return { openDoc, remote, tabs, index }
   }
 })
