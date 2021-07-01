@@ -2,7 +2,7 @@
   "name": "intuiter",
   "displayName": "Intuiter",
   "description": "Global Windows Productivity Application",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "./dist/main/index.js",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",
@@ -20,7 +20,7 @@
     "email": "sungle3737@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/michalzaq12/electron-nuxt/blob/master/README.md",
+  "homepage": "https://github.com/seonglae/intuiter",
   "engines": {
     "node": ">=12.13.0"
   },

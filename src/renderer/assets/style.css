@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  -webkit-app-region: no-drag;
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.top {
+  flex: 1 0 auto;
+}
+
+.bottom {
+  flex: 1 1 auto;
+}
+
+.drag {
+  -webkit-app-region: drag;
+}
+
+.nodrag {
+  -webkit-app-region: no-drag;
+}
+
+#app {
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+#view {
+  background: #121314 !important;
+}
+
+#bar {
+  -webkit-app-region: drag;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1 1 auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
