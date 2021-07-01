@@ -15,17 +15,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped lang="postcss">
-.flex {
-  height: 100vh;
-  display: flex;
-}
-.main {
-  flex: 1 1 auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-bottom: 10rem;
-  text-align: center;
-}
-</style>
