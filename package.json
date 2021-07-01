@@ -51,6 +51,7 @@
     "sass": "~1.32.12",
     "vuetify": "2.5.1",
     "webpack": "4.44.2",
-    "webpack-node-externals": "2.5.2"
+    "webpack-node-externals": "2.5.2",
+    "dancing-button": "^1.0.2"
   }
 }
