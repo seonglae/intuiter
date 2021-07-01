@@ -1,12 +1,15 @@
 
-<h1 align="center">
-Intuiter
-</h1>
+<p align="center">
+<img src="./asset/images/button.gif"/>
+</p>
+
 <p align="center">
 <img src="./asset/icons/white.png" width="100"/>
 </p>
 
-
+<h1 align="center">
+Intuiter
+</h1>
 <p align="center">
 <img src="https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white"/>
 <img src="https://img.shields.io/github/languages/top/seonglae/intuiter"/>
