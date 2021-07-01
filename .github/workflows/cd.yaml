@@ -103,9 +103,6 @@ jobs:
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageVersion:" ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
-          echo "License: MIT" >> Seonglae.Intuiter.yaml
-          echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
-          echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
           echo "  Silent: /S" >> Seonglae.Intuiter.yaml
           echo "  SilentWithProgress: /S" >> Seonglae.Intuiter.yaml
           echo "Installers:" >> Seonglae.Intuiter.yaml
