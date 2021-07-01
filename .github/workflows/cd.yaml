@@ -103,8 +103,6 @@ jobs:
           echo "Publisher: Seonglae" >> Seonglae.Intuiter.yaml
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageVersion:" ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
-          echo "  Silent: /S" >> Seonglae.Intuiter.yaml
-          echo "  SilentWithProgress: /S" >> Seonglae.Intuiter.yaml
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x86" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe" >> Seonglae.Intuiter.yaml
