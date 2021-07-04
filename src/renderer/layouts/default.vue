@@ -1,6 +1,9 @@
 <template>
   <div>
     <nuxt />
+    <v-overlay :value="$store.state.loading">
+      <v-progress-circular indeterminate size="64" />
+    </v-overlay>
   </div>
 </template>
 
@@ -11,8 +14,4 @@ import '@mdi/font/css/materialdesignicons.css'
 export default defineComponent({})
 </script>
 
-<style>
-body {
-  margin: 0 !important;
-}
-</style>
+<style src="~/assets/default.css" />

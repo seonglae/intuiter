@@ -1,13 +1,4 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; meta - <: left, >: right
-; meta - #:win, ^: ctrl, !: alt, +: shift
-; meta - remind Appskey
-; meta - sc138 - hanja, right alt
-; meta - sc038 - left alt
-; meta - sc11D - right control
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-; meta - Administrator and Set Options
+; Administrator and Set Options
 #NoTrayIcon
 #SingleInstance Force
     
@@ -23,9 +14,8 @@ Process, WaitClose, Intuit.exe
 ; meta - check previous file and remove
 if FileExist("Intuit.exe"){
     FileDelete, Intuit.exe
-    while (FileExist("Intuit.exe")){
+    while (FileExist("Intuit.exe"))
         sleep 1
-    }
 }
 
 ; meta - Make EXE
@@ -37,7 +27,5 @@ if FileExist("Intuit.exe"){
     run "Intuit.exe"
     break
 }
-
-MsgBox, , Make and Run, Complete
 
 Exitapp

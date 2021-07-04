@@ -55,4 +55,4 @@ export default defineComponent({
 })
 </script>
 
-<style src="~/assets/style.css" />
+<style src="~/assets/toast.css" />
