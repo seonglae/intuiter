@@ -2,6 +2,10 @@
   display: none;
 }
 
+body {
+  margin: 0 !important;
+}
+
 button {
   -webkit-app-region: no-drag;
 }

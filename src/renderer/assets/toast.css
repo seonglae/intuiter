@@ -1,0 +1,16 @@
+.toasted {
+  width: 20em !important;
+  padding: 1em !important;
+  left: unset !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  font-family: Roboto, -apple-system, sans-serif !important;
+}
+
+.toasted:hover {
+  filter: brightness(150%);
+}
+
+.toasted-container.bottom-center {
+  bottom: 1%;
+}
