@@ -13,7 +13,6 @@ Intuiter
 <p align="center">
 <img src="https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white"/>
 <img src="https://img.shields.io/github/languages/top/seonglae/intuiter"/>
-<img src="https://img.shields.io/github/languages/count/sungle3737/intuiter"/>
 <img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"/>
 </p>
 
@@ -32,24 +31,10 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 
 둘다 마음에 차지 않는 부분이 있었고, 개발자 뿐만 아니라 일반 사용자도 높은 생산성과 접근성을 가질 수 있도록 설계했습니다
 
-
-<h1 align="center">
-  <a href="https://intuiter.vercel.app">
-Document
-    </a>
-</h1>
-<h1 align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter">
-VSCode Version
-    </a>
-</h1>
+<br/>
 
 
-<h1 align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter">
-VSCode Version
-    </a>
-</h1>
+# [How to Use](https://intuiter.vercel.app)
 
 
 # Warning
@@ -58,6 +43,7 @@ This Program coulb be considered as game hack
 <br/>
 
 
+# [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
 # How to Contribute
 
 - **AHK user** can contribute to `/resources/ahk` **Core**

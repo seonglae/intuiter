@@ -5,9 +5,6 @@ const { killWithAllSubProcess } = utils
 
 const NUXT_PROCESS_PATH = path.join(__dirname, 'nuxt-process.js')
 
-/**
- * @implements {IStep}
- */
 class NuxtApp {
   constructor(logger) {
     this.logger = logger

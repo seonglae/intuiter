@@ -52,12 +52,3 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\src\win\display_rotate.ahk
 #Include %A_scriptDir%\src\win\app_shortcut.ahk
 #Include %A_scriptDir%\src\win\global_win.ahk
-
-; get gui make hotstring and include ahk files to runner.ahk
-; and run make ahk file
-; from right alt python write from this area by default runner in make.py by pyqt
-; gui make hot string
-
-; make default.ahk to runner.ahk from
-; add hotstring value
-; run make.ahk
