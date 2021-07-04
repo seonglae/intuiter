@@ -4,11 +4,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "skipLibCheck": true,
-    "lib": [
-      "esnext",
-      "esnext.asynciterable",
-      "dom"
-    ],
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
     "noImplicitAny": false,
     "esModuleInterop": true,
     "allowJs": true,
@@ -17,19 +13,10 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
-      ],
-      "@/*": [
-        "./*"
-      ]
+      "~/*": ["./*"],
+      "@/*": ["./*"]
     },
-    "types": [
-      "@nuxt/types",
-      "@nuxtjs/toast"
-    ]
+    "types": ["@nuxt/types", "@nuxtjs/toast"]
   },
-  "include": [
-    "./**/*"
-  ]
+  "include": ["./**/*"]
 }
