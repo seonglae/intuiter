@@ -25,7 +25,11 @@
       ]
     },
     "types": [
-      "@nuxt/types"
+      "@nuxt/types",
+      "@nuxtjs/toast"
     ]
-  }
+  },
+  "include": [
+    "./**/*"
+  ]
 }
