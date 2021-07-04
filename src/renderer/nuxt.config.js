@@ -1,3 +1,6 @@
+// @ts-check
+
+/** @type {import('@nuxt/types').NuxtOptions} */
 module.exports = {
   ssr: false,
   target: 'static',
@@ -5,6 +8,7 @@ module.exports = {
   components: true,
   loading: false,
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
-  modules: ['@nuxtjs/vuetify'],
+  modules: ['@nuxtjs/vuetify', '@nuxtjs/toast'],
+  toast: { position: 'bottom-center', duration: 2000, keepOnHover: true },
   vuetify: { theme: { dark: true } }
 }
