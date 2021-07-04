@@ -12,11 +12,7 @@ process.on('message', async ({ action, target }) => {
   }
 
   await nuxt.ready()
-
-  // https://github.com/nuxt/nuxt.js/blob/dev/packages/builder/src/builder.js
   const builder = new Builder(nuxt)
-
-  // https://github.com/nuxt/nuxt.js/blob/dev/packages/generator/src/generator.js
   const generator = new Generator(nuxt, builder)
 
   if (target === 'development') {
