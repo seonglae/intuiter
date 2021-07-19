@@ -35,6 +35,10 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 
 
 # [How to Use](https://intuiter.vercel.app)
+### Key Features
+- Text Navigation
+- Application Shortcut
+- Mouse Control
 
 
 # Warning
