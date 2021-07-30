@@ -4,6 +4,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "lib": [
       "esnext",
       "esnext.asynciterable",
