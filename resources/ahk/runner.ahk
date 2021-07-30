@@ -4,9 +4,6 @@
 
 ; meta - tray
 Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico
-Menu, Tray, NoStandard
-Menu, Tray, Add, Reload, ReLoad
-Menu, Tray, Add, Exit  , QuitScript
 Return
 
 Reload:

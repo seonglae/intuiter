@@ -2,7 +2,7 @@
   "name": "intuiter",
   "displayName": "Intuiter",
   "description": "Global Windows Productivity Application",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "main": "./dist/main/index.js",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",
@@ -15,6 +15,7 @@
     "ahk",
     "windows"
   ],
+  "repository": "https://github.com/seonglae/intuiter",
   "author": {
     "name": "Seonglae Cho",
     "email": "sungle3737@gmail.com"
@@ -39,7 +40,6 @@
     "@xpda-dev/electron-builder": "^0.2.1",
     "@xpda-dev/electron-launcher": "^0.3.0",
     "@xpda-dev/webpack-step": "^0.1.2",
-    "browser-env": "3.3.0",
     "consola": "^2.15.3",
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
@@ -48,7 +48,6 @@
     "electron-builder": "22.11.3",
     "electron-devtools-installer": "3.2.0",
     "ini": "^2.0.0",
-    "node-cmd": "^4.0.0",
     "nuxt": "2.15.6",
     "sass": "~1.32.12",
     "vuetify": "2.5.1",
