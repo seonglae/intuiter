@@ -1,23 +1,12 @@
-
-#SingleInstance Force
-    #Persistent
-
-; meta - tray
-Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico
-Return
-
-Reload:
-    MsgBox ,,AHK, Reload Start
-    Reload
-Return
-
-QuitScript:
-    ExitApp
-Return
-
-SetWorkingDir %A_ScriptDir%
+; meta - tray icon
+Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico,,1
 
 ; meta - Administrator
+#SingleInstance Force
+SetWorkingDir %A_ScriptDir%
+
+
+
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%",,hide
 
