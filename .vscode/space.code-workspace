@@ -1,12 +1,12 @@
 {
   "folders": [
     {
-      "path": "..",
-      "name": "root"
-    },
-    {
       "path": "..\\src\\renderer",
       "name": "nuxt"
+    },
+    {
+      "path": "..",
+      "name": "root"
     },
     {
       "path": "..\\resources\\ahk"
