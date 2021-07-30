@@ -36,7 +36,7 @@ import pkg from '../../../package.json'
 export default defineComponent({
   name: 'index',
   setup() {
-    const github = () => shell.openExternal(package.repository)
+    const github = () => shell.openExternal(pkg.repository)
 
     const tabs = [
       { name: 'Home', key: 'home' },

@@ -122,7 +122,7 @@ mouse_right(accel, max, cos, sin, axis){
 }
 
 MouseRelativeMove(x, y){
-    DllCall("mouse_event", UInt,1, Int,x, Int, y)
+    DllCall("mouse_event", "UInt",0x0001, "Int",x, "Int", y)
     sleep 1
     return
 }
