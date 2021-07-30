@@ -2,7 +2,7 @@
   "name": "intuiter",
   "displayName": "Intuiter",
   "description": "Global Windows Productivity Application",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "main": "./dist/main/index.js",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",
@@ -53,5 +53,8 @@
     "vuetify": "2.5.1",
     "webpack": "4.44.2",
     "webpack-node-externals": "2.5.2"
+  },
+  "dependencies": {
+    "node-cmd": "^5.0.0"
   }
 }
