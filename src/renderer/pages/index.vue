@@ -12,8 +12,8 @@
         <v-spacer class="drag" />
       </v-tabs>
 
-      <v-btn v-on:click="openDoc" class="mr-2">
-        Doc
+      <v-btn v-on:click="github" class="mr-2">
+        Github
       </v-btn>
       <v-btn v-on:click="() => remote.app.exit(0)" class="blue-grey darken-3">
         Exit
@@ -23,24 +23,20 @@
     <v-tabs-items v-model="index" class="wrapper bottom" id="view" touchless>
       <v-tab-item v-for="(tab, i) in tabs" :key="i" eager class="wrapper">
         <templates-run v-if="tab.key === 'home'" class="wrapper" />
-        <templates-opts v-else-if="tab.key === 'opt'" class="wrapper" />
-        <templates-shortcuts v-else-if="tab.key === 'shortcut'" class="wrapper" />
-        <templates-exts v-else-if="tab.key === 'ext'" class="wrapper" />
       </v-tab-item>
     </v-tabs-items>
   </v-app>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from '@vue/composition-api'
+import { defineComponent, ref } from '@vue/composition-api'
 import { shell, remote } from 'electron'
-
-const DOC = 'https://github.com/seonglae/intuiter'
+import pkg from '../../../package.json'
 
 export default defineComponent({
   name: 'index',
   setup() {
-    const openDoc = () => shell.openExternal(DOC)
+    const github = () => shell.openExternal(package.repository)
 
     const tabs = [
       { name: 'Home', key: 'home' },
@@ -50,7 +46,7 @@ export default defineComponent({
     ]
     const index = ref(0)
 
-    return { openDoc, remote, tabs, index }
+    return { github, remote, tabs, index }
   }
 })
 </script>
