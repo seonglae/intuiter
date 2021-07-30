@@ -1,28 +1,31 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		},
-		{
-			"path": "..\\src\\renderer"
-		},
-		{
-			"path": "..\\src\\main"
-		},
-		{
-			"path": "..\\resources\\ahk"
-		},
-		{
-			"path": "..\\.electron-nuxt"
-		},
-		{
-			"path": "..\\src"
-		}
-	],
-	"settings": {
-		"search.useIgnoreFiles": true,
-		"search.exclude": {
-			"**/.nuxt": true,
-		},
-	}
+  "folders": [
+    {
+      "path": "..",
+      "name": "root"
+    },
+    {
+      "path": "..\\src\\renderer",
+      "name": "nuxt"
+    },
+    {
+      "path": "..\\resources\\ahk"
+    },
+    {
+      "path": "..\\src\\main"
+    },
+    {
+      "path": "..\\.electron-nuxt",
+      "name": "lib"
+    },
+    {
+      "path": "..\\src"
+    }
+  ],
+  "settings": {
+    "search.useIgnoreFiles": true,
+    "search.exclude": {
+      "**/.nuxt": true
+    }
+  }
 }
