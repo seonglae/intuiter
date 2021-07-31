@@ -52,9 +52,9 @@ This Program coulb be considered as game hack
 <br/>
 
 
-# [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
-# How to Contribute
+# Contribute
 
 - **AHK user** can contribute to `/resources/ahk` **Core**
 - **TS user** can contribute to `/src/renderer` **UI**
+- [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
 
