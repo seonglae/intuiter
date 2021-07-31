@@ -40,8 +40,11 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 - Application Shortcut
 - Mouse Control
 
-# [Install](https://github.com/seonglae/intuiter/releases/latest/download/Intuiter.exe)
-
+# [Download](https://github.com/seonglae/intuiter/releases/latest/download/Intuiter.exe)
+### Or install by command
+```bash
+winget install intuiter
+```
 
 # Warning
 This Program coulb be considered as game hack
