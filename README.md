@@ -34,7 +34,7 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 <br/>
 
 
-## [Document Link](https://intuiter.vercel.app/) /  [사용법 링크](https://intuiter.vercel.app/ko/)
+# [Document Link](https://intuiter.vercel.app/) /  [사용법 링크](https://intuiter.vercel.app/ko/)
 ### Key Features
 - Text Navigation
 - Application Shortcut
