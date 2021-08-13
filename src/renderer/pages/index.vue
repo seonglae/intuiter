@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app >
     <v-app-bar app id="bar" class="top">
       <v-app-bar-title class="headline text-uppercase">
         <span>Intuit </span>
