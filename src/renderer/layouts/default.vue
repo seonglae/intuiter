@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <nuxt />
     <v-overlay :value="$store.state.loading">
       <v-progress-circular indeterminate size="64" />
