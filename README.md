@@ -34,11 +34,17 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 <br/>
 
 
-# [Document Link](https://intuiter.vercel.app/) /  [사용법 링크](https://intuiter.vercel.app/ko/)
+# [Document](https://intuiter.vercel.app/) /  [사용법](https://intuiter.vercel.app/ko/)
+
+Check [here](https://intuiter.vercel.app/) / 여기에 [사용법](https://intuiter.vercel.app/ko/) 있음
+
 ### Key Features
 - Text Navigation
 - Application Shortcut
 - Mouse Control
+
+![image](https://user-images.githubusercontent.com/27716524/129451148-e466a3f8-744e-48b3-85c2-81b7d9c73df4.png)
+
 
 # [Download](https://github.com/seonglae/intuiter/releases/latest/download/Intuiter.exe)
 ### Or install by command
