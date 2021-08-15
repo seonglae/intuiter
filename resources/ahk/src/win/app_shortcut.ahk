@@ -1,9 +1,8 @@
 ; meta - application shortcuts
 
 Lwin & c::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
         Run cmd.exe /c "code-insiders || code",,hide
-    }
     else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         Run *Runas cmd.exe /c "code-insiders || code",,hide
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
