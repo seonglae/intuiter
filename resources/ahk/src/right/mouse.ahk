@@ -1,12 +1,9 @@
 ; meta - mouse move
-
 Lwin & i::
     if (!GetKeyState("shift") && !GetKeyState("ctrl"))
         mouse_up(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
-
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, #i
-
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
     }
 return
@@ -14,10 +11,8 @@ return
 Lwin & k::
     if (!GetKeyState("shift") && !GetKeyState("ctrl"))
         mouse_down(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
-
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, #k
-
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
     }
 return
@@ -34,19 +29,13 @@ return
 Lwin & l::
     if (!GetKeyState("shift"))
         mouse_right(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
-
     else if (GetKeyState("shift"))
         run %windir%\System32\tsdiscon.exe
 return
 
-; meta - scroll at win
+; meta - click
 Lwin & u::
-    if (!GetKeyState("shift"))
-        click_left("u")
-
-    else if (GetKeyState("shift"))
-        Run *Runas cmd.exe /c explorer.exe shell:appsFolder\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc!ubuntu1804,,hide
-
+    click_left("u")
 return
 
 Lwin & o::
@@ -95,30 +84,22 @@ return
 Lwin & h::
     if (!GetKeyState("shift"))
         scroll_up("h")
-    else if (GetKeyState("shift")){
-        if FileExist("C:\Users\Seonglae\AppData\Local\hyper\Hyper.exe")
-            run *Runas C:\Users\Seonglae\AppData\Local\hyper\Hyper.exe
-        else
-            send #h
-    }
+    else if (GetKeyState("shift"))
+        send #h
 return
 
 Lalt & u::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         scroll_up("u")
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         scroll_left("u")
-    }
     else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-
     }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, {home}
-    }
-    else if (GetKeyState("Lwin")){
-    }
-Return
+    else if (GetKeyState("Lwin"))
+        click_left("u")
+return
 
 Lalt & o::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -131,4 +112,4 @@ Lalt & o::
         send, {end}
     else if (GetKeyState("Lwin")){
     }
-Return
+return
