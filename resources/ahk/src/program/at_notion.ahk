@@ -15,63 +15,52 @@ Lalt & 1::
         Send, ^+1
         send, {Enter}---{Enter 5}
     }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, ^+1
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, ^!1
-    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & 3::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         Send, ^+3
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, ^+3
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, ^!3
-    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & 5::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         Send, ^+5
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, ^+5
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, ^!5
-    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & 9::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         Send, ^+9
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, +^9
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, ^!9
-    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 

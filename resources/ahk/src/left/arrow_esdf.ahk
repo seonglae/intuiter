@@ -1,73 +1,53 @@
 ; meta - move - asdw - for accurate move
 
 Lalt & s::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         send, {left}
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, +{left}
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!s
-    }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!^s
-    }
-    else if (GetKeyState("Lwin")){
+    else if (GetKeyState("Lwin"))
         send, #{left}
-    }
-Return
+return
 
 Lalt & f::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         send, {Right}
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, +{Right}
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!f
-    }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!^f
-    }
-    else if (GetKeyState("Lwin")){
+    else if (GetKeyState("Lwin"))
         send, #{right}
-    }
-Return
+return
 
 Lalt & e::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         send, {up}
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, +{up}
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!e
-    }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!^e
-    }
-    else if (GetKeyState("Lwin")){
-        send #{up}  
-    }
-Return
+    else if (GetKeyState("Lwin"))
+        send #{up} 
+return
 
 Lalt & d::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         send, {down}
-    }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, +{down}
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, +!d
-    }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send +!^d
-    }
-    else if (GetKeyState("Lwin")){
+    else if (GetKeyState("Lwin"))
         send, #{down}
-    }
-Return
+return

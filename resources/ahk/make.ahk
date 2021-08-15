@@ -1,7 +1,7 @@
 ; Administrator and Set Options
 #NoTrayIcon
 #SingleInstance Force
-    
+
 SetWorkingDir %A_ScriptDir%
 
 if not A_IsAdmin
