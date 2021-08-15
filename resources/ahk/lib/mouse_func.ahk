@@ -33,7 +33,7 @@ mouse_up(accel, max, cos, sin, axis){
 mouse_down(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("k", "P")){
-        if (GetKeyState("j", "P")  and GetKeyState("k", "P")){
+        if (GetKeyState("j", "P") and GetKeyState("k", "P")){
             while(GetKeyState("j", "P") and GetKeyState("k", "P")){
                 MouseRelativeMove(-cos * v, sin * v)
                 if(v < max)
@@ -41,17 +41,17 @@ mouse_down(accel, max, cos, sin, axis){
             }
             return
         }
-        
-        else if (GetKeyState("l", "P")  and GetKeyState("k", "P")){
-            while(GetKeyState("l", "P")  and GetKeyState("k", "P")){
+
+        else if (GetKeyState("l", "P") and GetKeyState("k", "P")){
+            while(GetKeyState("l", "P") and GetKeyState("k", "P")){
                 MouseRelativeMove(cos * v, sin * v)
                 if(v < max)
                     v := v + accel
             }
             return
         }
-        else if (GetKeyState("k","P") and !GetKeyState("j","P")  and !GetKeyState("l","P")){
-            while (GetKeyState("k","P") and !GetKeyState("j","P")  and !GetKeyState("l","P")){
+        else if (GetKeyState("k","P") and !GetKeyState("j","P") and !GetKeyState("l","P")){
+            while (GetKeyState("k","P") and !GetKeyState("j","P") and !GetKeyState("l","P")){
                 MouseRelativeMove(0, axis * v)
                 if(v < max)
                     v := v + accel
@@ -112,9 +112,9 @@ mouse_right(accel, max, cos, sin, axis){
         }
         else if (GetKeyState("l", "P") and !GetKeyState("k", "P") and !GetKeyState("i", "P")){
             while (GetKeyState("l", "P") and !GetKeyState("k", "P") and !GetKeyState("i", "P")){
-            MouseRelativeMove(axis * v, 0)
-            if(v < max)
-                v := v + accel
+                MouseRelativeMove(axis * v, 0)
+                if(v < max)
+                    v := v + accel
             }
         }
         return
@@ -164,7 +164,6 @@ scroll_right(key){
         a_divider := a_divider + 1
     }
 }
-
 
 ; meta - mouse click
 click_left(key){

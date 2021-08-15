@@ -5,8 +5,6 @@ Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico,,1
 #SingleInstance Force
 SetWorkingDir %A_ScriptDir%
 
-
-
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%",,hide
 
@@ -30,9 +28,8 @@ if FileExist("C:\Home\Usage\Prog\System\ThrottleStop\ThrottleStop.exe"){
 
 ; meta - regedit remove lock function for mouse
 RegWrite, REG_DWORD, HKCU, SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System, DisableLockWorkstation, 000001
-if (ErrorLevel = 1){
+if (ErrorLevel = 1)
     MsgBox, regedit fail
-}
 
 ; meta - get monitor infor
 Loop, %MONITOR_COUNT%

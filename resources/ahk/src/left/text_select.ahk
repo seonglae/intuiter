@@ -16,17 +16,15 @@ Lalt & w::
                 return
         }
     }
-    else if (GetKeyState("shift") && !GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, {home}+{end}
-    }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, {up}{end}+{down}+{end}
-    }
     else if (GetKeyState("shift") && GetKeyState("ctrl")){
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & a::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
@@ -54,4 +52,4 @@ Lalt & a::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
