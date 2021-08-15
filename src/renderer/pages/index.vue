@@ -8,7 +8,7 @@
 
       <v-tabs v-model="index" class="nodrag">
         <v-spacer class="drag" />
-        <v-tab v-for="tab in tabs" :key="tab.type"> {{ tab.name }} </v-tab>
+        <v-tab v-for="tab in tabs" :key="tab.key"> {{ tab.name }} </v-tab>
         <v-spacer class="drag" />
       </v-tabs>
 
