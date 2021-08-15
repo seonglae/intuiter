@@ -56,7 +56,7 @@ Lalt & r::
         send !^r
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, !+^r
-Return
+return
 
 Lalt & q::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -82,7 +82,7 @@ Lalt & q::
             run C:\Windows\System32\scrnsave.scr
         return 
     }
-Return
+return
 
 ; meta - alt included
 Lalt & t::
@@ -96,7 +96,7 @@ Lalt & t::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & m::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
@@ -110,4 +110,4 @@ Lalt & m::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return

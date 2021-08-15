@@ -23,7 +23,7 @@ Lalt & 1::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & 3::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -36,7 +36,7 @@ Lalt & 3::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & 5::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -49,7 +49,7 @@ Lalt & 5::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & 9::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -62,5 +62,5 @@ Lalt & 9::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 

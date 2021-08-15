@@ -2,7 +2,7 @@
 
 IME_CHECK(WinTitle){
     WinGet,hWnd,ID,%WinTitle%
-    Return Send_ImeControl(ImmGetDefaultIMEWnd(hWnd),0x005,"")
+    return Send_ImeControl(ImmGetDefaultIMEWnd(hWnd),0x005,"")
 }
 
 Send_ImeControl(DefaultIMEWnd, wParam, lParam){

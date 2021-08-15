@@ -24,7 +24,7 @@ Lalt & w::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & a::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
@@ -52,4 +52,4 @@ Lalt & a::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
