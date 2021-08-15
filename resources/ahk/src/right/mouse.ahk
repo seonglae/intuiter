@@ -86,12 +86,10 @@ Lalt & u::
         scroll_up("u")
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         scroll_left("u")
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-    }
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
+        scroll_up("u")
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, {home}
-    else if (GetKeyState("Lwin"))
-        click_left("u")
 return
 
 Lalt & o::
@@ -99,10 +97,8 @@ Lalt & o::
         scroll_down("o")
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         scroll_right("o")
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-    } 
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
+        scroll_down("o")
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, {end}
-    else if (GetKeyState("Lwin")){
-    }
 return
