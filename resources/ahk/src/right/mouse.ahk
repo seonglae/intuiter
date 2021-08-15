@@ -1,29 +1,23 @@
 ; meta - mouse move
 Lwin & i::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
+    if (!GetKeyState("shift"))
         mouse_up(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, #i
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-    }
 return
 
 Lwin & k::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
+    if (!GetKeyState("shift"))
         mouse_down(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, #k
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-    }
 return
 
 Lwin & j::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
+    if (!GetKeyState("shift"))
         mouse_left(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
         send, #j
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
-    }
 return
 
 Lwin & l::
@@ -43,7 +37,6 @@ Lwin & o::
         click_right("o")
     else if (GetKeyState("shift"))
         send, #o
-
 return
 
 ; meta - mouse click
@@ -77,7 +70,7 @@ Lwin & m::
     if (!GetKeyState("shift"))
         click_mid("m")
     else if (GetKeyState("shift"))
-        send, #m
+        click_mid("m")
 return
 
 ; meta - mouse scroll global variable

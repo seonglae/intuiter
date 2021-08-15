@@ -3,6 +3,8 @@
 mouse_up(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("i", "P")){ 
+        if (GetKeyState("ctrl")) 
+            v:= max
         if (GetKeyState("l", "P") and GetKeyState("i", "P")){
             while(GetKeyState("l", "P") and GetKeyState("i", "P")){
                 MouseRelativeMove(cos * v, -sin * v)
@@ -33,6 +35,8 @@ mouse_up(accel, max, cos, sin, axis){
 mouse_down(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("k", "P")){
+        if (GetKeyState("ctrl")) 
+            v:= max
         if (GetKeyState("j", "P") and GetKeyState("k", "P")){
             while(GetKeyState("j", "P") and GetKeyState("k", "P")){
                 MouseRelativeMove(-cos * v, sin * v)
@@ -64,6 +68,8 @@ mouse_down(accel, max, cos, sin, axis){
 mouse_left(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("j", "P")){
+        if (GetKeyState("ctrl")) 
+            v:= max
         if (GetKeyState("i", "P") and GetKeyState("j", "P")){
             while(GetKeyState("i", "P")and GetKeyState("j", "P")){
                 MouseRelativeMove(-cos * v, -sin * v)
@@ -94,6 +100,8 @@ mouse_left(accel, max, cos, sin, axis){
 mouse_right(accel, max, cos, sin, axis){
     v = 0
     while (GetKeyState("l", "P")){
+        if (GetKeyState("ctrl")) 
+            v:= max
         if (GetKeyState("k", "P") and GetKeyState("l", "P")){
             while(GetKeyState("k", "P") and GetKeyState("l", "P")){
                 MouseRelativeMove(cos * v, sin * v)
