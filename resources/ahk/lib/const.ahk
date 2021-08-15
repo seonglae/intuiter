@@ -1,6 +1,5 @@
 ; meta - mouse move
 MAX_V = 5
-START_V = 0.2
 V_ACCEL = 0.2
 X_V= 4
 Y_V = 3
