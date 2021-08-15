@@ -27,9 +27,8 @@ Lwin & q::
             Run *Runas cmd.exe /c shutdown -s -t 0,,hide
         }
     }
-    else if (!GetKeyState("shift")){
+    else if (!GetKeyState("shift"))
         send #q
-    }
 return
 
 Lwin & r::
@@ -45,7 +44,6 @@ Lwin & r::
     }
 return
 
-
 ; meta - autohotkey meta
 Lalt & r::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
@@ -58,12 +56,11 @@ Lalt & r::
         send !^r
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, !+^r
-Return
+return
 
 Lalt & q::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         send, {esc}
-    }
     else if (GetKeyState("shift") && !GetKeyState("ctrl")){
         Msgbox, 4, AHK, AHK Exit and Restore Lock Feature?, 5
         ifMsgbox, Yes
@@ -74,12 +71,10 @@ Lalt & q::
             Exitapp
         }
     }
-    else if (!GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
         send, !^q
-    }
-    else if (GetKeyState("shift") && GetKeyState("ctrl")){
+    else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, !+^q
-    }
     else if (GetKeyState("Lwin")){
         if FileExist("exe\screen_save.lnk")
             Run exe\screen_save
@@ -87,10 +82,7 @@ Lalt & q::
             run C:\Windows\System32\scrnsave.scr
         return 
     }
-Return
-        
-
-
+return
 
 ; meta - alt included
 Lalt & t::
@@ -104,8 +96,7 @@ Lalt & t::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
-
+return
 
 Lalt & m::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
@@ -119,4 +110,4 @@ Lalt & m::
     }
     else if (GetKeyState("Lwin")){
     }
-Return
+return
