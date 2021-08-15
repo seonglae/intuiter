@@ -2,7 +2,7 @@
 
 mouse_up(accel, max, cos, sin, axis){
     v = 0
-    while (GetKeyState("i", "P")){ 
+    while (GetKeyState("i", "P")){
         if (GetKeyState("ctrl")) 
             v:= max
         if (GetKeyState("l", "P") and GetKeyState("i", "P")){
@@ -140,6 +140,8 @@ MouseRelativeMove(x, y){
 scroll_down(key){
     a_divider = 3
     while (GetKeyState(key, "P")){
+        if (GetKeyState("ctrl")) 
+            a_divider:= 10
         Click WheelDown
         sleep 500 / a_divider + 1
         a_divider := a_divider + 1
@@ -149,6 +151,8 @@ scroll_down(key){
 scroll_up(key){
     a_divider = 3
     while (GetKeyState(key, "P")){
+        if (GetKeyState("ctrl")) 
+            a_divider:= 10
         Click Wheelup
         sleep 500 / a_divider
         a_divider := a_divider + 1
@@ -158,6 +162,8 @@ scroll_up(key){
 scroll_left(key){
     a_divider = 3
     while (GetKeyState(key, "P")){
+        if (GetKeyState("ctrl")) 
+            a_divider:= 10
         Click WheelLeft
         sleep 500 / a_divider
         a_divider := a_divider + 1
@@ -167,6 +173,8 @@ scroll_left(key){
 scroll_right(key){
     a_divider = 3
     while (GetKeyState(key, "P")){
+        if (GetKeyState("ctrl")) 
+            a_divider:= 10
         Click WheelRight
         sleep 500 / a_divider
         a_divider := a_divider + 1
