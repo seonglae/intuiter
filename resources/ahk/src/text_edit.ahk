@@ -11,7 +11,7 @@ Lalt & h::
         send, ^+{Enter}
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 ; meta - large delete
 Lalt & b::
@@ -25,7 +25,7 @@ Lalt & b::
         send, +^{home}{BackSpace}
     else if (GetKeyState("Lwin")){
     }
-Return
+return
 
 Lalt & n::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -38,7 +38,7 @@ Lalt & n::
         send, +^{End}{BackSpace}
     else if (GetKeyState("Lwin1")){
     }
-Return
+return
 
 ; meta - large delete
 
@@ -53,4 +53,4 @@ Lalt & x::
         send ^{home}+^{end}{BackSpace}
     else if (GetKeyState("Lwin")){
     }
-Return
+return

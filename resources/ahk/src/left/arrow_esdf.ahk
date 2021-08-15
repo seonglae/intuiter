@@ -11,7 +11,7 @@ Lalt & s::
         send, +!^s
     else if (GetKeyState("Lwin"))
         send, #{left}
-Return
+return
 
 Lalt & f::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -24,7 +24,7 @@ Lalt & f::
         send, +!^f
     else if (GetKeyState("Lwin"))
         send, #{right}
-Return
+return
 
 Lalt & e::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -37,7 +37,7 @@ Lalt & e::
         send, +!^e
     else if (GetKeyState("Lwin"))
         send #{up} 
-Return
+return
 
 Lalt & d::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
@@ -50,4 +50,4 @@ Lalt & d::
         send +!^d
     else if (GetKeyState("Lwin"))
         send, #{down}
-Return
+return
