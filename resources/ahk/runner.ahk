@@ -68,6 +68,5 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\src\text_edit.ahk
 
 ; meta - Include program
-#Include %A_scriptDir%\src\program\at_notion.ahk
 #Include %A_scriptDir%\src\program\at_win.ahk
 #Include %A_scriptDir%\src\program\event.ahk

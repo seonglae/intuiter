@@ -1,15 +1,37 @@
-; meta - h enter, t right alt
-
 Lalt & h::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
-        send, {Enter}
+        send, {home}
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
-        send, +{Enter}
+        send, +{home}
     else if (!GetKeyState("shift") && GetKeyState("ctrl"))
-        send, ^{Enter}
+        send, ^{home}
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
-        send, ^+{Enter}
-    else if (GetKeyState("Lwin")){
+        send, ^+{home}
+return
+
+Lalt & `;::
+if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
+    send, {end}
+else if (GetKeyState("shift") && !GetKeyState("ctrl"))
+    send, +{end}
+else if (!GetKeyState("shift") && GetKeyState("ctrl"))
+    send, ^{end}
+else if (GetKeyState("shift") && GetKeyState("ctrl"))
+    send, ^+{end}
+return
+
+Lalt & Enter::
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+        send, {end}
+        send, {enter}
+    }
+return
+
+Lalt & '::
+    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
+        send, {home}
+        send, {enter}
+        send, {up}
     }
 return
 
@@ -23,8 +45,6 @@ Lalt & b::
         send, +{home}{BackSpace}
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, +^{home}{BackSpace}
-    else if (GetKeyState("Lwin")){
-    }
 return
 
 Lalt & n::
@@ -36,8 +56,6 @@ Lalt & n::
         send, +{End}{BackSpace}
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, +^{End}{BackSpace}
-    else if (GetKeyState("Lwin1")){
-    }
 return
 
 ; meta - large delete
@@ -51,6 +69,4 @@ Lalt & x::
         send ^{left}+^{right}{BackSpace}
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send ^{home}+^{end}{BackSpace}
-    else if (GetKeyState("Lwin")){
-    }
 return
