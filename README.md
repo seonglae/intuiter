@@ -43,7 +43,7 @@ Check [here](https://intuiter.vercel.app/) / 여기에 [사용법](https://intui
 
 
 # [Download](https://github.com/seonglae/intuiter/releases/latest/download/Intuiter.exe)
-### Or install by command
+### Or more simply, install by command
 ```bash
 winget install intuiter
 ```
