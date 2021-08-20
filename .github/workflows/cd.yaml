@@ -60,8 +60,8 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: | 
-            # [Doc Page](https://intuiter.vercel.app/versions/${{ env.RELEASE_VERSION }})
+          body: |
+            # [Version Doc](https://intuiter.vercel.app/en/versions/${{ env.RELEASE_VERSION }})/[버전정보](https://intuiter.vercel.app/ko/versions/${{ env.RELEASE_VERSION }}.html)
           draft: false
           prerelease: false
 
@@ -104,15 +104,12 @@ jobs:
           echo "PackageName: Intuiter" >> Seonglae.Intuiter.yaml
           echo "PackageVersion:" ${{ env.RELEASE_VERSION }} >> Seonglae.Intuiter.yaml
           echo "License: MIT" >> Seonglae.Intuiter.yaml
-          echo "InstallerType: exe" >> Seonglae.Intuiter.yaml
-          echo "InstallerSwitches:" >> Seonglae.Intuiter.yaml
-          echo "  Silent: /S" >> Seonglae.Intuiter.yaml
-          echo "  SilentWithProgress: /S" >> Seonglae.Intuiter.yaml
+          echo "InstallerType: nullsoft" >> Seonglae.Intuiter.yaml
           echo "Installers:" >> Seonglae.Intuiter.yaml
           echo "- Architecture: x64" >> Seonglae.Intuiter.yaml
           echo "  InstallerUrl: https://github.com/seonglae/intuiter/releases/download/${{ env.RELEASE_VERSION }}/Intuiter.exe" >> Seonglae.Intuiter.yaml
           echo "  InstallerSha256: ${HASH}" >> Seonglae.Intuiter.yaml
-          echo "ShortDescription: Seonglae.Intuiter" >> Seonglae.Intuiter.yaml
+          echo "ShortDescription: Global Windows Productivity Application" >> Seonglae.Intuiter.yaml
           echo "PackageLocale: en-US" >> Seonglae.Intuiter.yaml
           echo "ManifestType: singleton" >> Seonglae.Intuiter.yaml
           echo "ManifestVersion: 1.0.0" >> Seonglae.Intuiter.yaml
