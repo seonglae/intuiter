@@ -48,18 +48,17 @@ Check [here](https://intuiter.vercel.app/) / 여기에 [사용법](https://intui
 winget install intuiter
 ```
 
+<br/>
+
+
 # Warning
 This Program coulb be considered as game hack
-
-<br/>
 
 # Made with
 - [Daning Button](https://github.com/seonglae/dancing-button)
 - Electron
 - AHK
 
-
-<br/>
 
 # Contribute
 
