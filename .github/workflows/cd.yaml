@@ -15,9 +15,11 @@ jobs:
         shell: bash
         run: |
           echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-          echo "MAJOR=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-          echo "MINOR=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-          echo "PATCH=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+          IFS='.'
+          read -a VERSIONS <<< "1.2.3"
+          echo "MAJOR=${VERSIONS[0]}" >> $GITHUB_ENV
+          echo "MINOR=${VERSIONS[1]}" >> $GITHUB_ENV
+          echo "PATCH=${VERSIONS[2]}" >> $GITHUB_ENV
 
       - name: get-key
         shell: bash
@@ -65,7 +67,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            # [Version Doc](https://intuiter.vercel.app/en/versions/${{ env.RELEASE_VERSION }})/[버전정보](https://intuiter.vercel.app/ko/versions/${{ env.RELEASE_VERSION }}.html)
+            # [Version Doc](https://intuiter.vercel.app/en/versions/${{ env.RELEASE_VERSION }})/[버전정보](https://intuiter.vercel.app/ko/versions/${{ env.MAJOR }}-${{ env.MINOR }}-${{ env.PATCH }}.html)
           draft: false
           prerelease: false
 
