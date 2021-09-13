@@ -67,7 +67,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           body: |
-            # [Version Doc](https://intuiter.vercel.app/en/versions/${{ env.RELEASE_VERSION }})/[버전정보](https://intuiter.vercel.app/ko/versions/${{ env.MAJOR }}-${{ env.MINOR }}-${{ env.PATCH }}.html)
+            # [Version Doc](https://intuiter.vercel.app/en/versions/${{ env.MAJOR }}-${{ env.MINOR }}-${{ env.PATCH }}.html)/[버전정보](https://intuiter.vercel.app/ko/versions/${{ env.MAJOR }}-${{ env.MINOR }}-${{ env.PATCH }}.html)
           draft: false
           prerelease: false
 
