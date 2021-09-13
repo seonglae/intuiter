@@ -20,13 +20,6 @@ else if (GetKeyState("shift") && GetKeyState("ctrl"))
     send, ^+{end}
 return
 
-Lalt & Enter::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
-        send, {end}
-        send, {enter}
-    }
-return
-
 Lalt & '::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin")){
         send, {home}
