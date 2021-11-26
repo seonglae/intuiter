@@ -34,18 +34,35 @@ Vim 과 Emacs 모두 단축키가 해당 툴의 생산성의 핵심이라고 생
 <br/>
 
 
-# [How to Use](https://intuiter.vercel.app)
+# [Document](https://intuiter.vercel.app/) /  [사용법](https://intuiter.vercel.app/ko/)
+
+Check [here](https://intuiter.vercel.app/) / 여기에 [사용법](https://intuiter.vercel.app/ko/) 있음
+
+![image](https://user-images.githubusercontent.com/27716524/129465756-07e5d9bf-0a21-40bf-aaca-978f7c877884.png)
+
+
+
+# [Download](https://github.com/seonglae/intuiter/releases/latest/download/Intuiter.exe)
+### Or more simply, install by command
+```bash
+winget install intuiter
+```
+
+<br/>
 
 
 # Warning
 This Program coulb be considered as game hack
 
-<br/>
+# Made with
+- [Daning Button](https://github.com/seonglae/dancing-button)
+- Electron
+- AHK
 
 
-# [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
-# How to Contribute
+# Contribute
 
 - **AHK user** can contribute to `/resources/ahk` **Core**
 - **TS user** can contribute to `/src/renderer` **UI**
+- [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
 
