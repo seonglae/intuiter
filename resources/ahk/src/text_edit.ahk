@@ -1,3 +1,4 @@
+; Left Home
 Lalt & h::
     if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
         send, {home}
@@ -9,6 +10,7 @@ Lalt & h::
         send, ^+{home}
 return
 
+; Right End
 Lalt & `;::
 if (!GetKeyState("shift") && !GetKeyState("ctrl") && !GetKeyState("lwin"))
     send, {end}
