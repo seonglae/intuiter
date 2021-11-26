@@ -23,8 +23,10 @@ return
 Lwin & l::
     if (!GetKeyState("shift"))
         mouse_right(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
-    else if (GetKeyState("shift"))
+    else if (GetKeyState("shift")){
+        sendraw  {LWin Up}
         run %windir%\System32\tsdiscon.exe
+    }
 return
 
 ; meta - click
