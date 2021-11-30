@@ -50,9 +50,13 @@ winget install intuiter
 
 <br/>
 
+## Project Stats
+![Alt](https://repobeats.axiom.co/api/embed/f9927162b6bd945f38bc724c637836e6075443a0.svg "Repobeats analytics image")
+
 
 # Warning
 This Program coulb be considered as game hack
+
 
 # Made with
 - [Daning Button](https://github.com/seonglae/dancing-button)
@@ -60,7 +64,10 @@ This Program coulb be considered as game hack
 - AHK
 
 
-# Contribute
+
+
+
+# How to Contribute
 
 - **AHK user** can contribute to `/resources/ahk` **Core**
 - **TS user** can contribute to `/src/renderer` **UI**
