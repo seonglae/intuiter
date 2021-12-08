@@ -1,4 +1,28 @@
 ; meta - mouse move
+; #InstallKeybdHook
+; SendSuppressedKeyUp(key) {
+;     DllCall("keybd_event"
+;         , "char", GetKeyVK(key)
+;         , "char", GetKeySC(key)
+;         , "uint", KEYEVENTF_KEYUP := 0x2
+;         , "uptr", KEY_BLOCK_THIS := 0xFFC3D450)
+; }
+
+; ; Disable Alt+key shortcuts for the IME.
+; ~LAlt::SendSuppressedKeyUp("LAlt")
+
+; ; Test hotkey:
+; !CapsLock::MsgBox % A_ThisHotkey
+
+; ; Remap CapsLock to LCtrl in a way compatible with IME.
+; *CapsLock::
+;     Send {Blind}{LCtrl DownR}
+;     SendSuppressedKeyUp("LCtrl")
+;     return
+; *CapsLock up::
+;     Send {Blind}{LCtrl Up}
+;     return
+
 Lwin & i::
     if (!GetKeyState("shift"))
         mouse_up(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
@@ -24,7 +48,6 @@ Lwin & l::
     if (!GetKeyState("shift"))
         mouse_right(V_ACCEL, MAX_V, X_V, Y_V, AXIS_V)
     else if (GetKeyState("shift")){
-        sendraw  {LWin Up}
         run %windir%\System32\tsdiscon.exe
     }
 return
