@@ -14,6 +14,8 @@ Intuiter
 <img src="https://img.shields.io/badge/Electron-based-blue?logo=electron&logoColor=white"/>
 <img src="https://img.shields.io/github/languages/top/seonglae/intuiter"/>
 <img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"/>
+<a href="https://lgtm.com/projects/g/seonglae/intuiter/context:javascript"><img alt="undefined" src="https://img.shields.io/lgtm/grade/javascript/g/seonglae/intuiter.svg?logo=lgtm&logoWidth=18"/>
+<p>
 </p>
 
 <h3 align="center">
