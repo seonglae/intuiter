@@ -1,33 +1,28 @@
 ---
-name: "🧚‍♂️ Feature Request"
-description: "Wouldn’t it be nice if 💭"
+name: 🟢 Feature Request
+description: Wouldn’t it be nice if
 labels:
   - feature
 body:
-- type: textarea
-  id: summary
-  attributes:
-    label: What’s missing?
-    description: Describe your feature idea
-  validations:
-    required: true
-- type: textarea
-  id: why
-  attributes:
-    label: Why?
-    description: Describe the problem you are facing
-  validations:
-    required: true
-- type: textarea
-  id: alternatives
-  attributes:
-    label: Alternatives you tried
-    description: Describe the workarounds you tried so far and how they worked for you
-  validations:
-    required: true
-- type: checkboxes
-  id: contributor
-  attributes:
-    label: Would you be interested in contributing the feature?
-    options:
-      - label: "Yes"
+  - type: textarea
+    id: summary
+    attributes:
+      label: What’s missing?
+      description: Describe your feature idea
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: Describe the problem you are facing
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you tried
+      description:
+        Describe the workarounds you tried so far and how they worked for you
+    validations:
+      required: true
