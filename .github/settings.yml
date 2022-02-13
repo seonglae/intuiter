@@ -1,12 +1,7 @@
 repository:
   has_wiki: false
-  has_discussion: true
+  has_projects: false
   default_branch: main
-
-branches:
-  - name: main
-    protection:
-      required_pull_request_reviews:
-        dismiss_stale_reviews: true
-        require_code_owner_reviews: true
-      enforce_admins: true
+  delete_branch_on_merge: true
+  enable_automated_security_fixes: true
+  enable_vulnerability_alerts: true
