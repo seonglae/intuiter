@@ -7,7 +7,7 @@ body:
   - type: textarea
     id: summary
     attributes:
-      label: What’s missing?
+      label: What?
       description: Describe your feature idea
     validations:
       required: true
@@ -21,8 +21,8 @@ body:
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives you tried
+      label: How?
       description:
-        Describe the workarounds you tried so far and how they worked for you
+        Describe you tried or ideas to implement the feature
     validations:
-      required: true
+      required: false
