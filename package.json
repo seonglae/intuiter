@@ -23,35 +23,35 @@
   "license": "MIT",
   "homepage": "https://github.com/seonglae/intuiter",
   "engines": {
-    "node": ">=14.*.*"
+    "node": ">=v14.19.0"
   },
   "resolutions": {
-    "@types/node": "12.12.6",
-    "@nuxtjs/vuetify/**/sass": "1.32.12"
+    "@types/node": "12.20.46",
+    "@nuxtjs/vuetify/**/sass": "1.49.8"
   },
   "devDependencies": {
     "@mdi/font": "5.9.55",
-    "@nuxt/types": "^2.15.6",
+    "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "2.1.0",
-    "@nuxtjs/composition-api": "^0.24.4",
+    "@nuxtjs/composition-api": "^0.31.0",
     "@nuxtjs/toast": "^3.3.1",
-    "@nuxtjs/vuetify": "1.11.3",
+    "@nuxtjs/vuetify": "1.12.3",
     "@xpda-dev/core": "^0.1.6",
     "@xpda-dev/electron-builder": "^0.2.1",
     "@xpda-dev/electron-launcher": "^0.3.0",
-    "@xpda-dev/webpack-step": "^0.1.2",
+    "@xpda-dev/webpack-step": "^0.1.6",
     "consola": "^2.15.3",
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.2.2",
-    "electron": "9.4.0",
-    "electron-builder": "22.11.3",
+    "electron": "9.4.4",
+    "electron-builder": "22.14.13",
     "electron-devtools-installer": "3.2.0",
     "ini": "^2.0.0",
-    "nuxt": "2.15.6",
-    "sass": "~1.32.12",
-    "vuetify": "2.5.1",
-    "webpack": "4.44.2",
+    "nuxt": "2.15.8",
+    "sass": "~1.49.8",
+    "vuetify": "2.6.3",
+    "webpack": "4.46.0",
     "webpack-node-externals": "2.5.2"
   },
   "dependencies": {
