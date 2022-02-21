@@ -30,7 +30,7 @@
     "@nuxtjs/vuetify/**/sass": "1.32.12"
   },
   "devDependencies": {
-    "@mdi/font": "5.9.55",
+    "@mdi/font": "6.5.95",
     "@nuxt/types": "^2.15.6",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/composition-api": "^0.24.4",
