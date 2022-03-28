@@ -30,7 +30,7 @@
     "@nuxtjs/vuetify/**/sass": "1.49.9"
   },
   "devDependencies": {
-    "@mdi/font": "6.5.95",
+    "@mdi/font": "6.6.96",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/composition-api": "^0.32.0",
@@ -44,7 +44,7 @@
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.2.2",
-    "electron": "13.6.6",
+    "electron": "13.6.9",
     "electron-builder": "22.14.13",
     "electron-devtools-installer": "3.2.0",
     "ini": "^2.0.0",
