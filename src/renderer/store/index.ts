@@ -2,7 +2,7 @@ export type State = {
   loading: boolean
 }
 
-export const strict: boolean = false
+export const strict = false
 
 export const state = (): State => ({
   loading: false
