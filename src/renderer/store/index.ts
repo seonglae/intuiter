@@ -9,7 +9,7 @@ export const state = (): State => ({
 })
 
 export const mutations = {
-  setLoading(state: State, value: boolean) {
+  setLoading(state: State, value: boolean): void  {
     /**
      * @summary - set global loading state
      */
