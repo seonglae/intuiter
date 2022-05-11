@@ -47,7 +47,7 @@
     "electron": "13.6.9",
     "electron-builder": "23.0.3",
     "electron-devtools-installer": "3.2.0",
-    "ini": "^2.0.0",
+    "ini": "^3.0.0",
     "nuxt": "2.15.8",
     "sass": "~1.50.0",
     "vuetify": "2.6.4",
