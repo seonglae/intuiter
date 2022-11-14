@@ -4013,10 +4013,10 @@ electron-to-chromium@^1.3.723:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.752.tgz#0728587f1b9b970ec9ffad932496429aef750d09"
   integrity sha512-2Tg+7jSl3oPxgsBsWKh5H83QazTkmWG/cnNwJplmyZc7KcN61+I10oUgaXSVk/NwfvN3BdkKDR4FYuRBQQ2v0A==
 
-electron@20.3.4:
-  version "20.3.4"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-20.3.4.tgz#a982196c7901a17d1107618634b1d0839f49c1df"
-  integrity sha512-kZYy7lgR9k24rkz89lQSXA28PkjMz1Z6Fr5ewvfjUatKOSrc0NJKlZ+mJ9KDmTvD5+gqOmewAyVecEGsMLFVow==
+electron@20.3.5:
+  version "20.3.5"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-20.3.5.tgz#4512736c96338215855794d0e8010563a873d126"
+  integrity sha512-xTBjdgAZXf6txxfIhv9mZ3yloJZ+KTht7D2X10uHlFnQu4ZmvzqwhGuQPnldVKhRUDvZehIjulmmrFO6Mz6SzQ==
   dependencies:
     "@electron/get" "^1.14.1"
     "@types/node" "^16.11.26"
@@ -8089,10 +8089,10 @@ sass-loader@^10.2.0:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@1.56.0, sass@~1.32.13, sass@~1.56.0:
-  version "1.56.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.56.0.tgz#134032075a3223c8d49cb5c35e091e5ba1de8e0a"
-  integrity sha512-WFJ9XrpkcnqZcYuLRJh5qiV6ibQOR4AezleeEjTjMsCocYW59dEG19U3fwTTXxzi2Ed3yjPBp727hbbj53pHFw==
+sass@1.56.1, sass@~1.32.13, sass@~1.56.1:
+  version "1.56.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.56.1.tgz#94d3910cd468fd075fa87f5bb17437a0b617d8a7"
+  integrity sha512-VpEyKpyBPCxE7qGDtOcdJ6fFbcpOM+Emu7uZLxVrkX8KVU/Dp5UF7WLvzqRuUhB6mqqQt1xffLoG+AndxTZrCQ==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
