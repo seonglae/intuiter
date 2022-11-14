@@ -27,7 +27,7 @@
   },
   "resolutions": {
     "@types/node": "12.20.55",
-    "@nuxtjs/vuetify/**/sass": "1.56.0"
+    "@nuxtjs/vuetify/**/sass": "1.56.1"
   },
   "devDependencies": {
     "@mdi/font": "7.0.96",
@@ -44,12 +44,12 @@
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.2.2",
-    "electron": "20.3.4",
+    "electron": "20.3.5",
     "electron-builder": "23.6.0",
     "electron-devtools-installer": "3.2.0",
     "ini": "^3.0.1",
     "nuxt": "2.15.8",
-    "sass": "~1.56.0",
+    "sass": "~1.56.1",
     "vuetify": "2.6.12",
     "webpack": "4.46.0",
     "webpack-node-externals": "3.0.0"
