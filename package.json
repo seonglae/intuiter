@@ -26,8 +26,8 @@
     "node": ">=v18.12.1"
   },
   "resolutions": {
-    "@types/node": "18.11.13",
-    "@nuxtjs/vuetify/**/sass": "1.56.2"
+    "@types/node": "18.11.17",
+    "@nuxtjs/vuetify/**/sass": "1.57.1"
   },
   "devDependencies": {
     "@mdi/font": "7.1.96",
@@ -49,8 +49,8 @@
     "electron-devtools-installer": "3.2.0",
     "ini": "^3.0.1",
     "nuxt": "3.0.0",
-    "sass": "~1.56.2",
-    "vuetify": "2.6.12",
+    "sass": "~1.57.1",
+    "vuetify": "2.6.13",
     "webpack": "4.46.0",
     "webpack-node-externals": "3.0.0"
   },
