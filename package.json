@@ -26,7 +26,7 @@
     "node": ">=v18.12.1"
   },
   "resolutions": {
-    "@types/node": "18.11.17",
+    "@types/node": "18.11.18",
     "@nuxtjs/vuetify/**/sass": "1.57.1"
   },
   "devDependencies": {
