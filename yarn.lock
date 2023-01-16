@@ -3223,10 +3223,10 @@ electron-to-chromium@^1.4.251:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz#61046d1e4cab3a25238f6bf7413795270f125592"
   integrity sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA==
 
-electron@20.3.8:
-  version "20.3.8"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-20.3.8.tgz#94a4b2bb89a3e6bbeb824365cfd0f65658bc1a2c"
-  integrity sha512-P93ZWoJjXEVwsjUJ4q6640KZ4+rmWMZ9O5IB1eq/L9S52ZYsXo0o82afpPXq3j8vpneY0N5J62hgRzC1ZKzYmw==
+electron@20.3.9:
+  version "20.3.9"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-20.3.9.tgz#a2f53087658b3523825a7e21a969a61d8419e25b"
+  integrity sha512-CPThZ0Q0otIsFgwh2K6fMfrMX/3jsWt+fdjl1tiZh08MD8f74Az+dFB4NKpDHzqr4RFuRqh/W5CdGyGtvXXtFQ==
   dependencies:
     "@electron/get" "^1.14.1"
     "@types/node" "^16.11.26"
@@ -8053,10 +8053,10 @@ vuetify-loader@^1.7.3:
     file-loader "^6.2.0"
     loader-utils "^2.0.0"
 
-vuetify@2.6.13:
-  version "2.6.13"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.13.tgz#6c7dd1a43b5cee0e474fbe840f0fe86439d54502"
-  integrity sha512-HhJi52IzhfrmWFwcYFUiA1GRIzz9smbR06Lj61Ml5HgD5PBcMiDywUnNPVid1VsXO4qWpBU6kO3O89uTxH1yzw==
+vuetify@2.6.14:
+  version "2.6.14"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.14.tgz#a5bf662de938efe0450ac59776b04f760f5407d2"
+  integrity sha512-nr6wU3uTzhhEPssH23cW0Ee/hCrayp7cjl3nNjM2OmNwiJlV91tZiL1VO3597SqZyjh1xIa+m9J2rpKTSdIlrA==
 
 vuetify@^2.6:
   version "2.6.3"
