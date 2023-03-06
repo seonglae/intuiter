@@ -26,7 +26,7 @@
     "node": ">=v18.14.2"
   },
   "resolutions": {
-    "@types/node": "18.14.2",
+    "@types/node": "18.14.6",
     "@nuxtjs/vuetify/**/sass": "1.58.3"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
     "electron-builder": "23.6.0",
     "electron-devtools-installer": "3.2.0",
     "ini": "^3.0.1",
-    "nuxt": "3.2.2",
+    "nuxt": "3.2.3",
     "sass": "~1.58.3",
     "vuetify": "2.6.14",
     "webpack": "4.46.0",
