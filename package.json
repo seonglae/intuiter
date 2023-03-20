@@ -32,7 +32,7 @@
   "devDependencies": {
     "@mdi/font": "7.1.96",
     "@nuxt/types": "^2.16.0",
-    "@nuxt/typescript-build": "2.1.0",
+    "@nuxt/typescript-build": "3.0.0",
     "@nuxtjs/composition-api": "^0.33.1",
     "@nuxtjs/toast": "^3.3.1",
     "@nuxtjs/vuetify": "1.12.3",
