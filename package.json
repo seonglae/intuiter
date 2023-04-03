@@ -26,13 +26,13 @@
     "node": ">=v18.15.0"
   },
   "resolutions": {
-    "@types/node": "18.15.10",
+    "@types/node": "18.15.11",
     "@nuxtjs/vuetify/**/sass": "1.60.0"
   },
   "devDependencies": {
     "@mdi/font": "7.2.96",
     "@nuxt/types": "^2.16.3",
-    "@nuxt/typescript-build": "3.0.0",
+    "@nuxt/typescript-build": "3.0.1",
     "@nuxtjs/composition-api": "^0.33.1",
     "@nuxtjs/toast": "^3.3.1",
     "@nuxtjs/vuetify": "1.12.3",
@@ -48,9 +48,9 @@
     "electron-builder": "23.6.0",
     "electron-devtools-installer": "3.2.0",
     "ini": "^4.0.0",
-    "nuxt": "3.3.2",
+    "nuxt": "3.3.3",
     "sass": "~1.60.0",
-    "vuetify": "3.1.11",
+    "vuetify": "3.1.12",
     "webpack": "4.46.0",
     "webpack-node-externals": "3.0.0"
   },
