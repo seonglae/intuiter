@@ -44,7 +44,7 @@
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.3.1",
-    "electron": "20.3.12",
+    "electron": "24.0.0",
     "electron-builder": "23.6.0",
     "electron-devtools-installer": "3.2.0",
     "ini": "^4.0.0",
