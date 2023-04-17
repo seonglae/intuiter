@@ -40,7 +40,7 @@
     "@xpda-dev/electron-builder": "^0.2.1",
     "@xpda-dev/electron-launcher": "^0.3.0",
     "@xpda-dev/webpack-step": "^0.1.6",
-    "consola": "^2.15.3",
+    "consola": "^3.0.2",
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.3.1",
