@@ -26,7 +26,7 @@
     "node": ">=v18.16.0"
   },
   "resolutions": {
-    "@types/node": "18.16.7",
+    "@types/node": "18.16.8",
     "@nuxtjs/vuetify/**/sass": "1.62.1"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "ini": "^4.1.0",
     "nuxt": "3.4.3",
     "sass": "~1.62.1",
-    "vuetify": "3.2.3",
+    "vuetify": "3.2.4",
     "webpack": "4.46.0",
     "webpack-node-externals": "3.0.0"
   },
