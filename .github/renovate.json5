@@ -4,7 +4,6 @@
   labels: ['dependencies'],
   pin: false,
   rangeStrategy: 'bump',
-  node: false,
   packageRules: [{ depTypeList: ['peerDependencies'], enabled: false }],
   dependencyDashboardTitle: "deps: renovate dependency dashboard",
   branchPrefix: "deps/",
