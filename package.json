@@ -23,11 +23,11 @@
   "license": "MIT",
   "homepage": "https://github.com/seonglae/intuiter",
   "engines": {
-    "node": ">=v18.17.1"
+    "node": ">=18.18.0"
   },
   "resolutions": {
-    "@types/node": "18.17.16",
-    "@nuxtjs/vuetify/**/sass": "1.67.0"
+    "@types/node": "18.17.18",
+    "@nuxtjs/vuetify/**/sass": "1.68.0"
   },
   "devDependencies": {
     "@mdi/font": "7.2.96",
@@ -44,13 +44,13 @@
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.3.1",
-    "electron": "26.2.1",
+    "electron": "26.2.2",
     "electron-builder": "24.6.4",
     "electron-devtools-installer": "3.2.0",
     "ini": "^4.1.1",
     "nuxt": "3.7.3",
-    "sass": "~1.67.0",
-    "vuetify": "3.3.16",
+    "sass": "~1.68.0",
+    "vuetify": "3.3.17",
     "webpack": "4.47.0",
     "webpack-node-externals": "3.0.0"
   },
