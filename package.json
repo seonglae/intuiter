@@ -26,8 +26,8 @@
     "node": ">=18.18.2"
   },
   "resolutions": {
-    "@types/node": "18.18.5",
-    "@nuxtjs/vuetify/**/sass": "1.69.3"
+    "@types/node": "18.18.6",
+    "@nuxtjs/vuetify/**/sass": "1.69.4"
   },
   "devDependencies": {
     "@mdi/font": "7.3.67",
@@ -44,13 +44,13 @@
     "cross-env": "7.0.3",
     "dancing-button": "^1.0.2",
     "deepmerge": "4.3.1",
-    "electron": "27.0.0",
+    "electron": "27.0.1",
     "electron-builder": "24.6.4",
     "electron-devtools-installer": "3.2.0",
     "ini": "^4.1.1",
-    "nuxt": "3.7.4",
-    "sass": "~1.69.3",
-    "vuetify": "3.3.21",
+    "nuxt": "3.8.0",
+    "sass": "~1.69.4",
+    "vuetify": "3.3.22",
     "webpack": "4.47.0",
     "webpack-node-externals": "3.0.0"
   },
