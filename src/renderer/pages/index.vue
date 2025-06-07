@@ -23,6 +23,10 @@
     <v-tabs-items v-model="index" class="wrapper bottom" id="view" touchless>
       <v-tab-item v-for="(tab, i) in tabs" :key="i" eager class="wrapper">
         <templates-run v-if="tab.key === 'home'" class="wrapper" />
+        <templates-opts v-else-if="tab.key === 'opt'" class="wrapper" />
+        <templates-shortcuts v-else-if="tab.key === 'shortcut'" class="wrapper" />
+        <templates-exts v-else-if="tab.key === 'ext'" class="wrapper" />
+        <templates-custom v-else-if="tab.key === 'custom'" class="wrapper" />
       </v-tab-item>
     </v-tabs-items>
   </v-app>
@@ -42,7 +46,8 @@ export default defineComponent({
       { name: 'Home', key: 'home' },
       { name: 'Option', key: 'opt' },
       { name: 'Shortcut', key: 'shortcut' },
-      { name: 'Extension', key: 'ext' }
+      { name: 'Extension', key: 'ext' },
+      { name: 'Custom', key: 'custom' }
     ]
     const index = ref(0)
 
