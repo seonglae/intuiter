@@ -4,7 +4,20 @@ Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico,,1
 ; meta - Administrator
 #SingleInstance Force
 SetWorkingDir %A_ScriptDir%
+; read custom app paths for Win+1..0
+; Read all custom app paths from the INI file
+IniRead, CustomAppPaths, %A_ScriptDir%\..\default.ini, custom
 
+; Assign each custom app path to its corresponding variable
+Loop, 10
+{
+    Key := Mod(A_Index, 10)  ; Keys are 1-9, 0
+    Default := "notepad.exe"
+    Value := StrSplit(CustomAppPaths, "`n")[Key]
+    Value := (Value != "") ? Value : Default
+    VarName := "CUSTOM_APP_PATH_" . Key
+    %VarName% := Value
+}
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%",,hide
 
