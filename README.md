@@ -32,6 +32,7 @@ So I developed new key map which can be used by not only for developers but also
 - Increased universality to work in any software by letting the app run in the background.
 - Bound Electron and AutoHotKey by including AHK compiler in the installer which make AHK script run dynamically.
 - Added a smooth mouse control on keyboard by calling Windows mouse API DLL.
+- Change Windows virtual desktops directly with `Ctrl + Win + number`.
 
 <br/>
 
