@@ -4,6 +4,17 @@ Menu, Tray, Icon, %A_ScriptDir%\img\logo.ico,,1
 ; meta - Administrator
 #SingleInstance Force
 SetWorkingDir %A_ScriptDir%
+; read custom app paths for Win+1..0
+IniRead, CUSTOM_APP_PATH_1, %A_ScriptDir%\..\default.ini, custom, 1, notepad.exe
+IniRead, CUSTOM_APP_PATH_2, %A_ScriptDir%\..\default.ini, custom, 2, notepad.exe
+IniRead, CUSTOM_APP_PATH_3, %A_ScriptDir%\..\default.ini, custom, 3, notepad.exe
+IniRead, CUSTOM_APP_PATH_4, %A_ScriptDir%\..\default.ini, custom, 4, notepad.exe
+IniRead, CUSTOM_APP_PATH_5, %A_ScriptDir%\..\default.ini, custom, 5, notepad.exe
+IniRead, CUSTOM_APP_PATH_6, %A_ScriptDir%\..\default.ini, custom, 6, notepad.exe
+IniRead, CUSTOM_APP_PATH_7, %A_ScriptDir%\..\default.ini, custom, 7, notepad.exe
+IniRead, CUSTOM_APP_PATH_8, %A_ScriptDir%\..\default.ini, custom, 8, notepad.exe
+IniRead, CUSTOM_APP_PATH_9, %A_ScriptDir%\..\default.ini, custom, 9, notepad.exe
+IniRead, CUSTOM_APP_PATH_0, %A_ScriptDir%\..\default.ini, custom, 0, notepad.exe
 
 if not A_IsAdmin
     Run *RunAs "%A_ScriptFullPath%",,hide
