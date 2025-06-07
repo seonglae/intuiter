@@ -111,3 +111,18 @@ Lalt & m::
     else if (GetKeyState("Lwin")){
     }
 return
+
+; meta - toggle all dynamic shortcuts with alt + CapsLock
+Lalt & CapsLock::
+    Suspend, Permit
+    Suspend, Toggle
+    if (A_IsSuspended)
+        ToolTip, Intuiter Shortcuts Off
+    else
+        ToolTip, Intuiter Shortcuts On
+    SetTimer, RemoveToolTip, -1000
+return
+
+RemoveToolTip:
+    ToolTip
+return
