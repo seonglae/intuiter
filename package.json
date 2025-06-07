@@ -5,8 +5,8 @@
   "version": "0.8.2",
   "main": "./dist/main/index.js",
   "scripts": {
-    "dev": "node .electron-nuxt/dev.js",
-    "build": "node .electron-nuxt/build.js --publish=onTag",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
     "preinstall": "node .electron-nuxt/check-engines.js",
     "postinstall": "electron-builder install-app-deps "
   },
@@ -21,13 +21,14 @@
     "email": "sungle3737@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/seonglae/intuiter",
-  "engines": {
-    "node": ">=20.9.0"
-  },
-  "resolutions": {
-    "@types/node": "20.8.10",
-    "@nuxtjs/vuetify/**/sass": "1.69.5"
+"homepage": "https://github.com/seonglae/intuiter",
+"engines": {
+  "node": ">=20.9.0"
+},
+ "workspaces": ["packages/*"],
+"resolutions": {
+  "@types/node": "20.8.10",
+  "@nuxtjs/vuetify/**/sass": "1.69.5"
   },
   "devDependencies": {
     "@mdi/font": "7.3.67",
@@ -52,7 +53,11 @@
     "sass": "~1.69.5",
     "vuetify": "3.3.23",
     "webpack": "5.94.0",
-    "webpack-node-externals": "3.0.0"
+    "webpack-node-externals": "3.0.0",
+    "turbo": "^2.5.4",
+    "tsup": "^8.5.0",
+    "vite": "^6.3.5",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "node-cmd": "^5.0.0"
