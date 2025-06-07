@@ -26,6 +26,7 @@
         <templates-opts v-else-if="tab.key === 'opt'" class="wrapper" />
         <templates-shortcuts v-else-if="tab.key === 'shortcut'" class="wrapper" />
         <templates-exts v-else-if="tab.key === 'ext'" class="wrapper" />
+        <templates-custom v-else-if="tab.key === 'custom'" class="wrapper" />
         <templates-docs v-else-if="tab.key === 'docs'" class="wrapper" />
       </v-tab-item>
     </v-tabs-items>
@@ -47,6 +48,7 @@ export default defineComponent({
       { name: 'Option', key: 'opt' },
       { name: 'Shortcut', key: 'shortcut' },
       { name: 'Extension', key: 'ext' },
+      { name: 'Custom', key: 'custom' },
       { name: 'Document', key: 'docs' }
     ]
     const index = ref(0)
