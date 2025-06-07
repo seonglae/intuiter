@@ -76,11 +76,16 @@ Lalt & q::
     else if (GetKeyState("shift") && GetKeyState("ctrl"))
         send, !+^q
     else if (GetKeyState("Lwin")){
+        ; wait for modifiers to be released so key-up events don't
+        ; immediately cancel the screen saver
+        KeyWait, q
+        KeyWait, LAlt
+        KeyWait, LWin
         if FileExist("exe\screen_save.lnk")
             Run exe\screen_save
         else
             run C:\Windows\System32\scrnsave.scr
-        return 
+        return
     }
 return
 
