@@ -20,51 +20,22 @@ Lwin & t::
 return
 
 ; meta - custom application hotkeys for Win+1..0
-Lwin & 1::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
-        Run %CUSTOM_APP_PATH_1%,,hide
-    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
-        Run *Runas %CUSTOM_APP_PATH_1%,,hide
-    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
-        send #1
-return
+Loop, 10
+{
+    num := A_Index
+    if (num = 10)
+        num := 0
+    Hotkey, % "Lwin & " num "::", Func("HandleHotkey").Bind(num)
+}
 
-Lwin & 2::
+HandleHotkey(num) {
     if (!GetKeyState("shift") && !GetKeyState("ctrl"))
-        Run %CUSTOM_APP_PATH_2%,,hide
+        Run % CUSTOM_APP_PATH_%num%,,hide
     else if (!GetKeyState("shift") && GetKeyState("ctrl"))
-        Run *Runas %CUSTOM_APP_PATH_2%,,hide
+        Run *Runas % CUSTOM_APP_PATH_%num%,,hide
     else if (GetKeyState("shift") && !GetKeyState("ctrl"))
-        send #2
-return
-
-Lwin & 3::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
-        Run %CUSTOM_APP_PATH_3%,,hide
-    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
-        Run *Runas %CUSTOM_APP_PATH_3%,,hide
-    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
-        send #3
-return
-
-Lwin & 4::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
-        Run %CUSTOM_APP_PATH_4%,,hide
-    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
-        Run *Runas %CUSTOM_APP_PATH_4%,,hide
-    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
-        send #4
-return
-
-Lwin & 5::
-    if (!GetKeyState("shift") && !GetKeyState("ctrl"))
-        Run %CUSTOM_APP_PATH_5%,,hide
-    else if (!GetKeyState("shift") && GetKeyState("ctrl"))
-        Run *Runas %CUSTOM_APP_PATH_5%,,hide
-    else if (GetKeyState("shift") && !GetKeyState("ctrl"))
-        send #5
-return
-
+        send #%num%
+}
 Lwin & 6::
     if (!GetKeyState("shift") && !GetKeyState("ctrl"))
         Run %CUSTOM_APP_PATH_6%,,hide
