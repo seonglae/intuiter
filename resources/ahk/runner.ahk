@@ -67,6 +67,7 @@ Loop, %MONITOR_COUNT%
 #Include %A_scriptDir%\src\win\display_rotate.ahk
 #Include %A_scriptDir%\src\win\app_shortcut.ahk
 #Include %A_scriptDir%\src\win\global_win.ahk
+#Include %A_scriptDir%\src\win\virtual_desktop.ahk
 
 ; meta - include right alt
 #Include %A_scriptDir%\src\right\arrow_ijkl.ahk
