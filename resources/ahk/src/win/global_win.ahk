@@ -120,7 +120,7 @@ Lalt & CapsLock::
         ToolTip, Intuiter Shortcuts Off
     else
         ToolTip, Intuiter Shortcuts On
-    SetTimer, RemoveToolTip, -1000
+    SetTimer, RemoveToolTip, %TOOLTIP_DISPLAY_DURATION%
 return
 
 RemoveToolTip:
