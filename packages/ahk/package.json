@@ -1,0 +1,7 @@
+{
+  "name": "@intuit/ahk",
+  "version": "0.1.0",
+  "main": "runner.ahk",
+  "files": ["src", "exe", "img", "lib", "runner.ahk", "make.ahk"],
+  "private": true
+}
