@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "build": {},
+    "dev": {},
+    "test": {},
+    "lint": {},
+    "format": {}
+  }
+}

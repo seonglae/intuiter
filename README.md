@@ -39,6 +39,15 @@ So I developed new key map which can be used by not only for developers but also
 
 # [Document](https://intuiter.vercel.app/) /  [사용법](https://intuiter.vercel.app/ko/)
 
+## Monorepo Structure
+
+This project is organised as a Turborepo with packages under `packages/`.
+Major workspaces include:
+
+- `@intuit/ahk` – AutoHotkey sources
+- `@intuit/ahk-builder` – CLI to compile AHK to `Intuit.exe`
+- `@intuit/renderer` – Frontend UI built with Vite
+
 Check [here](https://intuiter.vercel.app/) / 여기에 [사용법](https://intuiter.vercel.app/ko/) 있음
 
 ![image](https://user-images.githubusercontent.com/27716524/129465756-07e5d9bf-0a21-40bf-aaca-978f7c877884.png)
@@ -72,7 +81,21 @@ This Program coulb be considered as game hack
 
 # How to Contribute
 
-- **AHK user** can contribute to `/resources/ahk` **Core**
-- **TS user** can contribute to `/src/renderer` **UI**
+- **AHK user** can contribute to `/packages/ahk` **Core**
+- **TS user** can contribute to `/packages/renderer` **UI**
 - [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
+
+## AHK Builder
+
+AutoHotkey sources can be rebuilt using the package under
+`packages/ahk-builder`. It invokes the bundled `Ahk2Exe.exe` compiler and
+produces `Intuit.exe` under `packages/ahk`.
+
+Run the builder with:
+
+```bash
+pnpm --filter @intuit/ahk-builder build
+```
+
+This makes it easy to reload or extend AHK modules during development.
 
