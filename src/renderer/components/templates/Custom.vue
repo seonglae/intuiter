@@ -40,7 +40,9 @@ export default defineComponent({
             store.commit('setCustomAppPath', { index: i, value: section[d] })
           }
         })
-      } catch {}
+      } catch (error) {
+        console.error('Failed to read or parse the INI file:', error)
+      }
     })
 
     async function save() {
