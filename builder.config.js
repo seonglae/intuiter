@@ -19,6 +19,7 @@ module.exports = {
   productName: 'Intuiter',
   appId: 'com.seonglae.intuiter',
   artifactName: 'Intuiter-${version}.${ext}',
+  publish: [{ provider: 'github' }],
   directories: { output: 'build' },
   extraResources: [{ from: './resources/ahk/', to: 'ahk' }],
   files: ['package.json', { from: 'dist/main/', to: 'dist/main/' }, { from: 'dist/renderer', to: 'dist/renderer/' }],
