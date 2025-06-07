@@ -5,3 +5,4 @@ app.on('window-all-closed', function() {
 })
 
 require('./mainWindow')
+require('./updater')
