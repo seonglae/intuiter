@@ -1,0 +1,10 @@
+{
+  "name": "@intuiter/mac-input",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hammerspoon configuration for Intuiter on macOS",
+  "scripts": {
+    "install": "node scripts/install.js",
+    "uninstall": "node scripts/uninstall.js"
+  }
+}
