@@ -13,11 +13,7 @@ export default function App() {
 
   useEffect(() => {
     if (buttonRef.current) {
-      new DancingButton(buttonRef.current, {
-        color1: '#5eead4',
-        color2: '#1e293b',
-        color3: '#334155'
-      })
+      new DancingButton(buttonRef.current)
     }
   }, [])
 
@@ -40,9 +36,9 @@ export default function App() {
   }
 
   return (
-    <div className="h-full flex flex-col bg-[#121314] rounded-3xl overflow-hidden">
+    <div className="h-full flex flex-col bg-[#121314] text-white rounded-3xl overflow-hidden">
       {/* Header */}
-      <header className="flex items-center px-4 py-2 bg-zinc-900 rounded-t-[10px]" style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}>
+      <header className="flex items-center px-4 py-3 bg-[#1a1b1c] rounded-t-xl" style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}>
         <h1 className="text-lg uppercase tracking-wide mr-4">
           <span className="font-bold">Intuit</span>
           <span className="font-light">Manager</span>
