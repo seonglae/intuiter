@@ -40,7 +40,7 @@ export default function App() {
       {/* Header */}
       <header className="flex items-center px-4 py-3 bg-[#1a1b1c] rounded-t-xl" style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}>
         <h1 className="text-lg uppercase tracking-wide mr-4">
-          <span className="font-bold">Intuit</span>
+          <span>Intuit </span>
           <span className="font-light">Manager</span>
         </h1>
 
