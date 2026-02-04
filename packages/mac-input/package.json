@@ -4,7 +4,11 @@
   "private": true,
   "description": "Hammerspoon configuration for Intuiter on macOS",
   "scripts": {
-    "install": "node scripts/install.js",
-    "uninstall": "node scripts/uninstall.js"
+    "install-config": "node scripts/install.js",
+    "uninstall-config": "node scripts/uninstall.js"
+  },
+  "os": ["darwin"],
+  "engines": {
+    "node": ">=20.9.0"
   }
 }
