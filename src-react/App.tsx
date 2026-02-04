@@ -13,7 +13,11 @@ export default function App() {
 
   useEffect(() => {
     if (buttonRef.current) {
-      new DancingButton(buttonRef.current)
+      new DancingButton(buttonRef.current, {
+        color1: '#5eead4',
+        color2: '#1e293b',
+        color3: '#334155'
+      })
     }
   }, [])
 
@@ -36,7 +40,7 @@ export default function App() {
   }
 
   return (
-    <div className="h-full flex flex-col bg-background rounded-[30px] overflow-hidden">
+    <div className="h-full flex flex-col bg-[#121314] rounded-3xl overflow-hidden">
       {/* Header */}
       <header className="flex items-center px-4 py-2 bg-zinc-900 rounded-t-[10px]" style={{ WebkitAppRegion: 'drag' } as React.CSSProperties}>
         <h1 className="text-lg uppercase tracking-wide mr-4">
