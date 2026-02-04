@@ -21,7 +21,7 @@ module.exports = {
   artifactName: 'Intuiter-${version}.${ext}',
   publish: [{ provider: 'github' }],
   directories: { output: 'build' },
-  extraResources: [{ from: './resources/ahk/', to: 'ahk' }],
+  extraResources: [{ from: './packages/ahk/', to: 'ahk' }],
   files: ['package.json', { from: 'dist/main/', to: 'dist/main/' }, { from: 'dist/renderer', to: 'dist/renderer/' }],
   ...windows
 }
