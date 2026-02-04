@@ -11,11 +11,13 @@ edition = "2021"
 tauri-build = { version = "2.0", features = [] }
 
 [dependencies]
-tauri = { version = "2.0", features = ["shell-open"] }
+tauri = { version = "2.0", features = ["macos-private-api"] }
 tauri-plugin-shell = "2.0"
+tauri-plugin-process = "2.0"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tokio = { version = "1", features = ["process", "rt-multi-thread"] }
+dirs = "5"
 
 [features]
 default = ["custom-protocol"]
