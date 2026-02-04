@@ -25,6 +25,9 @@
   "engines": {
     "node": ">=20.9.0"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "resolutions": {
     "@types/node": "20.8.10",
     "@nuxtjs/vuetify/**/sass": "1.69.5"

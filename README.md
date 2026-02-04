@@ -72,7 +72,15 @@ This Program coulb be considered as game hack
 
 # How to Contribute
 
-- **AHK user** can contribute to `/resources/ahk` **Core**
+- **AHK user** can contribute to `/packages/ahk` **Core**
 - **TS user** can contribute to `/src/renderer` **UI**
 - [VSCode Version](https://marketplace.visualstudio.com/items?itemName=seonglae.terminal-intuiter)
+
+## AHK Builder
+
+AutoHotkey sources can be rebuilt using the package under `packages/ahk-builder`:
+
+```bash
+cd packages/ahk-builder && npm run build
+```
 
