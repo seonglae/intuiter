@@ -1,0 +1,73 @@
+{
+  "name": "intuiter",
+  "displayName": "Intuiter",
+  "description": "Global Windows Productivity Application",
+  "version": "0.9.0-electron-vite",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "build:win": "npm run build && electron-builder --win --config",
+    "build:mac": "npm run build && electron-builder --mac --config",
+    "build:linux": "npm run build && electron-builder --linux --config",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": ["productivity", "ahk", "windows"],
+  "repository": "https://github.com/seonglae/intuiter",
+  "author": {
+    "name": "Seonglae Cho",
+    "email": "sungle3737@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/seonglae/intuiter",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "@electron-toolkit/preload": "^3.0.0",
+    "@electron-toolkit/utils": "^3.0.0",
+    "@mdi/font": "7.3.67",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "electron": "35.7.5",
+    "electron-builder": "24.6.4",
+    "electron-vite": "^2.3.0",
+    "sass": "~1.69.5",
+    "typescript": "^5.3.0",
+    "vite": "^5.4.0",
+    "vite-plugin-vuetify": "^2.0.0",
+    "vue": "^3.4.0",
+    "vuetify": "^3.5.0"
+  },
+  "dependencies": {
+    "node-cmd": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.intuiter.app",
+    "productName": "Intuiter",
+    "directories": {
+      "output": "release/${version}"
+    },
+    "files": [
+      "out/**/*",
+      "!node_modules/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "packages/ahk",
+        "to": "ahk"
+      }
+    ],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "asset/icons/white.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
