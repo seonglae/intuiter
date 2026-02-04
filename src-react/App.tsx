@@ -61,10 +61,10 @@ export default function App() {
         </nav>
 
         <div className="flex gap-2" style={{ WebkitAppRegion: 'no-drag' } as React.CSSProperties}>
-          <button onClick={handleGithub} className="px-3 py-1 text-sm hover:bg-zinc-700 rounded">
+          <button onClick={handleGithub} className="px-3 py-1 text-sm hover:text-zinc-300">
             Github
           </button>
-          <button onClick={handleExit} className="px-3 py-1 text-sm bg-zinc-700 hover:bg-zinc-600 rounded">
+          <button onClick={handleExit} className="px-3 py-1 text-sm hover:text-zinc-300">
             Exit
           </button>
         </div>
