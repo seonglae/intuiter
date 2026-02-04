@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.tauri.app/config/2.0.0",
+  "productName": "Intuiter",
+  "version": "0.9.0",
+  "identifier": "com.intuiter.app",
+  "build": {
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5173",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Intuiter",
+        "width": 1000,
+        "height": 600,
+        "minWidth": 1000,
+        "minHeight": 600,
+        "transparent": true,
+        "decorations": false,
+        "resizable": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "icon": [
+      "../asset/icons/white.png",
+      "../asset/icons/white.ico"
+    ],
+    "resources": {
+      "../packages/ahk/**/*": "ahk/"
+    },
+    "windows": {
+      "nsis": {
+        "installMode": "perMachine"
+      }
+    }
+  },
+  "plugins": {
+    "shell": {
+      "open": true,
+      "scope": [
+        {
+          "name": "ahk-runner",
+          "cmd": "ahk/Intuit.exe",
+          "args": true
+        }
+      ]
+    }
+  }
+}
