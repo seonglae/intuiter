@@ -1,16 +1,12 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vuetify from 'vite-plugin-vuetify'
+import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    vuetify({ autoImport: true })
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src-vue')
+      '@': resolve(__dirname, 'src-react')
     }
   },
   root: '.',
