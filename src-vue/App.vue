@@ -24,11 +24,7 @@ onMounted(async () => {
   setTimeout(() => {
     const button = document.querySelector('.liquid-button') as SVGSVGElement
     if (button) {
-      new DancingButton(button, {
-        width: 200,
-        height: 200,
-        text: '▶'
-      })
+      new DancingButton(button)
     }
   }, 100)
 })
@@ -56,7 +52,7 @@ async function exitApp() {
   <v-app>
     <v-app-bar app id="bar" class="top">
       <v-app-bar-title class="headline text-uppercase">
-        <span>Intuit </span>
+        <span class="font-weight-bold">Intuit</span>
         <span class="font-weight-light">Manager</span>
       </v-app-bar-title>
 
@@ -84,8 +80,10 @@ async function exitApp() {
       <!-- Option -->
       <v-window-item :value="1" class="wrapper">
         <div class="flex">
-          <div class="main">
-            <h1>Developing</h1>
+          <div class="main option-main">
+            <v-switch label="Launch at startup" color="primary" />
+            <v-switch label="Show in menu bar" color="primary" />
+            <v-switch label="Enable notifications" color="primary" />
           </div>
         </div>
       </v-window-item>
@@ -93,8 +91,25 @@ async function exitApp() {
       <!-- Shortcut -->
       <v-window-item :value="2" class="wrapper">
         <div class="flex">
-          <div class="main">
-            <h1>Developing</h1>
+          <div class="main shortcut-main">
+            <v-table density="compact" class="shortcut-table">
+              <thead>
+                <tr>
+                  <th>Shortcut</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Caps + H</td><td>Left Arrow</td></tr>
+                <tr><td>Caps + J</td><td>Down Arrow</td></tr>
+                <tr><td>Caps + K</td><td>Up Arrow</td></tr>
+                <tr><td>Caps + L</td><td>Right Arrow</td></tr>
+                <tr><td>Caps + U</td><td>Mouse Left</td></tr>
+                <tr><td>Caps + I</td><td>Mouse Down</td></tr>
+                <tr><td>Caps + O</td><td>Mouse Up</td></tr>
+                <tr><td>Caps + P</td><td>Mouse Right</td></tr>
+              </tbody>
+            </v-table>
           </div>
         </div>
       </v-window-item>
@@ -102,8 +117,12 @@ async function exitApp() {
       <!-- Extension -->
       <v-window-item :value="3" class="wrapper">
         <div class="flex">
-          <div class="main">
-            <h1>Developing</h1>
+          <div class="main ext-main">
+            <v-list>
+              <v-list-item title="Text Mode" subtitle="Caps + T to toggle" />
+              <v-list-item title="Mouse Mode" subtitle="Caps + M to toggle" />
+              <v-list-item title="Window Mode" subtitle="Caps + W to toggle" />
+            </v-list>
           </div>
         </div>
       </v-window-item>
@@ -191,7 +210,7 @@ button {
 
 .liquid-button {
   width: 200px;
-  height: 200px;
+  height: 60px;
   cursor: pointer;
 }
 
@@ -223,5 +242,24 @@ button {
   padding: 20px;
   max-width: 400px;
   margin: auto;
+}
+
+.option-main {
+  padding: 20px;
+  max-width: 300px;
+}
+
+.shortcut-main {
+  padding: 20px;
+  max-width: 400px;
+}
+
+.shortcut-table {
+  background: transparent !important;
+}
+
+.ext-main {
+  padding: 20px;
+  max-width: 400px;
 }
 </style>
