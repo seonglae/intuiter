@@ -1,0 +1,6 @@
+{
+  "name": "@intuiter/ahk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AutoHotkey sources for Intuiter"
+}
