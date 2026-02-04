@@ -27,7 +27,6 @@ function removeConfig() {
         }
     }
 
-    // Restore backup if exists
     const backupFile = path.join(HAMMERSPOON_CONFIG_DIR, 'init.lua.backup');
     if (fs.existsSync(backupFile)) {
         const initFile = path.join(HAMMERSPOON_CONFIG_DIR, 'init.lua');
@@ -37,16 +36,11 @@ function removeConfig() {
     }
 
     log('Uninstallation complete!');
-    log('');
-    log('Note: Hammerspoon application was not removed.');
-    log('To completely remove Hammerspoon, run: brew uninstall --cask hammerspoon');
 }
 
-// Main execution
 function main() {
     log('Intuiter macOS Uninstallation');
     log('=============================');
-    log('');
 
     if (process.platform !== 'darwin') {
         log('This script is for macOS only.');

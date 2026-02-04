@@ -36,19 +36,8 @@ end
 -- Equivalent to Lalt & i, Lalt & k, Lalt & j, Lalt & l in AHK
 
 -- Alt + I: Up arrow (single press)
--- Alt + Shift + I: Select up
--- Alt + Ctrl + I: Repeat up while held
--- Alt + Ctrl + Shift + I: Repeat select up while held
 local textUpBinding = hs.hotkey.bind({"alt"}, "i", function()
-    if hs.eventtap.checkKeyboardModifiers().shift and hs.eventtap.checkKeyboardModifiers().ctrl then
-        -- Repeating select up - handled by separate binding
-    elseif hs.eventtap.checkKeyboardModifiers().shift then
-        sendKey("up", {"shift"})
-    elseif hs.eventtap.checkKeyboardModifiers().ctrl then
-        -- Repeating up - handled by separate binding
-    else
-        sendKey("up")
-    end
+    sendKey("up")
 end)
 
 local textUpRepeatBinding = createRepeatingKey({"alt", "ctrl"}, "i", "up", {})
@@ -121,7 +110,7 @@ local textSelectWordBinding = hs.hotkey.bind({"alt"}, "w", function()
     selectState.pressCount = selectState.pressCount + 1
 
     if selectState.pressCount == 1 then
-        -- Select word: move left, then Ctrl+Right, then Shift+Ctrl+Left
+        -- Select word: move left, then Option+Right, then Shift+Option+Left
         sendKey("left")
         hs.timer.doAfter(0.01, function()
             sendKey("right", {"alt"})
