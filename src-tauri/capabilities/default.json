@@ -11,6 +11,8 @@
     "core:window:allow-maximize",
     "core:window:allow-start-dragging",
     "shell:default",
-    "shell:allow-open"
+    "shell:allow-open",
+    "process:default",
+    "process:allow-exit"
   ]
 }
