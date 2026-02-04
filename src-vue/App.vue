@@ -7,28 +7,29 @@ import DancingButton from 'dancing-button'
 
 const index = ref(0)
 const tabs = [
-  { name: 'HOME', key: 'home' },
-  { name: 'OPTION', key: 'opt' },
-  { name: 'SHORTCUT', key: 'shortcut' },
-  { name: 'EXTENSION', key: 'ext' },
-  { name: 'CUSTOM', key: 'custom' },
-  { name: 'DOCUMENT', key: 'docs' }
+  { name: 'Home', key: 'home' },
+  { name: 'Option', key: 'opt' },
+  { name: 'Shortcut', key: 'shortcut' },
+  { name: 'Extension', key: 'ext' },
+  { name: 'Custom', key: 'custom' },
+  { name: 'Document', key: 'docs' }
 ]
 
 const loading = ref(false)
+const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+const customPaths = ref<string[]>(Array(10).fill(''))
 
 onMounted(async () => {
   await nextTick()
   setTimeout(() => {
-    const button = document.querySelector('.liquid-button')
-    if (button) new DancingButton(button, {
-      width: 200,
-      height: 200,
-      text: '▶',
-      color1: '#4a5568',
-      color2: '#2d3748',
-      color3: '#1a202c'
-    })
+    const button = document.querySelector('.liquid-button') as SVGSVGElement
+    if (button) {
+      new DancingButton(button, {
+        width: 200,
+        height: 200,
+        text: '▶'
+      })
+    }
   }, 100)
 })
 
@@ -53,8 +54,8 @@ async function exitApp() {
 
 <template>
   <v-app>
-    <v-app-bar app id="bar" class="top drag">
-      <v-app-bar-title class="headline text-uppercase nodrag">
+    <v-app-bar app id="bar" class="top">
+      <v-app-bar-title class="headline text-uppercase">
         <span>Intuit </span>
         <span class="font-weight-light">Manager</span>
       </v-app-bar-title>
@@ -65,11 +66,11 @@ async function exitApp() {
         <v-spacer class="drag" />
       </v-tabs>
 
-      <v-btn variant="text" @click="github" class="mr-2 nodrag">GITHUB</v-btn>
-      <v-btn variant="flat" color="blue-grey-darken-3" density="compact" @click="exitApp" class="mr-3 nodrag">EXIT</v-btn>
+      <v-btn @click="github" class="mr-2 nodrag">Github</v-btn>
+      <v-btn @click="exitApp" color="blue-grey-darken-3" class="nodrag">Exit</v-btn>
     </v-app-bar>
 
-    <v-window v-model="index" class="wrapper bottom" id="view" touchless>
+    <v-window v-model="index" class="wrapper bottom" id="view">
       <!-- Home -->
       <v-window-item :value="0" class="wrapper">
         <div class="flex">
@@ -84,8 +85,7 @@ async function exitApp() {
       <v-window-item :value="1" class="wrapper">
         <div class="flex">
           <div class="main">
-            <h2>OPTIONS</h2>
-            <p>Application settings</p>
+            <h1>Developing</h1>
           </div>
         </div>
       </v-window-item>
@@ -94,9 +94,7 @@ async function exitApp() {
       <v-window-item :value="2" class="wrapper">
         <div class="flex">
           <div class="main">
-            <h2>SHORTCUTS</h2>
-            <p>Caps Lock + H/J/K/L = Arrow keys</p>
-            <p>Caps Lock + U/I/O/P = Mouse control</p>
+            <h1>Developing</h1>
           </div>
         </div>
       </v-window-item>
@@ -105,8 +103,7 @@ async function exitApp() {
       <v-window-item :value="3" class="wrapper">
         <div class="flex">
           <div class="main">
-            <h2>EXTENSIONS</h2>
-            <p>Script extensions</p>
+            <h1>Developing</h1>
           </div>
         </div>
       </v-window-item>
@@ -114,20 +111,24 @@ async function exitApp() {
       <!-- Custom -->
       <v-window-item :value="4" class="wrapper">
         <div class="flex">
-          <div class="main">
-            <h2>CUSTOM</h2>
-            <p>Custom configurations</p>
+          <div class="main custom-main">
+            <div v-for="(d, i) in digits" :key="d" class="mb-2">
+              <v-text-field v-model="customPaths[i]" :label="`Cmd+${d}`" density="compact" variant="outlined" />
+            </div>
+            <v-btn color="primary">Save</v-btn>
           </div>
         </div>
       </v-window-item>
 
       <!-- Document -->
-      <v-window-item :value="5" class="wrapper docs-wrapper">
-        <iframe src="https://intuiter.vercel.app/en/usages/text.html" class="docs-iframe" />
+      <v-window-item :value="5" class="wrapper">
+        <div class="flex docs-container">
+          <iframe src="https://intuiter.vercel.app/en/usages/text.html" class="docs-iframe" />
+        </div>
       </v-window-item>
     </v-window>
 
-    <v-overlay :model-value="loading" contained class="loading-overlay">
+    <v-overlay :model-value="loading" class="loading-overlay">
       <v-progress-circular indeterminate size="64" />
     </v-overlay>
   </v-app>
@@ -136,6 +137,10 @@ async function exitApp() {
 <style>
 ::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  margin: 0 !important;
 }
 
 button {
@@ -173,7 +178,7 @@ button {
 
 #bar {
   -webkit-app-region: drag;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   overflow: hidden;
 }
 
@@ -190,37 +195,33 @@ button {
   cursor: pointer;
 }
 
-.docs-wrapper {
-  display: flex;
-  flex-direction: column;
+.docs-container {
+  width: 100%;
+  height: 100%;
 }
 
 .docs-iframe {
-  flex: 1;
   width: 100%;
   height: 100%;
   border: none;
 }
 
-.v-btn {
-  text-transform: none !important;
-}
-
-.v-tab {
-  text-transform: none !important;
-}
-
 .loading-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .loading-overlay .v-overlay__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.custom-main {
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
 }
 </style>
