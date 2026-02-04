@@ -16,7 +16,7 @@ import { remote } from 'electron'
 import DancingButton from 'dancing-button'
 import { promises } from 'fs'
 import { platform, homedir } from 'os'
-import { execSync, exec } from 'child_process'
+import { execSync } from 'child_process'
 
 import useToast from '~/composables/useToast'
 
@@ -31,7 +31,7 @@ const MAKER_PATH = 'resources\\ahk\\make.ahk'
 const MAC_HAMMERSPOON_DIR = '.hammerspoon'
 const MAC_INPUT_PATH = 'resources/mac-input/hammerspoon'
 
-const exists = async path => await promises.stat(path).catch(() => false)
+const exists = async (path: string) => await promises.stat(path).catch(() => false)
 
 export default defineComponent({
   setup(_, context) {
@@ -64,7 +64,7 @@ export default defineComponent({
       // Create destination directory
       try {
         await promises.mkdir(destPath, { recursive: true })
-      } catch (e) {
+      } catch {
         // Directory may already exist
       }
 
@@ -133,7 +133,11 @@ export default defineComponent({
       const makePath = resolve(root, MAKER_PATH)
       store.state.loading = true
       const exist = (await exists(ahkPath)) && (await exists(makePath))
-      if (!exist) return toast.error('No File')
+      if (!exist) {
+        toast.error('No File')
+        store.state.loading = false
+        return
+      }
       run(`"${ahkPath}" "${makePath}"`, () => {
         toast.success('Intuiter Running')
         toast.info('You can close Window')

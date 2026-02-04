@@ -1,0 +1,10 @@
+{
+  "name": "@intuiter/ahk-builder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CLI to compile AHK sources to Intuit.exe",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "node src/index.js"
+  }
+}

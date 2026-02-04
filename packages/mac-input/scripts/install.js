@@ -20,15 +20,6 @@ function error(message) {
     console.error(`[Intuiter Error] ${message}`);
 }
 
-function checkHammerspoon() {
-    try {
-        execSync('which hs', { stdio: 'pipe' });
-        return true;
-    } catch {
-        return false;
-    }
-}
-
 function checkHammerspoonApp() {
     return fs.existsSync('/Applications/Hammerspoon.app');
 }
@@ -37,7 +28,6 @@ function installHammerspoon() {
     log('Hammerspoon not found. Attempting to install via Homebrew...');
 
     try {
-        // Check if Homebrew is installed
         execSync('which brew', { stdio: 'pipe' });
     } catch {
         error('Homebrew is not installed. Please install Homebrew first:');
@@ -69,15 +59,12 @@ function backupExistingConfig() {
 function installConfig() {
     log('Installing Intuiter Hammerspoon configuration...');
 
-    // Create config directory if it doesn't exist
     if (!fs.existsSync(HAMMERSPOON_CONFIG_DIR)) {
         fs.mkdirSync(HAMMERSPOON_CONFIG_DIR, { recursive: true });
     }
 
-    // Backup existing config
     backupExistingConfig();
 
-    // Copy all Lua files
     const files = ['init.lua', 'config.lua', 'mouse.lua', 'text.lua'];
 
     for (const file of files) {
@@ -99,13 +86,11 @@ function reloadHammerspoon() {
     log('Reloading Hammerspoon configuration...');
 
     try {
-        // Try using the hs CLI if available
         execSync('hs -c "hs.reload()"', { stdio: 'pipe' });
         log('Hammerspoon reloaded!');
     } catch {
         log('Could not reload automatically. Please reload Hammerspoon manually.');
         log('  Click the Hammerspoon menubar icon and select "Reload Config"');
-        log('  Or press Cmd+Ctrl+R if Intuiter is already loaded');
     }
 }
 
@@ -113,21 +98,15 @@ function printInstructions() {
     log('');
     log('=== Setup Complete ===');
     log('');
-    log('Important: Hammerspoon needs Accessibility permissions to control input.');
+    log('Important: Hammerspoon needs Accessibility permissions.');
     log('');
     log('1. Open System Preferences > Security & Privacy > Privacy > Accessibility');
-    log('2. Click the lock icon to make changes');
-    log('3. Add Hammerspoon to the list and enable it');
-    log('');
-    log('If Hammerspoon is not running, start it from Applications.');
+    log('2. Add Hammerspoon to the list and enable it');
     log('');
     log('=== Key Bindings ===');
     log('');
     log('Mouse Movement (Cmd + IJKL):');
-    log('  Cmd + I: Move up');
-    log('  Cmd + K: Move down');
-    log('  Cmd + J: Move left');
-    log('  Cmd + L: Move right');
+    log('  Cmd + I/K/J/L: Move up/down/left/right');
     log('  Hold Ctrl for instant max speed');
     log('');
     log('Mouse Clicks:');
@@ -136,53 +115,33 @@ function printInstructions() {
     log('  Cmd + M: Middle click');
     log('');
     log('Scroll:');
-    log('  Alt + U: Scroll up');
-    log('  Alt + O: Scroll down');
-    log('  Alt + Shift + U: Scroll left');
-    log('  Alt + Shift + O: Scroll right');
+    log('  Alt + U/O: Scroll up/down');
     log('');
     log('Text Navigation (Alt + IJKL):');
     log('  Alt + I/K: Up/Down arrow');
     log('  Alt + J/L: Word left/right');
-    log('  Alt + Shift + I/K: Select up/down');
-    log('  Alt + Shift + J/L: Select word left/right');
-    log('  Alt + Ctrl + IJKL: Repeat key while held');
-    log('');
-    log('Text Selection:');
-    log('  Alt + W: Select word (press twice for line)');
-    log('  Alt + A: Select line (press twice for paragraph)');
     log('');
     log('Reload Config: Cmd + Ctrl + R');
     log('');
 }
 
-// Main execution
 function main() {
     log('Intuiter macOS Installation');
     log('===========================');
-    log('');
 
-    // Check if we're on macOS
     if (process.platform !== 'darwin') {
-        error('This installation script is for macOS only.');
-        error('For Windows, please use the AHK package.');
+        error('This script is for macOS only.');
         process.exit(1);
     }
 
-    // Check/install Hammerspoon
     if (!checkHammerspoonApp()) {
         installHammerspoon();
     } else {
         log('Hammerspoon is already installed.');
     }
 
-    // Install configuration
     installConfig();
-
-    // Reload if possible
     reloadHammerspoon();
-
-    // Print usage instructions
     printInstructions();
 }
 
