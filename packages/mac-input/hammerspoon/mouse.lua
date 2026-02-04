@@ -48,7 +48,7 @@ local function stopMouseMove()
 end
 
 -- Generic mouse movement function
-local function startMouseMove(dirX, dirY)
+local function startMouseMove()
     stopMouseMove()
     state.velocity = 0
 
@@ -105,19 +105,7 @@ local function startMouseMove(dirX, dirY)
     end)
 end
 
--- Mouse click functions (equivalent to click_left, click_right, click_mid in AHK)
-local function mouseClick(button)
-    local pos = hs.mouse.absolutePosition()
-    hs.eventtap.event.newMouseEvent(
-        hs.eventtap.event.types[button .. "MouseDown"],
-        pos
-    ):post()
-    hs.eventtap.event.newMouseEvent(
-        hs.eventtap.event.types[button .. "MouseUp"],
-        pos
-    ):post()
-end
-
+-- Mouse click functions
 local function mouseDown(button)
     local pos = hs.mouse.absolutePosition()
     hs.eventtap.event.newMouseEvent(
@@ -134,7 +122,7 @@ local function mouseUp(button)
     ):post()
 end
 
--- Scroll functions (equivalent to scroll_up, scroll_down, etc. in AHK)
+-- Scroll functions
 local scrollState = {
     timer = nil,
     divisor = 3,
@@ -168,12 +156,10 @@ local function startScroll(dx, dy)
 end
 
 -- Key bindings for mouse movement (Cmd + IJKL)
--- Equivalent to Lwin & i, Lwin & k, Lwin & j, Lwin & l in AHK
 local moveKeys = {"i", "j", "k", "l"}
 local moveBindings = {}
 
 for _, key in ipairs(moveKeys) do
-    -- Key down
     moveBindings[key .. "_down"] = hs.hotkey.bind({"cmd"}, key, function()
         setKeyPressed(key, true)
         startMouseMove()
@@ -182,8 +168,7 @@ for _, key in ipairs(moveKeys) do
     end)
 end
 
--- Mouse click bindings (Cmd + U for left click, Cmd + O for right click)
--- Equivalent to Lwin & u, Lwin & o in AHK
+-- Mouse click bindings
 local leftClickBinding = hs.hotkey.bind({"cmd"}, "u", function()
     mouseDown("left")
 end, function()
@@ -196,15 +181,13 @@ end, function()
     mouseUp("right")
 end)
 
--- Middle click (Cmd + M)
 local midClickBinding = hs.hotkey.bind({"cmd"}, "m", function()
     mouseDown("middle")
 end, function()
     mouseUp("middle")
 end)
 
--- Scroll bindings (Alt + U for scroll up, Alt + O for scroll down)
--- Equivalent to Lalt & u, Lalt & o in AHK
+-- Scroll bindings
 local scrollUpBinding = hs.hotkey.bind({"alt"}, "u", function()
     startScroll(0, 5)
 end, function()
@@ -217,7 +200,6 @@ end, function()
     stopScroll()
 end)
 
--- Horizontal scroll with Shift modifier
 local scrollLeftBinding = hs.hotkey.bind({"alt", "shift"}, "u", function()
     startScroll(5, 0)
 end, function()
@@ -230,7 +212,6 @@ end, function()
     stopScroll()
 end)
 
--- Additional scroll binding (Cmd + H for scroll up, Cmd + P for scroll down)
 local scrollUpAltBinding = hs.hotkey.bind({"cmd"}, "h", function()
     startScroll(0, 5)
 end, function()
