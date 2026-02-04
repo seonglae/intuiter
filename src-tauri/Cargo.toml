@@ -1,0 +1,29 @@
+[package]
+name = "intuiter"
+version = "0.9.0"
+description = "Global Windows Productivity Application"
+authors = ["Seonglae Cho <sungle3737@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/seonglae/intuiter"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0", features = ["shell-open"] }
+tauri-plugin-shell = "2.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["process", "rt-multi-thread"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
