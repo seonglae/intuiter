@@ -7,4 +7,5 @@ Intuit.exe
 Intuiter.exe
 *.pfx
 *.env
-.historysrc-tauri/target/
+.history
+src-tauri/target/
