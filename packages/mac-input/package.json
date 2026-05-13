@@ -7,7 +7,6 @@
     "install-config": "node scripts/install.js",
     "uninstall-config": "node scripts/uninstall.js"
   },
-  "os": ["darwin"],
   "engines": {
     "node": ">=20.9.0"
   }
