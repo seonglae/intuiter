@@ -8,3 +8,4 @@ Intuiter.exe
 *.pfx
 *.env
 .history
+src-tauri/target/
