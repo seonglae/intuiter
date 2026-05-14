@@ -1,83 +1,100 @@
-name: Release Program
+name: Release
 
 on:
   push:
     tags:
-      - '[0-9]\.[0-9]\.[0-9]'
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   release:
-    runs-on: windows-latest
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            target: aarch64-apple-darwin
+            name: macOS-arm64
+          - platform: macos-latest
+            target: x86_64-apple-darwin
+            name: macOS-x64
+          - platform: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            name: Linux-x64
+          - platform: windows-latest
+            target: x86_64-pc-windows-msvc
+            name: Windows-x64
+
+    runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set env
-        shell: bash
-        run: |
-          echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
-          IFS='.'
-          read -a VERSIONS <<< "1.2.3"
-          echo "MAJOR=${VERSIONS[0]}" >> $GITHUB_ENV
-          echo "MINOR=${VERSIONS[1]}" >> $GITHUB_ENV
-          echo "PATCH=${VERSIONS[2]}" >> $GITHUB_ENV
-
-      - name: get-key
-        shell: bash
-        run: |
-          echo "${{ secrets.PFX }}" | base64 --decode > Seonglae.pfx
-          echo "${{ secrets.ENV }}" > .env
-
-      - name: Install Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14.x
+          node-version: 20
+          cache: 'npm'
 
-      - name: Cache node modules
-        uses: actions/cache@v3
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
         with:
-          path: |
-            **/node_modules
-          key: ${{ runner.OS }}-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
+          targets: ${{ matrix.target }}
 
-      - name: Install npm dependencies
+      - name: Install Linux dependencies
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - name: Cache Rust
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Install Tauri CLI
+        run: npm install -g @tauri-apps/cli
+
+      - name: Build Tauri app
+        run: cargo tauri build --target ${{ matrix.target }}
+
+      - name: Get version
+        id: version
         shell: bash
-        run: yarn
+        run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
-      - name: Run build task
+      - name: Prepare release assets (macOS)
+        if: matrix.platform == 'macos-latest'
         shell: bash
         run: |
-          yarn build
-          ln build/Intuiter*.exe Intuiter.exe
+          cd src-tauri/target/${{ matrix.target }}/release/bundle
+          mv dmg/*.dmg ../../../Intuiter_${{ steps.version.outputs.version }}_${{ matrix.name }}.dmg
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: make artiface
-          path: build
+      - name: Prepare release assets (Linux)
+        if: matrix.platform == 'ubuntu-22.04'
+        shell: bash
+        run: |
+          cd src-tauri/target/${{ matrix.target }}/release/bundle
+          mv appimage/*.AppImage ../../../Intuiter_${{ steps.version.outputs.version }}_${{ matrix.name }}.AppImage
+          mv deb/*.deb ../../../Intuiter_${{ steps.version.outputs.version }}_${{ matrix.name }}.deb
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare release assets (Windows)
+        if: matrix.platform == 'windows-latest'
+        shell: bash
+        run: |
+          cd src-tauri/target/${{ matrix.target }}/release/bundle
+          mv nsis/*.exe ../../../Intuiter_${{ steps.version.outputs.version }}_${{ matrix.name }}.exe
+          mv msi/*.msi ../../../Intuiter_${{ steps.version.outputs.version }}_${{ matrix.name }}.msi
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            # [Version Doc](https://intuiter.vercel.app/en/versions/${{ env.MAJOR }}-${{ env.MINOR }}-${{ env.PATCH }}.html)/[버전정보](https://intuiter.vercel.app/ko/versions/${{ env.MAJOR }}-${{ env.MINOR }}-${{ env.PATCH }}.html)
+          files: |
+            src-tauri/target/${{ matrix.target }}/release/Intuiter_*
           draft: false
           prerelease: false
-
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Intuiter.exe
-          asset_name: Intuiter.exe
-          asset_content_type: application/exe

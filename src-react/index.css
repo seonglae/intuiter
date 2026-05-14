@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply h-full min-h-[600px] overflow-hidden;
+    background: transparent !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
